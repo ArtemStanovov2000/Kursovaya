@@ -32,6 +32,15 @@ header {
   font-size: 48px;
 }
 
+.nav__link:hover {
+  color: var(--hover);
+  text-decoration-line: underline;
+}
+
+.nav__link:active {
+  color: var(--black);
+}
+
 .nav__reg {
   display: flex;
   height: max-content;
@@ -64,6 +73,15 @@ header {
   font-size: 20px;
 }
 
+.form__btn:hover {
+  background-color: var(--hover);
+}
+
+.form__btn:active {
+  background-color: var(--white);
+  border: 2px solid var(--black);
+}
+
 .nav__btn {
   background-color: var(--white);
   padding: 0;
@@ -77,11 +95,22 @@ header {
   font-size: 20px;
 }
 
+.nav__btn:hover {
+  background-color: var(--hover);
+}
+
+.nav__btn:active {
+  background-color: var(--white);
+  border: 2px solid var(--black);
+}
+
 :root {
   --basic_blue: #DAE8F5;
   --blue: #95CCFF;
   --white: #ffffff;
   --dark_blue: #0085FF;
+  --hover: #69FF51;
+  --black: #000000;
 }
 
 body {
