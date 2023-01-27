@@ -70,6 +70,10 @@ main {
     background-color: var(--kursovaya_item_hover);
 }
 
+.task__item:active {
+    box-shadow: 0px 0px 13px 0px var(--grey);
+}
+
 .task__item__link{
     width: 100%;
     height: 100%;
@@ -77,6 +81,8 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .task__item--dorogova {
@@ -114,4 +120,46 @@ main {
     font-weight: 700;
     text-transform: uppercase;
     margin: 0;
+}
+
+/*средний блок*/
+.title__reference_list {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: var(--black);
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.reference_list {
+    margin: 0;
+    padding: 0;
+}
+
+.reference_item {
+    list-style-type: none;
+    width: 100%;
+    height: 60px;
+    background-color: var(--white);
+    border-radius: 8px;
+    border: 2px solid var(--blue);
+    margin-top: 25px;
+}
+
+.reference_item:first-child {
+    margin-top: 0;
+}
+
+.reference_item__link {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: var(--black);
+    font-weight: 400;
 }
