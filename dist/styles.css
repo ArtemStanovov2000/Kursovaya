@@ -1,5 +1,6 @@
 header {
   background-color: var(--blue);
+  box-shadow: 0px 5px 15px 0px rgba(34, 60, 80, 0.2);
 }
 
 .header__inner {
@@ -104,6 +105,129 @@ header {
   border: 2px solid var(--black);
 }
 
+footer {
+  height: 150px;
+  background-color: var(--blue);
+}
+
+main {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.main__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cart__block {
+  border-right: 1px solid var(--grey);
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.cart__block:last-child {
+  border: none;
+}
+
+.kurs__task {
+  background-color: var(--kursovaya);
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.kurs__task:hover {
+  box-shadow: 0px 0px 13px 0px var(--kursovaya_hover);
+}
+
+.task__title {
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  height: max-content;
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-weight: 400;
+}
+
+.task__list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  padding: 0;
+  height: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.task__list--dorogova {
+  grid-template-columns: 1fr 1fr;
+}
+
+.task__item {
+  height: 80px;
+  width: 100%;
+  background-color: var(--kursovaya_item);
+}
+
+.task__item:hover {
+  background-color: var(--kursovaya_item_hover);
+}
+
+.task__item__link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.task__item--dorogova {
+  height: 125px;
+}
+
+.task__item__number {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: var(--white);
+  font-weight: 700;
+  margin: 0;
+}
+
+.task__item__deck {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--white);
+  font-weight: 700;
+  margin: 0;
+}
+
+.task__practical__number {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  color: var(--white);
+  font-weight: 700;
+  margin: 0;
+}
+
+.task__practical__title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}
+
 :root {
   --basic_blue: #DAE8F5;
   --blue: #95CCFF;
@@ -111,6 +235,11 @@ header {
   --dark_blue: #0085FF;
   --hover: #69FF51;
   --black: #000000;
+  --grey: #404040;
+  --kursovaya: #B1D251;
+  --kursovaya_hover: #91ac45;
+  --kursovaya_item: #cee18d;
+  --kursovaya_item_hover: #dbe8a9;
 }
 
 body {
