@@ -260,6 +260,14 @@ main {
   margin-top: 25px;
 }
 
+.reference_item:hover {
+  box-shadow: 0px 0px 13px 0px var(--grey);
+}
+
+.reference_item:active {
+  box-shadow: 0px 0px 13px 0px var(--black);
+}
+
 .reference_item:first-child {
   margin-top: 0;
 }
@@ -275,6 +283,16 @@ main {
   font-size: 30px;
   color: var(--black);
   font-weight: 400;
+  opacity: 0.6;
+}
+
+.reference_item__link:hover {
+  font-size: 31px;
+}
+
+.reference_item__link:active {
+  font-size: 31px;
+  opacity: 1;
 }
 
 :root {
