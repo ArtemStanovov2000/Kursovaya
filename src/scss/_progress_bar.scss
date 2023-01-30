@@ -19,3 +19,134 @@
     text-align: justify;
     text-indent: 30px;
 }
+
+.progress_bar {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.progress_bar__deck {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    width: 150px;
+    margin: 0;
+}
+
+.progress_bar__line_box {
+    width: 250px;
+    height: 10px;
+    background-color: var(--white);
+    border-radius: 8px;
+    display: flex;
+    border: 1px solid var(--blue);
+    align-items: center;
+    padding-left: 6px;
+    padding-right: 6px;
+    position: relative;
+}
+
+.progress_bar__line {
+    height: 20px;
+    width: 20px;
+    background-color: var(--dark_blue);
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    border: 1px solid var(--special_two-grey);
+    left: 40%;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress_bar__line__point {
+    height: 8px;
+    width: 8px;
+    background-color: var(--black);
+    border-radius: 50%;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+}
+
+.timer__title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.timer__stay {
+    display: flex;
+    justify-content: space-between;
+}
+
+.level__number {
+    display: flex;
+    margin-right: 15px;
+}
+
+.level__number:last-child {
+    margin-right: 0;
+}
+
+.timer__digit {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 400;
+    background-color: var(--white);
+    padding: 15px 10px;
+    border-radius: 8px;
+    margin-right: 5px;
+}
+
+.timer__digit:last-child {
+    margin-right: 0;
+}
+
+.level__number__deck {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.price__result {
+
+}
+
+.price__title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.price__value__box {
+    display: flex;
+    width: 120px;
+    justify-content: space-between;
+}
+
+.price__value {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    line-height: 15px;
+    background-color: var(--white);
+    padding: 10px 7px;
+    border-radius: 6px;
+}
