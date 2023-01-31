@@ -11,10 +11,87 @@
 
 <body>
     <header>
+        <div class="container">
+            <nav class="navigation">
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a href="#" class="navigation__item__link">Конвертер</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__item__link">О нас</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__item__link">Каталог услуг</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__item__link">Войдите</a></li>
+                </ul>
+                <form class="form__login" action="#" method="post" target="_blank">
+                    <h2 class="form__title">Войдите в аккаунт</h2>
+                    <fieldset class="fieldset">
+                        <ul class="field__login__list">
+                            <li class="field__login__item">
+                                <label class="field__login__item__label" for="name">Логин:</label>
+                                <input class="field__login__item__input" type="login" name="login" placeholder="loob_job123" id="login" required>
+                            </li>
+                            <li class="field__login__item">
+                                <label class="field__login__item__label" for="age">Пароль:</label>
+                                <input class="field__login__item__input" type="password" name="password" placeholder="******" id="password"
+                                    required>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <div>
+                        <button type="submit">Отправить</button>
+                    </div>
+                </form>
+                <button type="button" class="">Регистрация</button>
+                <form action="#" method="post" target="_blank">
+                    <h2 class="form__title">Зарегестрируйтесь</h2>
+                    <fieldset>
+                        <legend>Персональные данные</legend>
+                        <ul>
+                            <li>
+                                <label for="name">Имя:*</label>
+                                <input type="text" name="name" placeholder="Иван Иванов" id="name" required>
+                            </li>
+                            <li>
+                                <label for="age">Возраст:</label>
+                                <input type="number" name="age" placeholder="27" id="age" min="0" max="125">
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Контакты</legend>
+                        <ul>
+                            <li>
+                                <label for="email">E-mail:*</label>
+                                <input type="email" name="mail" placeholder="ivanov@gmail.com" id="email" required>
+                            </li>
+                            <li>
+                                <label for="number">Телефон:*</label>
+                                <input type="tel" name="phone" placeholder="+7 000 000-00-00" id="number" maxlength="21"
+                                    required>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Персональные данные</legend>
+                        <ul>
+                            <li>
+                                <label for="name">Логин:</label>
+                                <input type="login" name="login" placeholder="loob_job123" id="login_reg" required>
+                            </li>
+                            <li>
+                                <label for="age">Пароль:</label>
+                                <input type="password" name="password" placeholder="******" id="password_reg" required>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <div>
+                        <button type="submit">Отправить</button>
+                        <p>* — Обязательные поля</p>
+                    </div>
+                </form>
+            </nav>
+        </div>
     </header>
     <main>
     </main>
-    <footer>     
+    <footer>
     </footer>
 </body>
 

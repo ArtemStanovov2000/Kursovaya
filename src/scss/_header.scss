@@ -1,0 +1,84 @@
+.navigation {
+    padding: 0;
+    margin: 0;
+}
+
+.navigation__list {
+    padding: 0;
+    margin: 0;
+}
+
+.navigation__item {
+    list-style-type: none;
+    border-bottom: 1px solid var(--grey);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+
+.navigation__item__link {
+    opacity: 0.7;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: Oswald;
+    display: flex;
+    justify-content: center;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.navigation__item__link:hover {
+    opacity: 1;
+}
+
+.navigation__item__link:active {
+    opacity: 1;
+    background-color: var(--blue_darker);
+}
+
+.form__login {
+    margin-top: 15px;
+}
+
+.form__title {
+    font-family: Oswald;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.field__login__list {
+    padding: 0;
+    margin: 0;
+}
+
+.field__login__item {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.field__login__item__label {
+    font-family: Oswald;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.field__login__item__input {
+    font-family: Oswald;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    width: 60%;
+    height: 30px;
+}

@@ -1,18 +1,122 @@
-:root {
-  --basic_blue: #DAE8F5;
-  --blue: #95CCFF;
-  --dark_blue: #0085FF;
-  --white: #ffffff;
-  --black: #000000;
-  --hover: #69FF51;
-}
-
-body {
-  background-color: var(--basic_blue);
+.navigation {
+  padding: 0;
   margin: 0;
 }
 
+.navigation__list {
+  padding: 0;
+  margin: 0;
+}
+
+.navigation__item {
+  list-style-type: none;
+  border-bottom: 1px solid var(--grey);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.navigation__item__link {
+  opacity: 0.7;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: Oswald;
+  display: flex;
+  justify-content: center;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.navigation__item__link:hover {
+  opacity: 1;
+}
+
+.navigation__item__link:active {
+  opacity: 1;
+  background-color: var(--blue_darker);
+}
+
+.form__login {
+  margin-top: 15px;
+}
+
+.form__title {
+  font-family: Oswald;
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.field__login__list {
+  padding: 0;
+  margin: 0;
+}
+
+.field__login__item {
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.field__login__item__label {
+  font-family: Oswald;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.field__login__item__input {
+  font-family: Oswald;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  width: 60%;
+  height: 30px;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: local("Oswald"), url(Oswald/Oswald-VariableFont_wght.ttf);
+}
+:root {
+  --light_blue: #DAE8F5;
+  --blue: #95CCFF;
+  --blue_darker: #92c9fc;
+  --dark_blue: #0085FF;
+  --white: #ffffff;
+  --light_grey: #D3D3D3;
+  --grey: #545454;
+  --black: #000000;
+  --basic_green: #69FF51;
+}
+
+body {
+  background-color: var(--light_blue);
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .container {
-  padding-left: 140px;
-  padding-right: 140px;
+  padding-left: 20px;
+  padding-right: 20px;
 }

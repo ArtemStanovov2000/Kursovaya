@@ -4,23 +4,45 @@
 @import "progress_bar";
 @import "footer";
 
+@font-face {
+	font-family: 'Oswald'; 
+	src: local('Oswald'),
+		url(Oswald/Oswald-VariableFont_wght.ttf); 
+}
+
 :root {
-    --basic_blue: #DAE8F5;
+    --light_blue: #DAE8F5;
     --blue: #95CCFF;
+    --blue_darker: #92c9fc;
     --dark_blue: #0085FF;
 
     --white: #ffffff;
+    --light_grey: #D3D3D3;
+    --grey: #545454;
     --black: #000000;
 
-    --hover: #69FF51;
+    --basic_green: #69FF51;
 }
 
 body {
-    background-color: var(--basic_blue);
+    background-color: var(--light_blue);
     margin: 0;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
 .container {
-    padding-left: 140px;
-    padding-right: 140px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
