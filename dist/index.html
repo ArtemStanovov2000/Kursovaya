@@ -96,10 +96,25 @@
         <div class="container">
             <section class="calc__item">
                 <h2 class="calc__item__title">Произвести рассчёт</h2>
+                <ul class="status__list">
+                    <h3 class="status__list__title">Статус пунктов</h2>
+                    <li class="status__item">
+                        <div class="status__marker status__marker--absent"></div>
+                        <p class="status__deck">- отсутсвует</p>
+                    </li>
+                    <li class="status__item">
+                        <div class="status__marker status__marker--development"></div>
+                        <p class="status__deck">- в разработке</p>
+                    </li>
+                    <li class="status__item">
+                        <div class="status__marker status__marker--work"></div>
+                        <p class="status__deck">- можно пользоваться</p>
+                    </li>
+                </ul>
                 <article class="coursework">
                     <h2 class="coursework__title">Кривенкова</h2>
                     <ul class="coursework__list">
-                        <li class="coursework__item">
+                        <li class="coursework__item coursework__item--absent">
                             <a href="#" class="coursework__item__link">
                                 <h3 class="coursework__item__link__title">3-й пункт</h3>
                                 <p class="coursework__item__link__deck">Расчет ШРА</p>
@@ -111,25 +126,25 @@
                                 <p class="coursework__item__link__deck">Расчет КТП</p>
                             </a>
                         </li>
-                        <li class="coursework__item">
+                        <li class="coursework__item coursework__item--development">
                             <a href="#" class="coursework__item__link">
                                 <h3 class="coursework__item__link__title">5-й пункт</h3>
                                 <p class="coursework__item__link__deck">Расчет КВА</p>
                             </a>
                         </li>
-                        <li class="coursework__item">
+                        <li class="coursework__item coursework__item--absent">
                             <a href="#" class="coursework__item__link">
                                 <h3 class="coursework__item__link__title">6-й пункт</h3>
                                 <p class="coursework__item__link__deck">Кабель КТП</p>
                             </a>
                         </li>
-                        <li class="coursework__item">
+                        <li class="coursework__item coursework__item--development">
                             <a href="#" class="coursework__item__link">
                                 <h3 class="coursework__item__link__title">7-й пункт</h3>
                                 <p class="coursework__item__link__deck">Расчёт ШМА</p>
                             </a>
                         </li>
-                        <li class="coursework__item">
+                        <li class="coursework__item coursework__item--development">
                             <a href="#" class="coursework__item__link">
                                 <h3 class="coursework__item__link__title">8-й пункт</h3>
                                 <p class="coursework__item__link__deck">Провода</p>
@@ -141,13 +156,13 @@
                                 <p class="coursework__item__link__deck">Защита</p>
                             </a>
                         </li>
-                        <li class="coursework__item">
+                        <li class="coursework__item coursework__item--development">
                             <a href="#" class="coursework__item__link">
                                 <h3 class="coursework__item__link__title">10-й пункт</h3>
                                 <p class="coursework__item__link__deck">Iкз КТП</p>
                             </a>
                         </li>
-                        <li class="coursework__item">
+                        <li class="coursework__item coursework__item--development">
                             <a href="#" class="coursework__item__link">
                                 <h3 class="coursework__item__link__title">12-й пункт</h3>
                                 <p class="coursework__item__link__deck">Выключатель</p>
@@ -164,19 +179,19 @@
                                 <p class="coursework__item__link__deck">Практическая</p>
                             </a>
                         </li>
-                        <li class="coursework__item">
+                        <li class="coursework__item coursework__item--development">
                             <a href="#" class="coursework__item__link">
                                 <h3 class="coursework__item__link__title">25</h3>
                                 <p class="coursework__item__link__deck">Практическая</p>
                             </a>
                         </li>
-                        <li class="coursework__item">
+                        <li class="coursework__item coursework__item--development">
                             <a href="#" class="coursework__item__link">
                                 <h3 class="coursework__item__link__title">26</h3>
                                 <p class="coursework__item__link__deck">Практическая</p>
                             </a>
                         </li>
-                        <li class="coursework__item">
+                        <li class="coursework__item coursework__item--absent">
                             <a href="#" class="coursework__item__link">
                                 <h3 class="coursework__item__link__title">28</h3>
                                 <p class="coursework__item__link__deck">Практическая</p>
@@ -185,7 +200,39 @@
                     </ul>
                 </article>
             </section>
-            <section></section>
+            <section class="reference">
+                <h2 class="reference__title">Справочная информация</h2>
+                <ul class="reference__list">
+                    <h3 class="reference__list__title">Ссылки на источники</h3>
+                    <li class="reference__item">
+                        <a href="#" class="reference__item__link">Закон Ома</a>
+                    </li>
+                    <li class="reference__item">
+                        <a href="#" class="reference__item__link">Трансформаторы</a>
+                    </li>
+                    <li class="reference__item">
+                        <a href="#" class="reference__item__link">Б.Ю. Липкин Электроснабжение</a>
+                    </li>
+                    <li class="reference__item">
+                        <a href="#" class="reference__item__link">Рубильники</a>
+                    </li>
+                    <li class="reference__item">
+                        <a href="#" class="reference__item__link">Шинопроводы</a>
+                    </li>
+                    <li class="reference__item">
+                        <a href="#" class="reference__item__link">Станки</a>
+                    </li>
+                    <li class="reference__item">
+                        <a href="#" class="reference__item__link">PhotoMath</a>
+                    </li>
+                    <li class="reference__item">
+                        <a href="#" class="reference__item__link">Асинхронный двигатель</a>
+                    </li>
+                    <li class="reference__item">
+                        <a href="#" class="reference__item__link">Короткое замыкание</a>
+                    </li>
+                </ul>
+            </section>
             <section></section>
         </div>
     </main>

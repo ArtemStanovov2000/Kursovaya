@@ -11,14 +11,14 @@
 .navigation__item {
   list-style-type: none;
   border-bottom: 1px solid var(--grey);
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 .navigation__item__link {
   opacity: 0.7;
   font-size: 30px;
   line-height: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   text-transform: uppercase;
   font-family: Oswald;
   display: flex;
@@ -131,6 +131,59 @@
   color: var(--black);
 }
 
+.status__list {
+  background-color: var(--light_blue_darker);
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  padding: 15px;
+}
+
+.status__list__title {
+  font-size: 30px;
+  line-height: 30px;
+  font-family: Oswald;
+  color: var(--black);
+  font-weight: 400;
+  margin: 0;
+}
+
+.status__item {
+  list-style-type: none;
+  display: flex;
+  margin-top: 20px;
+}
+
+.status__marker {
+  width: 30px;
+  height: 30px;
+}
+
+.status__marker--work {
+  background-color: var(--basic_green_light_1);
+}
+
+.status__marker--development {
+  background-color: var(--basic_yellow);
+}
+
+.status__marker--absent {
+  background-color: var(--basic_red);
+}
+
+.status__deck {
+  font-size: 20px;
+  line-height: 20px;
+  font-family: Oswald;
+  color: var(--black);
+  text-transform: uppercase;
+  margin: 0;
+  margin-left: 25px;
+  display: flex;
+  align-items: center;
+}
+
 .calc__item__title {
   font-size: 40px;
   line-height: 40px;
@@ -149,6 +202,10 @@
   padding-right: 15px;
   padding-bottom: 15px;
   margin-bottom: 30px;
+}
+
+.coursework:hover {
+  box-shadow: 0px 0px 21px 4px var(--basic_green_light);
 }
 
 .coursework__title {
@@ -181,12 +238,36 @@
   border-radius: 5px;
 }
 
+.coursework__item--development {
+  background-color: var(--basic_yellow);
+}
+
+.coursework__item--absent {
+  background-color: var(--basic_red);
+}
+
 .coursework__item:hover {
   background-color: var(--basic_green_light_2);
 }
 
+.coursework__item--development:hover {
+  background-color: var(--basic_yellow_light);
+}
+
+.coursework__item--absent:hover {
+  background-color: var(--basic_red_light);
+}
+
 .coursework__item:active {
   background-color: var(--basic_green_light_3);
+}
+
+.coursework__item--development:active {
+  background-color: var(--basic_yellow_light_1);
+}
+
+.coursework__item--absent:active {
+  background-color: var(--basic_red_light_1);
 }
 
 .coursework__item:first-child {
@@ -221,14 +302,83 @@
   justify-content: center;
 }
 
+.reference__title {
+  padding: 0;
+  margin: 0;
+  font-size: 40px;
+  line-height: 40px;
+  font-family: Oswald;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+}
+
+.reference__list {
+  padding: 0;
+  margin: 0;
+}
+
+.reference__list__title {
+  padding: 0;
+  margin: 0;
+  font-size: 30px;
+  line-height: 30px;
+  font-family: Oswald;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.reference__item {
+  list-style-type: none;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.reference__item__link {
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 30px;
+  font-family: Oswald;
+  color: var(--black);
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  background-color: var(--blue_darker);
+  border: 6px solid var(--blue_darker_1);
+  border-radius: 14px;
+}
+
+.reference__item__link:hover {
+  font-size: 31px;
+  line-height: 31px;
+  width: 100%;
+}
+
+.reference__item__link:active {
+  font-size: 31px;
+  line-height: 31px;
+  width: 95%;
+  background-color: var(--blue_darker_1);
+}
+
 @font-face {
   font-family: "Oswald";
   src: local("Oswald"), url(Oswald/Oswald-VariableFont_wght.ttf);
 }
 :root {
   --light_blue: #DAE8F5;
+  --light_blue_darker: #c4ddf5;
   --blue: #95CCFF;
   --blue_darker: #92c9fc;
+  --blue_darker_1: #378cbd;
   --dark_blue: #0085FF;
   --white: #ffffff;
   --light_grey: #D3D3D3;
@@ -241,6 +391,12 @@
   --basic_green: #49ab3a;
   --basic_green2: #49ab3a;
   --basic_green3: #49ab3a;
+  --basic_yellow: #b0b300;
+  --basic_yellow_light: #d8db0f;
+  --basic_yellow_light_1: #e7eb2f;
+  --basic_red: #b30000;
+  --basic_red_light: #d92b2b;
+  --basic_red_light_1: #eb4646;
 }
 
 body {

@@ -1,5 +1,6 @@
 @import "header";
 @import "coursework";
+@import "reference";
 
 @font-face {
 	font-family: 'Oswald'; 
@@ -9,8 +10,10 @@
 
 :root {
     --light_blue: #DAE8F5;
+    --light_blue_darker: #c4ddf5;
     --blue: #95CCFF;
     --blue_darker: #92c9fc;
+    --blue_darker_1: #378cbd;
     --dark_blue: #0085FF;
 
     --white: #ffffff;
@@ -25,6 +28,14 @@
     --basic_green: #49ab3a;
     --basic_green2: #49ab3a;
     --basic_green3: #49ab3a;
+
+    --basic_yellow: #b0b300;
+    --basic_yellow_light: #d8db0f;
+    --basic_yellow_light_1: #e7eb2f;
+
+    --basic_red: #b30000;
+    --basic_red_light: #d92b2b;
+    --basic_red_light_1: #eb4646;
 }
 
 body {
