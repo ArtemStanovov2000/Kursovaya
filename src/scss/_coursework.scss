@@ -1,0 +1,89 @@
+.calc__item__title {
+    font-size: 40px;
+    line-height: 40px;
+    font-family: Oswald;
+    color: var(--black);
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.coursework {
+    background-color: var(--basic_green);
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.coursework__title {
+    font-size: 40px;
+    line-height: 40px;
+    font-family: Oswald;
+    color: var(--black);
+    font-weight: 400;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.coursework__list {
+    padding: 0;
+    margin: 0;
+    background-color: var(--basic_green_light);
+    border-radius: 5px;
+}
+
+.coursework__item {
+    list-style-type: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--basic_green_light_1);
+    border-radius: 5px;
+}
+
+.coursework__item:hover {
+    background-color: var(--basic_green_light_2);
+}
+
+.coursework__item:active {
+    background-color: var(--basic_green_light_3);
+}
+
+.coursework__item:first-child {
+    margin-top: 0;
+}
+
+.coursework__item__link {
+    text-decoration: none;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.coursework__item__link__title {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 40px;
+    line-height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+}
+
+.coursework__item__link__deck {
+    margin: 0;
+    font-size: 40px;
+    line-height: 40px;
+    font-family: Oswald;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+}

@@ -18,6 +18,7 @@
 .navigation__item__link {
   opacity: 0.7;
   font-size: 30px;
+  line-height: 30px;
   text-transform: uppercase;
   font-family: Oswald;
   display: flex;
@@ -42,6 +43,7 @@
 .form__title {
   font-family: Oswald;
   font-size: 30px;
+  line-height: 30px;
   font-weight: 400;
   margin: 0;
   margin-bottom: 15px;
@@ -69,6 +71,7 @@
 .field__login__item__label {
   font-family: Oswald;
   font-size: 20px;
+  line-height: 20px;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -76,6 +79,7 @@
 .field__login__item__input {
   font-family: Oswald;
   font-size: 16px;
+  line-height: 20px;
   font-weight: 400;
   text-transform: uppercase;
   width: 60%;
@@ -91,6 +95,7 @@
   padding: 0;
   border: none;
   font-size: 20px;
+  line-height: 20px;
   font-family: Oswald;
   color: var(--black);
   background-color: var(--white);
@@ -104,11 +109,13 @@
 .form__button:hover {
   background-color: var(--light_grey);
   font-size: 21px;
+  line-height: 21px;
 }
 
 .form__button:active {
   background-color: var(--white);
   font-size: 21px;
+  line-height: 21px;
   opacity: 0.5;
 }
 
@@ -119,8 +126,99 @@
 
 .form__regist__box__deck {
   font-size: 20px;
+  line-height: 20px;
   font-family: Oswald;
   color: var(--black);
+}
+
+.calc__item__title {
+  font-size: 40px;
+  line-height: 40px;
+  font-family: Oswald;
+  color: var(--black);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.coursework {
+  background-color: var(--basic_green);
+  border-radius: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+.coursework__title {
+  font-size: 40px;
+  line-height: 40px;
+  font-family: Oswald;
+  color: var(--black);
+  font-weight: 400;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.coursework__list {
+  padding: 0;
+  margin: 0;
+  background-color: var(--basic_green_light);
+  border-radius: 5px;
+}
+
+.coursework__item {
+  list-style-type: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--basic_green_light_1);
+  border-radius: 5px;
+}
+
+.coursework__item:hover {
+  background-color: var(--basic_green_light_2);
+}
+
+.coursework__item:active {
+  background-color: var(--basic_green_light_3);
+}
+
+.coursework__item:first-child {
+  margin-top: 0;
+}
+
+.coursework__item__link {
+  text-decoration: none;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.coursework__item__link__title {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 40px;
+  line-height: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+}
+
+.coursework__item__link__deck {
+  margin: 0;
+  font-size: 40px;
+  line-height: 40px;
+  font-family: Oswald;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
 }
 
 @font-face {
@@ -136,7 +234,13 @@
   --light_grey: #D3D3D3;
   --grey: #545454;
   --black: #000000;
-  --basic_green: #69FF51;
+  --basic_green_light_3: #66d955;
+  --basic_green_light_2: #58cf46;
+  --basic_green_light_1: #53c242;
+  --basic_green_light: #4cb33d;
+  --basic_green: #49ab3a;
+  --basic_green2: #49ab3a;
+  --basic_green3: #49ab3a;
 }
 
 body {

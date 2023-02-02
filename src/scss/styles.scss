@@ -1,8 +1,5 @@
 @import "header";
-@import "task_list";
-@import "information_list";
-@import "progress_bar";
-@import "footer";
+@import "coursework";
 
 @font-face {
 	font-family: 'Oswald'; 
@@ -21,7 +18,13 @@
     --grey: #545454;
     --black: #000000;
 
-    --basic_green: #69FF51;
+    --basic_green_light_3: #66d955;
+    --basic_green_light_2: #58cf46;
+    --basic_green_light_1: #53c242;
+    --basic_green_light: #4cb33d;
+    --basic_green: #49ab3a;
+    --basic_green2: #49ab3a;
+    --basic_green3: #49ab3a;
 }
 
 body {
