@@ -98,18 +98,18 @@
                 <h2 class="calc__item__title">Произвести рассчёт</h2>
                 <ul class="status__list">
                     <h3 class="status__list__title">Статус пунктов</h2>
-                    <li class="status__item">
-                        <div class="status__marker status__marker--absent"></div>
-                        <p class="status__deck">- отсутсвует</p>
-                    </li>
-                    <li class="status__item">
-                        <div class="status__marker status__marker--development"></div>
-                        <p class="status__deck">- в разработке</p>
-                    </li>
-                    <li class="status__item">
-                        <div class="status__marker status__marker--work"></div>
-                        <p class="status__deck">- можно пользоваться</p>
-                    </li>
+                        <li class="status__item">
+                            <div class="status__marker status__marker--absent"></div>
+                            <p class="status__deck">- отсутсвует</p>
+                        </li>
+                        <li class="status__item">
+                            <div class="status__marker status__marker--development"></div>
+                            <p class="status__deck">- в разработке</p>
+                        </li>
+                        <li class="status__item">
+                            <div class="status__marker status__marker--work"></div>
+                            <p class="status__deck">- можно пользоваться</p>
+                        </li>
                 </ul>
                 <article class="coursework">
                     <h2 class="coursework__title">Кривенкова</h2>
@@ -230,6 +230,75 @@
                     </li>
                     <li class="reference__item">
                         <a href="#" class="reference__item__link">Короткое замыкание</a>
+                    </li>
+                </ul>
+                <ul class="conversion__list">
+                    <h2 class="conversion__list__title">Небольшой калькулятор</h2>
+                    <li class="conversion__item">
+                        <div class="conversion__item__inner">
+                            <div class="conversion__input__box">
+                                <input class="conversion__input" id="current" name="current" type="text" value="1">
+                                <h3 class="conversion__input__title">кА</h3>
+                            </div>
+                            <div class="conversion__input__equal">=</div>
+                            <div class="conversion__input__box">
+                                <input class="conversion__input" id="current_result" name="current_result" type="text"
+                                    value="1000">
+                                <h3 class="conversion__input__title">А</h3>
+                            </div>
+                        </div>
+                        <button class="conversion__button" type="button">Перевести</button>
+                    </li>
+                    <li class="conversion__item">
+                        <div class="conversion__item__inner">
+                            <div class="conversion__input__box">
+                                <input class="conversion__input" id="voltage" name="voltage" type="text" value="1">
+                                <h3 class="conversion__input__title">кВ</h3>
+                            </div>
+                            <div class="conversion__input__equal">=</div>
+                            <div class="conversion__input__box">
+                                <input class="conversion__input" id="voltage_result" name="voltage_result" type="text"
+                                    value="1000">
+                                <h3 class="conversion__input__title">В</h3>
+                            </div>
+                        </div>
+                        <button class="conversion__button" type="button">Перевести</button>
+                    </li>
+                    <li class="conversion__item">
+                        <div class="conversion__item__inner">
+                            <div class="conversion__input__box">
+                                <input class="conversion__input" id="power" name="power" type="text" value="1">
+                                <h3 class="conversion__input__title">кВт</h3>
+                            </div>
+                            <div class="conversion__input__equal">=</div>
+                            <div class="conversion__input__box">
+                                <input class="conversion__input" id="power_result" name="power_result" type="text"
+                                    value="1000">
+                                <h3 class="conversion__input__title">Вт</h3>
+                            </div>
+                        </div>
+                        <button class="conversion__button" type="button">Перевести</button>
+                    </li>
+                    <li class="conversion__item">
+                        <div class="conversion__item__inner">
+                            <div class="conversion__input__box">
+                                <input class="conversion__input" id="power_active" name="power_active" type="text" value="1">
+                                <h3 class="conversion__input__title">кВт</h3>
+                            </div>
+                            <div class="conversion__input__equal">+</div>
+                            <div class="conversion__input__box">
+                                <input class="conversion__input" id="power_reactive" name="power_reactive" type="text"
+                                    value="1">
+                                <h3 class="conversion__input__title">кВАр</h3>
+                            </div>
+                            <div class="conversion__input__equal">=</div>
+                            <div class="conversion__input__box">
+                                <input class="conversion__input" id="power_full" name="power_full" type="text"
+                                    value="1.41">
+                                <h3 class="conversion__input__title">кВА</h3>
+                            </div>
+                        </div>
+                        <button class="conversion__button" type="button">Рассчитать</button>
                     </li>
                 </ul>
             </section>
