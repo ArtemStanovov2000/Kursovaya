@@ -302,6 +302,10 @@
   justify-content: center;
 }
 
+.reference {
+  margin: 0;
+}
+
 .reference__title {
   padding: 0;
   margin: 0;
@@ -461,6 +465,92 @@
   background-color: var(--basic_green);
 }
 
+.promo {
+  margin: 0;
+  margin-bottom: 100px;
+}
+
+.promo__title {
+  font-size: 30px;
+  line-height: 30px;
+  font-family: Oswald;
+  font-weight: 500;
+}
+
+.promo__deck {
+  font-size: 25px;
+  line-height: 35px;
+  font-family: Oswald;
+  font-weight: 300;
+}
+
+.promo__list {
+  margin: 0;
+  padding: 0;
+}
+
+.promo__item {
+  list-style-type: none;
+}
+
+.promo__item__title {
+  font-size: 25px;
+  line-height: 25px;
+  font-family: Oswald;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+
+.range__box {
+  display: flex;
+  flex-direction: column;
+}
+
+.range {
+  width: 100%;
+  height: 5px;
+  background-color: var(--basic_violet);
+  border-radius: 2px;
+  display: flex;
+  position: relative;
+}
+
+.range__marker {
+  background-image: url("/dist/img/svg/range_point.svg");
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-size: 100% 100%;
+  top: -18px;
+}
+
+.estimate__box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.estimate {
+  font-size: 25px;
+  line-height: 25px;
+  font-family: Oswald;
+}
+
+.estimate__deck__box {
+  margin-top: 25px;
+}
+
+.estimate__deck {
+  font-size: 20px;
+  line-height: 20px;
+  font-family: Oswald;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 @font-face {
   font-family: "Oswald";
   src: local("Oswald"), url(Oswald/Oswald-VariableFont_wght.ttf);
@@ -489,6 +579,7 @@
   --basic_red: #b30000;
   --basic_red_light: #d92b2b;
   --basic_red_light_1: #eb4646;
+  --basic_violet: #af67e5;
 }
 
 body {

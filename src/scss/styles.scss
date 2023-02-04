@@ -1,6 +1,7 @@
 @import "header";
 @import "coursework";
 @import "reference";
+@import "promo";
 
 @font-face {
 	font-family: 'Oswald'; 
@@ -36,6 +37,8 @@
     --basic_red: #b30000;
     --basic_red_light: #d92b2b;
     --basic_red_light_1: #eb4646;
+
+    --basic_violet: #af67e5;
 }
 
 body {
