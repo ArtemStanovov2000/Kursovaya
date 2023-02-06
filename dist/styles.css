@@ -131,6 +131,19 @@
   color: var(--black);
 }
 
+@media (min-width: 450px) {
+  .navigation {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  .navigation__list {
+    display: flex;
+  }
+  .navigation__item {
+    border: none;
+    padding-right: 40px;
+  }
+}
 .status__list {
   background-color: var(--light_blue_darker);
   margin: 0;
@@ -195,7 +208,7 @@
 }
 
 .coursework {
-  background-color: var(--basic_green);
+  background-color: var(--basic_green_light_3);
   border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
@@ -223,7 +236,7 @@
 .coursework__list {
   padding: 0;
   margin: 0;
-  background-color: var(--basic_green_light);
+  background-color: var(--basic_green_light_3);
   border-radius: 5px;
 }
 
@@ -242,7 +255,7 @@
 }
 
 .coursework__item--absent {
-  background-color: var(--basic_red);
+  background-color: var(--basic_red_light_1);
 }
 
 .coursework__item:hover {
@@ -266,7 +279,7 @@
 }
 
 .coursework__item--absent:active {
-  background-color: var(--basic_red_light_1);
+  background-color: var(--basic_red);
 }
 
 .coursework__item:first-child {
@@ -301,6 +314,39 @@
   justify-content: center;
 }
 
+@media (min-width: 450px) {
+  .calc__item {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .coursework__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .calc__item__title {
+    margin-top: 0;
+  }
+  .coursework__list--practical {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .coursework__item {
+    margin: 0;
+    height: 150px;
+    display: flex;
+    align-items: center;
+  }
+  .coursework__item__link__title {
+    font-size: 22px;
+    line-height: 22px;
+  }
+  .coursework__item__link__deck {
+    font-size: 22px;
+    line-height: 22px;
+  }
+}
 .reference {
   margin: 0;
 }
@@ -308,8 +354,8 @@
 .reference__title {
   padding: 0;
   margin: 0;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 35px;
+  line-height: 35px;
   font-family: Oswald;
   font-weight: 400;
   text-transform: uppercase;
@@ -464,6 +510,12 @@
   background-color: var(--basic_green);
 }
 
+@media (min-width: 450px) {
+  .reference {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 .promo {
   margin: 0;
   margin-bottom: 100px;
@@ -516,7 +568,7 @@
 }
 
 .range__marker {
-  background-image: url("/dist/img/svg/range_point.svg");
+  background-image: url("/img/svg/range_point.svg");
   width: 40px;
   height: 40px;
   position: absolute;
@@ -638,6 +690,15 @@
   margin-bottom: 10px;
 }
 
+@media (min-width: 450px) {
+  .promo {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .promo__title {
+    margin-top: 0;
+  }
+}
 @font-face {
   font-family: "Oswald";
   src: local("Oswald"), url(Oswald/Oswald-VariableFont_wght.ttf);
@@ -690,4 +751,15 @@ body {
 .container {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+@media (min-width: 450px) {
+  .container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .main__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

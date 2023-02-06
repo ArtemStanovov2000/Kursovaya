@@ -50,7 +50,7 @@
 }
 
 .range__marker {
-    background-image: url("/dist/img/svg/range_point.svg");
+    background-image: url("/img/svg/range_point.svg");
     width: 40px;
     height: 40px;
     position: absolute;
@@ -83,10 +83,6 @@
     font-family: Oswald;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-.timer {
-
 }
 
 .timer__title {
@@ -174,4 +170,15 @@
     border-radius: 7px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+@media (min-width: 450px) {
+    .promo {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .promo__title {
+        margin-top: 0;
+    }
 }

@@ -50,15 +50,6 @@
     align-items: center;
 }
 
-
-
-
-
-
-
-
-
-
 .calc__item__title {
     font-size: 40px;
     line-height: 40px;
@@ -71,7 +62,7 @@
 }
 
 .coursework {
-    background-color: var(--basic_green);
+    background-color: var(--basic_green_light_3);
     border-radius: 5px;
     padding-left: 15px;
     padding-right: 15px;
@@ -99,7 +90,7 @@
 .coursework__list {
     padding: 0;
     margin: 0;
-    background-color: var(--basic_green_light);
+    background-color: var(--basic_green_light_3);
     border-radius: 5px;
 }
 
@@ -118,7 +109,7 @@
 }
 
 .coursework__item--absent {
-    background-color: var(--basic_red);
+    background-color: var(--basic_red_light_1);
 }
 
 
@@ -145,7 +136,7 @@
 }
 
 .coursework__item--absent:active {
-    background-color: var(--basic_red_light_1);
+    background-color: var(--basic_red);
 }
 
 
@@ -180,4 +171,44 @@
     color: var(--white);
     display: flex;
     justify-content: center;
+}
+
+@media (min-width: 450px) {
+    .calc__item {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .coursework__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .calc__item__title {
+        margin-top: 0;
+    }
+
+    .coursework__list--practical {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .coursework__item {
+        margin: 0;
+        height: 150px;
+        display: flex;
+        align-items: center;
+    }
+
+    .coursework__item__link__title {
+        font-size: 22px;
+        line-height: 22px;
+    }
+
+    .coursework__item__link__deck {
+        font-size: 22px;
+        line-height: 22px;
+    }
 }

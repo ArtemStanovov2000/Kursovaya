@@ -130,3 +130,19 @@
     font-family: Oswald;
     color: var(--black);
 }
+
+@media (min-width: 450px) {
+    .navigation {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+    
+    .navigation__list {
+        display: flex;
+    }
+
+    .navigation__item {
+        border: none;
+        padding-right: 40px;
+    }
+}

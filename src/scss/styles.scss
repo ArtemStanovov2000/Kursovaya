@@ -63,3 +63,15 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
+
+@media (min-width: 450px) {
+    .container {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .main__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
