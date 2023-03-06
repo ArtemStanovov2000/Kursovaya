@@ -243,12 +243,11 @@
                                 </div>
                                 <div class="conversion__input__equal">=</div>
                                 <div class="conversion__input__box">
-                                    <input class="conversion__input" id="current_result" name="current_result"
-                                        type="text" value="1000">
+                                    <p class="conversion__output" id="current_result">1000</p>
                                     <h3 class="conversion__input__title">А</h3>
                                 </div>
                             </div>
-                            <button class="conversion__button" type="button">Перевести</button>
+                            <button class="conversion__button" id="currentConversion" type="button">Перевести</button>
                         </li>
                         <li class="conversion__item">
                             <div class="conversion__item__inner">
@@ -258,12 +257,11 @@
                                 </div>
                                 <div class="conversion__input__equal">=</div>
                                 <div class="conversion__input__box">
-                                    <input class="conversion__input" id="voltage_result" name="voltage_result"
-                                        type="text" value="1000">
+                                    <p class="conversion__output"  id="voltage_result">1000</p>
                                     <h3 class="conversion__input__title">В</h3>
                                 </div>
                             </div>
-                            <button class="conversion__button" type="button">Перевести</button>
+                            <button class="conversion__button"  id="voltageConversion" type="button">Перевести</button>
                         </li>
                         <li class="conversion__item">
                             <div class="conversion__item__inner">
@@ -273,12 +271,11 @@
                                 </div>
                                 <div class="conversion__input__equal">=</div>
                                 <div class="conversion__input__box">
-                                    <input class="conversion__input" id="power_result" name="power_result" type="text"
-                                        value="1000">
+                                    <p class="conversion__output"  id="power_result">1000</p>
                                     <h3 class="conversion__input__title">Вт</h3>
                                 </div>
                             </div>
-                            <button class="conversion__button" type="button">Перевести</button>
+                            <button class="conversion__button"  id="powerConversion" type="button">Перевести</button>
                         </li>
                         <li class="conversion__item">
                             <div class="conversion__item__inner">
@@ -295,12 +292,11 @@
                                 </div>
                                 <div class="conversion__input__equal">=</div>
                                 <div class="conversion__input__box">
-                                    <input class="conversion__input" id="power_full" name="power_full" type="text"
-                                        value="1.41">
+                                    <p class="conversion__output" id="power_full">1.41</p>
                                     <h3 class="conversion__input__title">кВА</h3>
                                 </div>
                             </div>
-                            <button class="conversion__button" type="button">Рассчитать</button>
+                            <button class="conversion__button"  id="fullPowerConversion"  type="button">Рассчитать</button>
                         </li>
                     </ul>
                 </section>
@@ -421,6 +417,7 @@
     </main>
     <footer>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
