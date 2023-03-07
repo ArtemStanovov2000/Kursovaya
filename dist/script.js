@@ -1,45 +1,59 @@
 const REMOVING_PREFIX_KILO = 1000;
 const LIMIT_OF_INCREASED_ACCURACY = 10;
+const FRACTIONAL_PART_OF_LARGE_NUMBERS = 0; // Количество знаков после запятой
+const FRACTIONAL_PART_OF_SMALL_NUMBERS = 2; // Количество знаков после запятой
 
-const buttonAmperageConversion = document.getElementById("amperageConversion");
-const buttonVoltageConversion = document.getElementById("voltageConversion");
-const buttonElectricalPowerConversion = document.getElementById("powerConversion");
+const buttonAmperageConversion = document.getElementById("amperage_conversion");
+const buttonVoltageConversion = document.getElementById("voltage_conversion");
+const buttonElectricalPowerConversion = document.getElementById("power_conversion");
+const buttonFullPowerConversion = document.getElementById("full_power_conversion");
+
+const translationUnitOfMeasurement = function translationUnitOfMeasurement(inputValue, output) {
+    let result = inputValue * REMOVING_PREFIX_KILO;
+    if (result < LIMIT_OF_INCREASED_ACCURACY) {
+        output.innerHTML = result.toFixed(FRACTIONAL_PART_OF_SMALL_NUMBERS);
+    } else {
+        output.innerHTML = result.toFixed(FRACTIONAL_PART_OF_LARGE_NUMBERS);
+    }
+}
 
 buttonAmperageConversion.addEventListener("click", () => {
     let amperageValue = document.getElementById("amperage_input").value
     let amperageResultOutput = document.getElementById("amperage_result")
+    let inputValue = amperageValue;
+    let output = amperageResultOutput;
 
-    let amperageResult = amperageValue * REMOVING_PREFIX_KILO;
-
-    if (amperageResult < LIMIT_OF_INCREASED_ACCURACY) {
-        amperageResultOutput.innerHTML = amperageResult.toFixed(2);
-    } else {
-        amperageResultOutput.innerHTML = amperageResult.toFixed(0);
-    }
+    translationUnitOfMeasurement(inputValue, output);
 });
 
 buttonVoltageConversion.addEventListener("click", () => {
     let voltageValue = document.getElementById("voltage_input").value
     let voltageResultOutput = document.getElementById("voltage_result")
+    let inputValue = voltageValue;
+    let output = voltageResultOutput;
 
-    let voltageResult = voltageValue * REMOVING_PREFIX_KILO;
-
-    if (voltageResult < LIMIT_OF_INCREASED_ACCURACY) {
-        voltageResultOutput.innerHTML = voltageResult.toFixed(2);
-    } else {
-        voltageResultOutput.innerHTML = voltageResult.toFixed(0);
-    }
+    translationUnitOfMeasurement(inputValue, output);
 });
 
 buttonElectricalPowerConversion.addEventListener("click", () => {
     let electricalPowerValue = document.getElementById("electrical_power_input").value
     let electricalPowerResultOutput = document.getElementById("electrical_power_result")
+    let inputValue = electricalPowerValue;
+    let output = electricalPowerResultOutput;
 
-    let electricalPowerResult = electricalPowerValue * REMOVING_PREFIX_KILO;
+    translationUnitOfMeasurement(inputValue, output);
+});
 
-    if (electricalPowerResult < LIMIT_OF_INCREASED_ACCURACY) {
-        electricalPowerResultOutput.innerHTML = electricalPowerResult.toFixed(2);
+buttonFullPowerConversion.addEventListener("click", () => {
+    let activePowerValue = document.getElementById("power_active_input").value
+    let reactivePowerValue = document.getElementById("power_reactive_input").value
+    let fullPowerResultOutput = document.getElementById("full_power")
+
+    let fullPowerResult = Math.sqrt(Math.pow(activePowerValue, 2) + Math.pow(reactivePowerValue, 2));
+
+    if (fullPowerResult < LIMIT_OF_INCREASED_ACCURACY) {
+        fullPowerResultOutput.innerHTML = fullPowerResult.toFixed(3);
     } else {
-        electricalPowerResultOutput.innerHTML = electricalPowerResult.toFixed(0);
+        fullPowerResultOutput.innerHTML = electricalPowerResult.toFixed(2);
     }
 });
