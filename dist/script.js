@@ -50,10 +50,11 @@ buttonFullPowerConversion.addEventListener("click", () => {
     let fullPowerResultOutput = document.getElementById("full_power")
 
     let fullPowerResult = Math.sqrt(Math.pow(activePowerValue, 2) + Math.pow(reactivePowerValue, 2));
+    console.log(fullPowerResult);
 
     if (fullPowerResult < LIMIT_OF_INCREASED_ACCURACY) {
         fullPowerResultOutput.innerHTML = fullPowerResult.toFixed(3);
     } else {
-        fullPowerResultOutput.innerHTML = electricalPowerResult.toFixed(2);
+        fullPowerResultOutput.innerHTML = fullPowerResult.toFixed(2);
     }
 });
