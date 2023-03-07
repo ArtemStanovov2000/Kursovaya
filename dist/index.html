@@ -238,26 +238,26 @@
                         <li class="conversion__item">
                             <div class="conversion__item__inner">
                                 <div class="conversion__input__box">
-                                    <input class="conversion__input" id="current" name="current" type="text" value="1">
+                                    <input class="conversion__input" id="amperage_input" name="amperage_input" type="text" value="1">
                                     <h3 class="conversion__input__title">кА</h3>
                                 </div>
                                 <div class="conversion__input__equal">=</div>
                                 <div class="conversion__input__box">
-                                    <p class="conversion__output" id="current_result">1000</p>
+                                    <p class="conversion__output" id="amperage_result"></p>
                                     <h3 class="conversion__input__title">А</h3>
                                 </div>
                             </div>
-                            <button class="conversion__button" id="currentConversion" type="button">Перевести</button>
+                            <button class="conversion__button" id="amperageConversion" type="button">Перевести</button>
                         </li>
                         <li class="conversion__item">
                             <div class="conversion__item__inner">
                                 <div class="conversion__input__box">
-                                    <input class="conversion__input" id="voltage" name="voltage" type="text" value="1">
+                                    <input class="conversion__input" id="voltage_input" name="voltage_input" type="text" value="1">
                                     <h3 class="conversion__input__title">кВ</h3>
                                 </div>
                                 <div class="conversion__input__equal">=</div>
                                 <div class="conversion__input__box">
-                                    <p class="conversion__output"  id="voltage_result">1000</p>
+                                    <p class="conversion__output"  id="voltage_result"></p>
                                     <h3 class="conversion__input__title">В</h3>
                                 </div>
                             </div>
@@ -266,12 +266,12 @@
                         <li class="conversion__item">
                             <div class="conversion__item__inner">
                                 <div class="conversion__input__box">
-                                    <input class="conversion__input" id="power" name="power" type="text" value="1">
+                                    <input class="conversion__input" id="electrical_power_input" name="electrical_power_input" type="text" value="1">
                                     <h3 class="conversion__input__title">кВт</h3>
                                 </div>
                                 <div class="conversion__input__equal">=</div>
                                 <div class="conversion__input__box">
-                                    <p class="conversion__output"  id="power_result">1000</p>
+                                    <p class="conversion__output"  id="electrical_power_result"></p>
                                     <h3 class="conversion__input__title">Вт</h3>
                                 </div>
                             </div>
@@ -282,18 +282,18 @@
                                 <div class="conversion__input__box">
                                     <input class="conversion__input" id="power_active" name="power_active" type="text"
                                         value="1">
-                                    <h3 class="conversion__input__title">кВт</h3>
+                                    <h3 class="conversion__input__title">Вт</h3>
                                 </div>
                                 <div class="conversion__input__equal">+</div>
                                 <div class="conversion__input__box">
                                     <input class="conversion__input" id="power_reactive" name="power_reactive"
                                         type="text" value="1">
-                                    <h3 class="conversion__input__title">кВАр</h3>
+                                    <h3 class="conversion__input__title">ВАр</h3>
                                 </div>
                                 <div class="conversion__input__equal">=</div>
                                 <div class="conversion__input__box">
-                                    <p class="conversion__output" id="power_full">1.41</p>
-                                    <h3 class="conversion__input__title">кВА</h3>
+                                    <p class="conversion__output" id="power_full"></p>
+                                    <h3 class="conversion__input__title">ВА</h3>
                                 </div>
                             </div>
                             <button class="conversion__button"  id="fullPowerConversion"  type="button">Рассчитать</button>
@@ -374,29 +374,29 @@
                                 <div class="timer__block__rare__box">
                                     <div class="timer__block__rare">
                                         <div class="timer__rate__box">
-                                            <p class="timer__rate">2</p>
-                                            <p class="timer__rate">6</p>
+                                            <p class="timer__rate" id="dozens_days">2</p>
+                                            <p class="timer__rate" id="days">6</p>
                                         </div>
                                         <h3 class="timer__rate__title">Дней:</h3>
                                     </div>
                                     <div class="timer__block__rare">
                                         <div class="timer__rate__box">
-                                            <p class="timer__rate">1</p>
-                                            <p class="timer__rate">3</p>
+                                            <p class="timer__rate" id="dozens_hours">1</p>
+                                            <p class="timer__rate" id="hours">3</p>
                                         </div>
                                         <h3 class="timer__rate__title">Часов:</h3>
                                     </div>
                                     <div class="timer__block__rare">
                                         <div class="timer__rate__box">
-                                            <p class="timer__rate">5</p>
-                                            <p class="timer__rate">8</p>
+                                            <p class="timer__rate" id="dozens_minutes">5</p>
+                                            <p class="timer__rate" id="minutes">8</p>
                                         </div>
                                         <h3 class="timer__rate__title">Минут:</h3>
                                     </div>
                                     <div class="timer__block__rare">
                                         <div class="timer__rate__box">
-                                            <p class="timer__rate">4</p>
-                                            <p class="timer__rate">5</p>
+                                            <p class="timer__rate" id="dozens_seconds">4</p>
+                                            <p class="timer__rate" id="seconds">5</p>
                                         </div>
                                         <h3 class="timer__rate__title">Секунд:</h3>
                                     </div>
