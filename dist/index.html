@@ -17,31 +17,35 @@
                     <li class="navigation__item"><a href="#" class="navigation__item__link">Конвертер</a></li>
                     <li class="navigation__item"><a href="#" class="navigation__item__link">О нас</a></li>
                     <li class="navigation__item"><a href="#" class="navigation__item__link">Каталог услуг</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__item__link">Войдите</a></li>
+                    <li class="navigation__item" id="form_login_open_link"><a href="#"
+                            class="navigation__item__link">Войдите</a></li>
                 </ul>
             </nav>
-            <form class="form__login visually-hidden" action="#" method="post" target="_blank">
+            <form class="form__login visually-hidden" id="form_login_come" action="#" method="post" target="_blank"
+                autocomplete="off">
+                <button class="form__login__close__btn" id="form_login_close_btn"></button>
                 <h2 class="form__title">Войдите в аккаунт</h2>
                 <fieldset class="fieldset">
                     <ul class="field__login__list">
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="name">Логин:</label>
                             <input class="field__login__item__input" type="login" name="login" placeholder="loob_job123"
-                                id="login" required>
+                                id="login" required minlength="8" maxlength="20">
                         </li>
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="age">Пароль:</label>
                             <input class="field__login__item__input" type="password" name="password"
-                                placeholder="******" id="password" required>
+                                placeholder="******" id="password" required minlength="10" maxlength="25">
                         </li>
                     </ul>
                 </fieldset>
                 <div class="form__button__box">
                     <button class="form__button" type="submit">Отправить</button>
-                    <button class="form__button" type="button">Создать аккаунт</button>
+                    <button class="form__button" id="open_reg_btn" type="button">Создать аккаунт</button>
                 </div>
             </form>
-            <form class="form__login visually-hidden" action="#" method="post" target="_blank">
+            <form class="form__login visually-hidden" action="#" id="form_login_open_reg" method="post" target="_blank">
+                <button class="form__login__close__btn" id="form_reg_close_btn"></button>
                 <h2 class="form__title">Зарегестрируйтесь</h2>
                 <fieldset class="fieldset">
                     <ul class="field__login__list">
@@ -235,10 +239,36 @@
                     </ul>
                     <ul class="conversion__list">
                         <h2 class="conversion__list__title">Небольшой калькулятор</h2>
+                        <div class="conversion_button_radio__box">
+                            <h2 class="conversion__list__title conversion__list__title--radio">знаков после запятой</h2>
+                            <div class="conversion_button_radio">
+                                <label for="amperage_radio_3"
+                                    class="conversion__button conversion__button--label"><input type="radio"
+                                        id="amperage_radio_3" name="amperage" value="3"
+                                        class="conversion__button__radio__item" checked>
+                                    0.001</label>
+                                <label for="amperage_radio_2"
+                                    class="conversion__button conversion__button--label"><input type="radio"
+                                        id="amperage_radio_2" name="amperage" value="2"
+                                        class="conversion__button__radio__item">
+                                    0.01</label>
+                                <label for="amperage_radio_1"
+                                    class="conversion__button conversion__button--label"><input type="radio"
+                                        id="amperage_radio_1" name="amperage" value="1"
+                                        class="conversion__button__radio__item">
+                                    0.1</label>
+                                <label for="amperage_radio_0"
+                                    class="conversion__button conversion__button--label"><input type="radio"
+                                        id="amperage_radio_0" name="amperage" value="0"
+                                        class="conversion__button__radio__item">
+                                    1</label>
+                            </div>
+                        </div>
                         <li class="conversion__item">
                             <div class="conversion__item__inner">
                                 <div class="conversion__input__box">
-                                    <input class="conversion__input" id="amperage_input" name="amperage_input" type="text" value="1" maxlength="7">
+                                    <input class="conversion__input" id="amperage_input" name="amperage_input"
+                                        type="text" value="1" maxlength="8">
                                     <h3 class="conversion__input__title">кА</h3>
                                 </div>
                                 <div class="conversion__input__equal">=</div>
@@ -252,36 +282,38 @@
                         <li class="conversion__item">
                             <div class="conversion__item__inner">
                                 <div class="conversion__input__box">
-                                    <input class="conversion__input" id="voltage_input" name="voltage_input" type="text" value="1" maxlength="7">
+                                    <input class="conversion__input" id="voltage_input" name="voltage_input" type="text"
+                                        value="1" maxlength="8">
                                     <h3 class="conversion__input__title">кВ</h3>
                                 </div>
                                 <div class="conversion__input__equal">=</div>
                                 <div class="conversion__input__box">
-                                    <p class="conversion__output"  id="voltage_result"></p>
+                                    <p class="conversion__output" id="voltage_result"></p>
                                     <h3 class="conversion__input__title">В</h3>
                                 </div>
                             </div>
-                            <button class="conversion__button"  id="voltage_conversion" type="button">Перевести</button>
+                            <button class="conversion__button" id="voltage_conversion" type="button">Перевести</button>
                         </li>
                         <li class="conversion__item">
                             <div class="conversion__item__inner">
                                 <div class="conversion__input__box">
-                                    <input class="conversion__input" id="electrical_power_input" name="electrical_power_input" type="text" value="1" maxlength="7">
+                                    <input class="conversion__input" id="electrical_power_input"
+                                        name="electrical_power_input" type="text" value="1" maxlength="8">
                                     <h3 class="conversion__input__title">кВт</h3>
                                 </div>
                                 <div class="conversion__input__equal">=</div>
                                 <div class="conversion__input__box">
-                                    <p class="conversion__output"  id="electrical_power_result"></p>
+                                    <p class="conversion__output" id="electrical_power_result"></p>
                                     <h3 class="conversion__input__title">Вт</h3>
                                 </div>
                             </div>
-                            <button class="conversion__button"  id="power_conversion" type="button">Перевести</button>
+                            <button class="conversion__button" id="power_conversion" type="button">Перевести</button>
                         </li>
                         <li class="conversion__item">
                             <div class="conversion__item__inner">
                                 <div class="conversion__input__box">
-                                    <input class="conversion__input" id="power_active_input" name="power_active" type="text"
-                                        value="1" maxlength="6">
+                                    <input class="conversion__input" id="power_active_input" name="power_active"
+                                        type="text" value="1" maxlength="6">
                                     <h3 class="conversion__input__title">Вт</h3>
                                 </div>
                                 <div class="conversion__input__equal">+</div>
@@ -296,7 +328,8 @@
                                     <h3 class="conversion__input__title">ВА</h3>
                                 </div>
                             </div>
-                            <button class="conversion__button"  id="full_power_conversion"  type="button">Рассчитать</button>
+                            <button class="conversion__button" id="full_power_conversion"
+                                type="button">Рассчитать</button>
                         </li>
                     </ul>
                 </section>
@@ -310,9 +343,7 @@
                         <li class="promo__item">
                             <h2 class="promo__item__title">Ожидаемая оценка</h2>
                             <div class="range__box">
-                                <div class="range">
-                                    <div class="range__marker"></div>
-                                </div>
+                                <input type="range" id="estimation" min="1" max="3" value="3" step="1" oninput="calculationCostOfCourse()">
                                 <div class="range__rate__box">
                                     <span class="range__rate">3</span>
                                     <span class="range__rate">4</span>
@@ -328,42 +359,53 @@
                         <li class="promo__item">
                             <h2 class="promo__item__title">Время ожидания</h2>
                             <div class="range__box">
-                                <div class="range">
-                                    <div class="range__marker"></div>
-                                </div>
+                                <input type="range" id="waiting_time" min="1" max="22" value="2" step="1"
+                                    oninput="calculationCostOfCourse()">
                                 <div class="range__rate__box">
-                                    <span class="range__rate">4</span>
-                                    <span class="range__rate">3</span>
-                                    <span class="range__rate">2</span>
                                     <span class="range__rate">1</span>
+                                    <span class="range__rate">2</span>
+                                    <span class="range__rate">3</span>
+                                    <span class="range__rate">4</span>
                                 </div>
                             </div>
                             <div class="range__rate__deck__box">
                                 <p class="range__rate__deck">*Время указано в неделях</p>
+                                <div class="time__remains__box">
+                                    <p class="time__remains" id="number_of_weeks">1</p>
+                                    <p class="time__remains" id="deck_weeks">Недель</p>
+                                    <p class="time__remains" id="number_of_days">1</p>
+                                    <p class="time__remains" id="deck_days">Дней</p>
+                                </div>
                             </div>
                         </li>
                         <li class="promo__item">
                             <h2 class="promo__item__title">Количество пунктов</h2>
                             <div class="range__box">
-                                <div class="range">
-                                    <div class="range__marker"></div>
-                                </div>
+                                <input type="range" id="number_of_item" min="1" max="9" value="2" step="1"
+                                    oninput="calculationCostOfCourse()">
                                 <div class="range__rate__box">
-                                    <span class="range__rate">9</span>
-                                    <span class="range__rate">8</span>
-                                    <span class="range__rate">7</span>
-                                    <span class="range__rate">6</span>
-                                    <span class="range__rate">5</span>
-                                    <span class="range__rate">4</span>
-                                    <span class="range__rate">3</span>
-                                    <span class="range__rate">2</span>
                                     <span class="range__rate">1</span>
+                                    <span class="range__rate">2</span>
+                                    <span class="range__rate">3</span>
+                                    <span class="range__rate">4</span>
+                                    <span class="range__rate">5</span>
+                                    <span class="range__rate">6</span>
+                                    <span class="range__rate">7</span>
+                                    <span class="range__rate">8</span>
+                                    <span class="range__rate">9</span>
                                 </div>
                             </div>
                             <div class="range__rate__deck__box">
                                 <p class="range__rate__deck">*Расчет только для пунктов курсовой</p>
                             </div>
                         </li>
+                        <div class="price">
+                            <h2 class="price__title">Стоимость у нас:</h2>
+                            <div class="price__deck__box">
+                                <p class="price__deck" id="final_price">750</p>
+                                <p class="price__deck">₽</p>
+                            </div>
+                        </div>
                         <div class="timer">
                             <h2 class="timer__title">До защиты осталось:</h2>
                             <div class="timer__box">
@@ -404,20 +446,15 @@
                             </div>
                         </div>
                     </ul>
-                    <div class="price">
-                        <h2 class="price__title">Стоимость у нас:</h2>
-                        <div class="price__deck__box">
-                            <p class="price__deck">5260</p>
-                            <p class="price__deck">₽</p>
-                        </div>
-                    </div>
                 </section>
             </div>
         </div>
     </main>
     <footer>
     </footer>
-    <script src="script.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/form.js"></script>
 </body>
 
 </html>

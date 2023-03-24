@@ -22,5 +22,5 @@ gulp.task("watch", function () {
   gulp.watch("./src/scss/**/*.scss", gulp.series("sass"));
   gulp.watch("./dist/*.html").on("change", browserSync.reload);
 });
- 
+
 gulp.task("default", gulp.series(gulp.parallel("watch", "browser-sync")));

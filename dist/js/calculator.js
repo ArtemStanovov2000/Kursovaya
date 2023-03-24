@@ -7,13 +7,26 @@ const amperageConversionButton = document.getElementById("amperage_conversion");
 const voltageConversionButton = document.getElementById("voltage_conversion");
 const electricalPowerConversionButton = document.getElementById("power_conversion");
 const fullPowerConversionButton = document.getElementById("full_power_conversion");
+const radioButtonNumbersFractionalDigitsCount = document.querySelectorAll('input[name="amperage"]');
+
+let numbersFractionalDigitsCount;
+
+const selectingRadioButtonValue = function selectingRadioButtonValue(radioButtonNumbersFractionalDigitsCount) {
+    radioButtonNumbersFractionalDigitsCount.forEach((radioButton) => {
+        if (radioButton.checked) {
+            numbersFractionalDigitsCount = radioButton.value;
+        }
+        return numbersFractionalDigitsCount;
+    });
+}
 
 const conversionFromKiloToUnits = function conversionFromKiloToUnits(value) {
     let result = value * UNITS_IN_KILO;
-    if (result < MAX_INCREASED_ACCURACY_NUMBER) {
-        return result.toFixed(INCREASED_ACCURACY_NUMBERS_FRACTIONAL_DIGITS_COUNT);
+    if (Number.isInteger(result)) {
+        return result.toFixed(0);
     } else {
-        return result.toFixed(REGULAR_NUMBERS_FRACTIONAL_DIGITS_COUNT);
+        selectingRadioButtonValue(radioButtonNumbersFractionalDigitsCount);
+        return result.toFixed(numbersFractionalDigitsCount);
     }
 }
 

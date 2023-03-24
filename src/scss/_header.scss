@@ -38,6 +38,20 @@
 
 .form__login {
     margin-top: 15px;
+    position: relative;
+}
+
+.form__login__close__btn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 20px;
+    right: 20px;
+    background-size: 100% 100%;
+    background-color: var(--light_blue_darker);
+    border: none;
+    cursor: pointer;
+    background-image: url(/img/svg/close_btn.svg);
 }
 
 .form__title {
@@ -144,5 +158,22 @@
     .navigation__item {
         border: none;
         padding-right: 40px;
+    }
+
+    .form__login {
+        position: fixed;
+        background-color: var(--light_blue_darker);
+        width: 30%;
+        border-radius: 10px;
+        padding: 50px 50px;
+        box-shadow: 0px 0px 27px 1px var(--black);
+        left: 672px;
+        z-index: 2;
+    }
+
+    .navigation__item__link {
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 4px;
     }
 }
