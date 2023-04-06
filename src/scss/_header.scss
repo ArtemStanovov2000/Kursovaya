@@ -39,7 +39,13 @@
 .form__login {
     margin-top: 15px;
     position: relative;
+    animation: drop 1s forwards;
 }
+
+@keyframes drop {
+    0% {top: -1000px;}
+    100% {top: 200px;}
+  }
 
 .form__login__close__btn {
     position: absolute;
@@ -95,7 +101,6 @@
     font-size: 16px;
     line-height: 20px;
     font-weight: 400;
-    text-transform: uppercase;
     width: 60%;
     height: 30px;
 }

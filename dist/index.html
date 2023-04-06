@@ -30,21 +30,21 @@
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="name">Логин:</label>
                             <input class="field__login__item__input" type="login" name="login" placeholder="loob_job123"
-                                id="login" required minlength="8" maxlength="20">
+                                id="login_pole" minlength="8" maxlength="20" required>
                         </li>
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="age">Пароль:</label>
                             <input class="field__login__item__input" type="password" name="password"
-                                placeholder="******" id="password" required minlength="10" maxlength="25">
+                                placeholder="******" id="password_pole" minlength="10" maxlength="25" required>
                         </li>
                     </ul>
                 </fieldset>
                 <div class="form__button__box">
-                    <button class="form__button" type="submit">Отправить</button>
-                    <button class="form__button" id="open_reg_btn" type="button">Создать аккаунт</button>
+                    <button class="form__button" id="submit_login_form_btn" type="submit">Отправить</button>
+                    <button class="form__button" id="open_reg_form_btn" type="button">Создать аккаунт</button>
                 </div>
             </form>
-            <form class="form__login visually-hidden" action="#" id="form_login_open_reg" method="post" target="_blank">
+            <form class="form__login visually-hidden" action="#" id="form_login_open_reg" method="post" target="_blank" autocomplete="off">
                 <button class="form__login__close__btn" id="form_reg_close_btn"></button>
                 <h2 class="form__title">Зарегестрируйтесь</h2>
                 <fieldset class="fieldset">
@@ -52,45 +52,37 @@
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="name">Имя:*</label>
                             <input class="field__login__item__input" type="text" name="name" placeholder="Иван Иванов"
-                                id="name" required>
+                                id="name_pole_reg_form" required>
                         </li>
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="age">Возраст:</label>
-                            <input class="field__login__item__input" type="number" name="age" placeholder="27" id="age"
-                                min="0" max="125">
+                            <input class="field__login__item__input" type="number" name="age" placeholder="27"
+                                id="age_pole_reg_form" required>
                         </li>
-                    </ul>
-                </fieldset>
-                <fieldset class="fieldset">
-                    <ul class="field__login__list">
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="email">E-mail:*</label>
                             <input class="field__login__item__input" type="email" name="mail"
-                                placeholder="ivanov@gmail.com" id="email" required>
+                                placeholder="ivanov@gmail.com" id="email_pole_reg_form" required>
                         </li>
                         <li class="field__login__item">
-                            <label class="field__login__item__label" for="number">Телефон:*</label>
+                            <label class="field__login__item__label" for="phone_number">Телефон:*</label>
                             <input class="field__login__item__input" type="tel" name="phone"
-                                placeholder="+7 000 000-00-00" id="number" maxlength="21" required>
+                                placeholder="+7 000 000-00-00" id="phone_number_pole_reg_form" maxlength="21" required>
                         </li>
-                    </ul>
-                </fieldset>
-                <fieldset class="fieldset">
-                    <ul class="field__login__list">
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="name">Логин:</label>
                             <input class="field__login__item__input" type="login" name="login" placeholder="loob_job123"
-                                id="login_reg" required>
+                                id="login_pole_reg_form" required>
                         </li>
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="age">Пароль:</label>
                             <input class="field__login__item__input" type="password" name="password"
-                                placeholder="******" id="password_reg" required>
+                                placeholder="******" id="password_pole_reg_form" required>
                         </li>
                     </ul>
                 </fieldset>
                 <div class="form__regist__box">
-                    <button type="button" class="form__button">Зарегистроваться</button>
+                    <button type="submit" class="form__button" id="regist_button_reg_form">Зарегистроваться</button>
                     <p class="form__regist__box__deck">* — Обязательные поля</p>
                 </div>
             </form>
@@ -343,7 +335,8 @@
                         <li class="promo__item">
                             <h2 class="promo__item__title">Ожидаемая оценка</h2>
                             <div class="range__box">
-                                <input type="range" id="estimation" min="1" max="3" value="3" step="1" oninput="calculationCostOfCourse()">
+                                <input type="range" id="estimation" min="1" max="3" value="3" step="1"
+                                    oninput="calculationCostOfCourse()">
                                 <div class="range__rate__box">
                                     <span class="range__rate">3</span>
                                     <span class="range__rate">4</span>
@@ -406,11 +399,25 @@
                                 <p class="price__deck">₽</p>
                             </div>
                         </div>
+                        <div class="Date">
+                            <h2 class="Date__title">А когда у нас защита?</h2>
+                            <div class="Date__rare__box">
+                                <div class="Date__rare">
+                                    <input class="Date__input" id="Date__month__input" type="text">
+                                    <h3 class="Date__input__title">Месяц</h3>
+                                </div>
+                                <div class="Date__rare">
+                                    <input class="Date__input" id="Date__day__input" type="text">
+                                    <h3 class="Date__input__title">Число</h3>
+                                </div>
+                            </div>
+                            <button type="button" class="Date__button" id="Date_button">Посчитать</button>
+                        </div>
                         <div class="timer">
                             <h2 class="timer__title">До защиты осталось:</h2>
                             <div class="timer__box">
                                 <div class="timer__rate__box timer__rate__box--main">
-                                    <p class="timer__rate timer__rate--main">4</p>
+                                    <p class="timer__rate timer__rate--main" id="month">4</p>
                                     <h3 class="timer__rate__title">Месяцев:</h3>
                                 </div>
                                 <div class="timer__block__rare__box">
@@ -453,6 +460,7 @@
     <footer>
     </footer>
     <script src="js/slider.js"></script>
+    <script src="js/timer.js"></script>
     <script src="js/calculator.js"></script>
     <script src="js/form.js"></script>
 </body>

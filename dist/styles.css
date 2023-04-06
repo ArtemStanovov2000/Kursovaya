@@ -39,8 +39,17 @@
 .form__login {
   margin-top: 15px;
   position: relative;
+  animation: drop 1s forwards;
 }
 
+@keyframes drop {
+  0% {
+    top: -1000px;
+  }
+  100% {
+    top: 200px;
+  }
+}
 .form__login__close__btn {
   position: absolute;
   width: 30px;
@@ -95,7 +104,6 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
-  text-transform: uppercase;
   width: 60%;
   height: 30px;
 }
@@ -790,6 +798,64 @@
   border-radius: 7px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.Date {
+  width: max-content;
+}
+
+.Date__title {
+  font-size: 30px;
+  line-height: 30px;
+  font-family: Oswald;
+  font-weight: 400;
+}
+
+.Date__rare__box {
+  display: flex;
+  gap: 35px;
+}
+
+.Date__input {
+  font-size: 25px;
+  line-height: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-family: Oswald;
+  width: 150px;
+}
+
+.Date__input__title {
+  font-size: 30px;
+  line-height: 30px;
+  font-family: Oswald;
+  font-weight: 400;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.Date__button {
+  padding: 8px 20px 8px 20px;
+  border-radius: 7px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-family: Oswald;
+  color: var(--black);
+  background-color: var(--basic_green_light_3);
+  cursor: pointer;
+}
+
+.Date__button:hover {
+  background-color: var(--basic_green_light_1);
+}
+
+.Date__button:active {
+  background-color: var(--basic_green);
 }
 
 @media (min-width: 450px) {
