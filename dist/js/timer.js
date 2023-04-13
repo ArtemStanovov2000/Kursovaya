@@ -15,6 +15,7 @@ const COUNT_SECONDS_IN_DAYS = 86400;
 const COUNT_SECONDS_IN_MONTH = 2592000;
 const COUNT_SECONDS_IN_YEAR = 31536000;
 const MILLISECONDS_IN_SECONDS = 1000;
+const COUNT_DAYS_IN_MONTH_OF_YEAR = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 const MAX_VALUE_YEAR = 2;
 
@@ -49,15 +50,14 @@ function timer() {
     //день
     if (((DateFullYearsInputValue - now.getFullYear()) <= 0) && (DateMonthInputValue - (now.getMonth() + 1) <= 0)) {
         if ((DateDayInput.value - now.getDate()) <= 0) {
-            console.log(now.getDate())
             DateDayInput.value = now.getDate();
-        } else if (DateDayInput.value > 31) {
+        } else if (DateDayInput.value > COUNT_DAYS_IN_MONTH_OF_YEAR[DateMonthInputValue - 1]) {
             DateDayInput.value = 30;
         } else {
             DateDayInput.value = DateDayInput.value;
         }
     } else {
-        if (DateDayInput.value > 31) {
+        if (DateDayInput.value > COUNT_DAYS_IN_MONTH_OF_YEAR[DateMonthInputValue - 1]) {
             DateDayInput.value = 30;
         } else if (DateDayInput.value < 1) {
             DateDayInput.value = 1;
