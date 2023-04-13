@@ -1,59 +1,126 @@
-let secondsElement = document.getElementById('seconds');
-let dozensSecondsElement = document.getElementById('dozens_seconds');
+const secondsElement = document.getElementById('seconds');
+const minutesElement = document.getElementById('minutes');
+const hoursElement = document.getElementById('hours');
+const DaysElement = document.getElementById('days');
+const monthElement = document.getElementById('month');
 
-let minutesElement = document.getElementById('minutes');
-let dozensMinutesElement = document.getElementById('dozens_minutes');
+const DateFullYearsInput = document.getElementById('Date__fullYears__input');
+const DateMonthInput = document.getElementById('Date__months__input');
+const DateDayInput = document.getElementById('Date__days__input');
+const DateHoursInput = document.getElementById('Date__hours__input');
 
-let hoursElement = document.getElementById('hours');
-let dozensHoursElement = document.getElementById('dozens_hours');
+const COUNT_SECONDS_IN_MINUTES = 60;
+const COUNT_SECONDS_IN_HOURS = 3600;
+const COUNT_SECONDS_IN_DAYS = 86400;
+const COUNT_SECONDS_IN_MONTH = 2592000;
+const COUNT_SECONDS_IN_YEAR = 31536000;
+const MILLISECONDS_IN_SECONDS = 1000;
 
-let DaysElement = document.getElementById('days');
-let dozensDaysElement = document.getElementById('dozens_days');
+const MAX_VALUE_YEAR = 2;
 
-let monthElement = document.getElementById('month');
+function timer() {
+    const now = new Date();
+    const nowMoment = now.getTime();
+    // год
+    if ((DateFullYearsInput.value - now.getFullYear()) < 0) {
+        DateFullYearsInput.value = now.getFullYear();
+    } else if ((DateFullYearsInput.value - now.getFullYear()) > MAX_VALUE_YEAR) {
+        DateFullYearsInput.value = now.getFullYear() + MAX_VALUE_YEAR;
+    } else {
+        DateFullYearsInput.value = DateFullYearsInput.value;
+    };
+    const DateFullYearsInputValue = DateFullYearsInput.value;
+    //месяц
+    if ((DateFullYearsInputValue - now.getFullYear()) <= 0) {
+        if (DateMonthInput.value - (now.getMonth() + 1) <= 0) {
+            DateMonthInput.value = now.getMonth() + 1;
+        } else if (DateMonthInput.value > 12) {
+            DateMonthInput.value = 11;
+        }
+    } else if ((DateFullYearsInputValue - now.getFullYear()) > 0) {
+        if (DateMonthInput.value > 12) {
+            DateMonthInput.value = 11;
+        } else if (DateMonthInput.value < 1) {
+            DateMonthInput.value = 1;
+        }
+        DateMonthInput.value = DateMonthInput.value;
+    }
+    const DateMonthInputValue = DateMonthInput.value;
+    //день
+    if (((DateFullYearsInputValue - now.getFullYear()) <= 0) && (DateMonthInputValue - (now.getMonth() + 1) <= 0)) {
+        if ((DateDayInput.value - now.getDate()) <= 0) {
+            console.log(now.getDate())
+            DateDayInput.value = now.getDate();
+        } else if (DateDayInput.value > 31) {
+            DateDayInput.value = 30;
+        } else {
+            DateDayInput.value = DateDayInput.value;
+        }
+    } else {
+        if (DateDayInput.value > 31) {
+            DateDayInput.value = 30;
+        } else if (DateDayInput.value < 1) {
+            DateDayInput.value = 1;
+        } else {
+            DateDayInput.value = DateDayInput.value;
+        }
+    }
+    const DateDayInputValue = DateDayInput.value;
 
-let DateMonthInput = document.getElementById('Date__month__input').value;
-let DateDayInput = document.getElementById('Date__day__input').value;
-let DateButtonElement = document.getElementById('Date_button');
+    //час
+    if (((DateFullYearsInputValue - now.getFullYear()) <= 0) && (DateMonthInputValue - (now.getMonth() + 1) <= 0) && ((DateDayInput.value - now.getDate()) <= 0)) {
+        if ((DateHoursInput.value - now.getHours()) <= 0) {
+            DateHoursInput.value = (now.getHours() + 1);
+        } else if (DateHoursInput.value > 23) {
+            DateHoursInput.value = 22;
+        } else {
+            DateHoursInput.value = DateHoursInput.value;
+        }
+    } else {
+        if (DateHoursInput.value > 23) {
+            DateHoursInput.value = 22;
+        } else if (DateHoursInput.value < 1) {
+            DateHoursInput.value = 1;
+        } else {
+            DateHoursInput.value = DateHoursInput.value;
+        }
+    }
+    const DateHoursInputValue = DateHoursInput.value;
 
-const NumbersDayInMonthsOfYear = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    const projectCompletionDate = new Date();
+    projectCompletionDate.setFullYear(DateFullYearsInputValue);
+    projectCompletionDate.setMonth(DateMonthInputValue - 1);
+    projectCompletionDate.setDate(DateDayInputValue);
+    projectCompletionDate.setHours(DateHoursInputValue);
+    projectCompletionDate.setMinutes(0);
+    projectCompletionDate.setSeconds(0);
+    projectCompletionDate.setMilliseconds(0);
+    const projectCompletionDateTimeValue = projectCompletionDate.getTime();
 
-function timeg() {
-    let now = new Date();
+    const timeDifferentInSeconds = (projectCompletionDateTimeValue - nowMoment) / MILLISECONDS_IN_SECONDS;
 
-    let MonthsNow = now.getMonth() + 1;
-    let DaysNow = now.getDate();
-    let hoursNow = now.getHours();
-    let MinutesNow = now.getMinutes();
-    let SecondsNow = now.getSeconds();
+    const monthDifferent = Math.floor(timeDifferentInSeconds / COUNT_SECONDS_IN_MONTH);
+    const remainingSecondsFromMonths = timeDifferentInSeconds - (monthDifferent * COUNT_SECONDS_IN_MONTH);
+    const dayDifferent = Math.floor(remainingSecondsFromMonths / COUNT_SECONDS_IN_DAYS);
+    const remainingSecondsFromDays = remainingSecondsFromMonths - (dayDifferent * COUNT_SECONDS_IN_DAYS);
+    const hoursDifferent = Math.floor(remainingSecondsFromDays / COUNT_SECONDS_IN_HOURS);
+    const remainingSecondsFromHours = remainingSecondsFromDays - (hoursDifferent * COUNT_SECONDS_IN_HOURS);
+    const minutesDifferent = Math.floor(remainingSecondsFromHours / COUNT_SECONDS_IN_MINUTES);
+    const remainingSecondsFromMinutes = remainingSecondsFromHours - (minutesDifferent * COUNT_SECONDS_IN_MINUTES);
+    const secondsDifferent = Math.floor(remainingSecondsFromMinutes);
 
-    let NumbersOfSecondNow = hoursNow * 3600 + MinutesNow * 60 + SecondsNow;
-    let remainingNumberOfSecondNow = 86400 - NumbersOfSecondNow;
-    let remainingNumberOfHoursNow = Math.floor(remainingNumberOfSecondNow / 3600);
-    let remainingNumberOfMinutesNow = remainingNumberOfSecondNow - remainingNumberOfHoursNow * 3600;
-    let remainingNumberOfMinutesInHours = Math.floor(remainingNumberOfMinutesNow / 60);
-    let remainingNumberOfSecondsInMinutes = remainingNumberOfMinutesNow % 60;
-
-    secondsElement.textContent = remainingNumberOfSecondsInMinutes % 10;
-    dozensSecondsElement.textContent = Math.floor(remainingNumberOfSecondsInMinutes / 10);
-
-    minutesElement.textContent = remainingNumberOfMinutesInHours % 10;
-    dozensMinutesElement.textContent = Math.floor(remainingNumberOfMinutesInHours / 10);
-
-    hoursElement.textContent = remainingNumberOfHoursNow % 10;
-    dozensHoursElement.textContent = Math.floor(remainingNumberOfHoursNow / 10);
-
-    DaysElement.textContent = NumbersDayInMonthsOfYear[MonthsNow + 1] - DaysNow;
-
-    monthElement.textContent = DateMonthInput - MonthsNow;
+    monthElement.textContent = monthDifferent;
+    DaysElement.textContent = dayDifferent;
+    hoursElement.textContent = hoursDifferent;
+    minutesElement.textContent = minutesDifferent;
+    secondsElement.textContent = secondsDifferent;
 };
 
-DateButtonElement.addEventListener("click", () => {
-    timeid = null;
+timeid = null;
 
-    timeg();
+timer();
 
-    timeid = setInterval(timeg, 200);
-});
+timeid = setInterval(timer, 100);
+
 
 

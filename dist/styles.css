@@ -748,7 +748,9 @@
   line-height: 35px;
   font-family: Oswald;
   background-color: var(--white);
-  padding: 15px 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 90px;
   margin: 5px 7px 5px 7px;
   text-align: center;
   border-radius: 7px;
@@ -811,17 +813,17 @@
   font-weight: 400;
 }
 
-.Date__rare__box {
-  display: flex;
+.Date__rate__box {
+  display: grid;
   gap: 35px;
+  grid-template-columns: 1fr 1fr;
 }
 
 .Date__input {
   font-size: 25px;
   line-height: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  padding: 10px;
+  text-align: center;
   font-family: Oswald;
   width: 150px;
 }
