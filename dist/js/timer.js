@@ -9,104 +9,143 @@ const DateMonthInput = document.getElementById('Date__months__input');
 const DateDayInput = document.getElementById('Date__days__input');
 const DateHoursInput = document.getElementById('Date__hours__input');
 
-const COUNT_SECONDS_IN_MINUTES = 60;
-const COUNT_SECONDS_IN_HOURS = 3600;
-const COUNT_SECONDS_IN_DAYS = 86400;
-const COUNT_SECONDS_IN_MONTH = 2592000;
-const COUNT_SECONDS_IN_YEAR = 31536000;
-const MILLISECONDS_IN_SECONDS = 1000;
-const COUNT_DAYS_IN_MONTH_OF_YEAR = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-
 const MAX_VALUE_YEAR = 2;
+
+const TimeCount = {
+    MilliSeconds: {
+        inSeconds : 1000
+    },
+    Seconds: {
+        inMinutes : 60,
+        inHours : 3600,
+        inDays: 86400,
+        inMonth: 2592000,
+        inYear: 31536000,
+    },
+    Minutes: {
+        inHours : 60,
+        inDays: 1440,
+        inMonth: 43200,
+        inYear: 525600,
+    },
+    Hours: {
+        inDays: 24,
+        inMonth: 720,
+        inYear: 8760,
+    },
+    Days: {
+        inMonth: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+        inYear: 365,
+    },
+    Month: {
+        inYear: 12,
+    },
+};
+
+const yearValueInputValidity = function yearValueInputValidity(input, time, maxValue) {
+    if ((input.value - time.getFullYear()) < 0) {
+        return input.value = time.getFullYear();
+    } else if ((input.value - time.getFullYear()) > maxValue) {
+        return input.value = time.getFullYear() + maxValue;
+    } else {
+        return input.value = input.value;
+    };
+};
+
+const monthValueInputValidity = function monthValueInputValidity(inputYear, inputMonth, time, maxValue) {
+    if ((inputYear.value - time.getFullYear()) <= 0) {
+        if (inputMonth.value - (time.getMonth() + 1) <= 0) {
+            return inputMonth.value = time.getMonth() + 1;
+        } else if (inputMonth.value > maxValue) {
+            return inputMonth.value = maxValue;
+        }
+    } else if ((inputYear.value - time.getFullYear()) > 0) {
+        if (inputMonth.value > maxValue) {
+            return inputMonth.value = maxValue;
+        } else if (inputMonth.value < 1) {
+            return inputMonth.value = 1;
+        }
+        return inputMonth.value = inputMonth.value;
+    }
+};
+
+const dateValueInputValidity = function dateValueInputValidity(inputYear, inputMonth, inputDate, time, maxValue) {
+    if (((inputYear.value - time.getFullYear()) <= 0) && (inputMonth.value - (time.getMonth() + 1) <= 0)) {
+        if ((inputDate.value - time.getDate()) <= 0) {
+            return inputDate.value = time.getDate();
+        } else if (inputDate.value > maxValue[inputMonth.value - 1]) {
+            return inputDate.value = maxValue[inputMonth.value - 1];
+        } else {
+            return inputDate.value = inputDate.value;
+        }
+    } else {
+        if (inputDate.value > maxValue[inputMonth.value - 1]) {
+            return inputDate.value = maxValue[inputMonth.value - 1];
+        } else if (inputDate.value < 1) {
+            return inputDate.value = 1;
+        } else {
+            return inputDate.value = inputDate.value;
+        }
+    }
+};
+
+const hoursValueInputValidity = function hoursValueInputValidity (inputYear, inputMonth, inputDate, inputHours, time, maxValue) {
+    if (((inputYear.value - time.getFullYear()) <= 0) && (inputMonth.value - (time.getMonth() + 1) <= 0) && ((inputDate.value - time.getDate()) <= 0)) {
+        if ((inputHours.value - time.getHours()) <= 0) {
+            return inputHours.value = (time.getHours() + 1);
+        } else if (inputHours.value > (maxValue - 1)) {
+            return inputHours.value = (maxValue - 1);
+        } else {
+            return inputHours.value = inputHours.value;
+        }
+    } else {
+        if (inputHours.value > (maxValue - 1)) {
+            return inputHours.value = (maxValue - 1);
+        } else if (inputHours.value < 1) {
+            return inputHours.value = 1;
+        } else {
+            return inputHours.value = inputHours.value;
+        }
+    }
+};
+
+const setTimeValue = function setTimeValue(setTime, yearValue, monthValue, dateValue, hoursValue, minutesValue, secondsValue) {
+    setTime.setFullYear(yearValue);
+    setTime.setMonth(monthValue - 1);
+    setTime.setDate(dateValue);
+    setTime.setHours(hoursValue);
+    setTime.setMinutes(minutesValue);
+    setTime.setSeconds(secondsValue);
+    setTime.setMilliseconds(0);
+    return setTime;
+};
 
 function timer() {
     const now = new Date();
     const nowMoment = now.getTime();
-    // год
-    if ((DateFullYearsInput.value - now.getFullYear()) < 0) {
-        DateFullYearsInput.value = now.getFullYear();
-    } else if ((DateFullYearsInput.value - now.getFullYear()) > MAX_VALUE_YEAR) {
-        DateFullYearsInput.value = now.getFullYear() + MAX_VALUE_YEAR;
-    } else {
-        DateFullYearsInput.value = DateFullYearsInput.value;
-    };
-    const DateFullYearsInputValue = DateFullYearsInput.value;
-    //месяц
-    if ((DateFullYearsInputValue - now.getFullYear()) <= 0) {
-        if (DateMonthInput.value - (now.getMonth() + 1) <= 0) {
-            DateMonthInput.value = now.getMonth() + 1;
-        } else if (DateMonthInput.value > 12) {
-            DateMonthInput.value = 11;
-        }
-    } else if ((DateFullYearsInputValue - now.getFullYear()) > 0) {
-        if (DateMonthInput.value > 12) {
-            DateMonthInput.value = 11;
-        } else if (DateMonthInput.value < 1) {
-            DateMonthInput.value = 1;
-        }
-        DateMonthInput.value = DateMonthInput.value;
-    }
-    const DateMonthInputValue = DateMonthInput.value;
-    //день
-    if (((DateFullYearsInputValue - now.getFullYear()) <= 0) && (DateMonthInputValue - (now.getMonth() + 1) <= 0)) {
-        if ((DateDayInput.value - now.getDate()) <= 0) {
-            DateDayInput.value = now.getDate();
-        } else if (DateDayInput.value > COUNT_DAYS_IN_MONTH_OF_YEAR[DateMonthInputValue - 1]) {
-            DateDayInput.value = 30;
-        } else {
-            DateDayInput.value = DateDayInput.value;
-        }
-    } else {
-        if (DateDayInput.value > COUNT_DAYS_IN_MONTH_OF_YEAR[DateMonthInputValue - 1]) {
-            DateDayInput.value = 30;
-        } else if (DateDayInput.value < 1) {
-            DateDayInput.value = 1;
-        } else {
-            DateDayInput.value = DateDayInput.value;
-        }
-    }
-    const DateDayInputValue = DateDayInput.value;
-
-    //час
-    if (((DateFullYearsInputValue - now.getFullYear()) <= 0) && (DateMonthInputValue - (now.getMonth() + 1) <= 0) && ((DateDayInput.value - now.getDate()) <= 0)) {
-        if ((DateHoursInput.value - now.getHours()) <= 0) {
-            DateHoursInput.value = (now.getHours() + 1);
-        } else if (DateHoursInput.value > 23) {
-            DateHoursInput.value = 22;
-        } else {
-            DateHoursInput.value = DateHoursInput.value;
-        }
-    } else {
-        if (DateHoursInput.value > 23) {
-            DateHoursInput.value = 22;
-        } else if (DateHoursInput.value < 1) {
-            DateHoursInput.value = 1;
-        } else {
-            DateHoursInput.value = DateHoursInput.value;
-        }
-    }
-    const DateHoursInputValue = DateHoursInput.value;
-
     const projectCompletionDate = new Date();
-    projectCompletionDate.setFullYear(DateFullYearsInputValue);
-    projectCompletionDate.setMonth(DateMonthInputValue - 1);
-    projectCompletionDate.setDate(DateDayInputValue);
-    projectCompletionDate.setHours(DateHoursInputValue);
-    projectCompletionDate.setMinutes(0);
-    projectCompletionDate.setSeconds(0);
-    projectCompletionDate.setMilliseconds(0);
+
+    yearValueInputValidity(DateFullYearsInput, now, MAX_VALUE_YEAR);
+    const DateFullYearsInputValue = DateFullYearsInput.value;
+    monthValueInputValidity(DateFullYearsInput, DateMonthInput, now, TimeCount.Month.inYear);
+    const DateMonthInputValue = DateMonthInput.value;
+    dateValueInputValidity(DateFullYearsInput, DateMonthInput, DateDayInput, now, TimeCount.Days.inMonth);
+    const DateDayInputValue = DateDayInput.value;
+    hoursValueInputValidity(DateFullYearsInput, DateMonthInput, DateDayInput, DateHoursInput, now, TimeCount.Hours.inDays);
+    const DateHoursInputValue = DateHoursInput.value;
+    setTimeValue(projectCompletionDate, DateFullYearsInputValue, DateMonthInputValue, DateDayInputValue, DateHoursInputValue, 0, 0);
     const projectCompletionDateTimeValue = projectCompletionDate.getTime();
 
-    const timeDifferentInSeconds = (projectCompletionDateTimeValue - nowMoment) / MILLISECONDS_IN_SECONDS;
+    const timeDifferentInSeconds = (projectCompletionDateTimeValue - nowMoment) / TimeCount.MilliSeconds.inSeconds;
 
-    const monthDifferent = Math.floor(timeDifferentInSeconds / COUNT_SECONDS_IN_MONTH);
-    const remainingSecondsFromMonths = timeDifferentInSeconds - (monthDifferent * COUNT_SECONDS_IN_MONTH);
-    const dayDifferent = Math.floor(remainingSecondsFromMonths / COUNT_SECONDS_IN_DAYS);
-    const remainingSecondsFromDays = remainingSecondsFromMonths - (dayDifferent * COUNT_SECONDS_IN_DAYS);
-    const hoursDifferent = Math.floor(remainingSecondsFromDays / COUNT_SECONDS_IN_HOURS);
-    const remainingSecondsFromHours = remainingSecondsFromDays - (hoursDifferent * COUNT_SECONDS_IN_HOURS);
-    const minutesDifferent = Math.floor(remainingSecondsFromHours / COUNT_SECONDS_IN_MINUTES);
-    const remainingSecondsFromMinutes = remainingSecondsFromHours - (minutesDifferent * COUNT_SECONDS_IN_MINUTES);
+    const monthDifferent = Math.floor(timeDifferentInSeconds / TimeCount.Seconds.inMonth);
+    const remainingSecondsFromMonths = timeDifferentInSeconds - (monthDifferent * TimeCount.Seconds.inMonth);
+    const dayDifferent = Math.floor(remainingSecondsFromMonths / TimeCount.Seconds.inDays);
+    const remainingSecondsFromDays = remainingSecondsFromMonths - (dayDifferent * TimeCount.Seconds.inDays);
+    const hoursDifferent = Math.floor(remainingSecondsFromDays / TimeCount.Seconds.inHours);
+    const remainingSecondsFromHours = remainingSecondsFromDays - (hoursDifferent * TimeCount.Seconds.inHours);
+    const minutesDifferent = Math.floor(remainingSecondsFromHours / TimeCount.Seconds.inMinutes);
+    const remainingSecondsFromMinutes = remainingSecondsFromHours - (minutesDifferent * TimeCount.Seconds.inMinutes);
     const secondsDifferent = Math.floor(remainingSecondsFromMinutes);
 
     monthElement.textContent = monthDifferent;
