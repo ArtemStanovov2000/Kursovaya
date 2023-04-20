@@ -13,7 +13,7 @@ const agePoleIRegFormInput = document.getElementById("age_pole_reg_form");
 const emailPoleIRegFormInput = document.getElementById("email_pole_reg_form");
 const phoneNumberPoleIRegFormInput = document.getElementById("phone_number_pole_reg_form");
 const loginPoleIRegFormInput = document.getElementById("login_pole_reg_form");
-const passwordPoleIRegFormInput = document.getElementById("password_pole_reg_form");
+const passwordPoleRegFormInput = document.getElementById("password_pole_reg_form");
 
 const MAX_PERMISSIBLE_AGE = 120;
 const MIN_PERMISSIBLE_AGE = 10;
@@ -31,15 +31,30 @@ const MIN_LENGTH_PASSWORD = 10;
 
 formLoginOpenLink.addEventListener("click", () => {
     formLoginComeForm.classList.remove("visually-hidden");
+    loginPoleFormInput.focus();
+});
+
+window.addEventListener('keydown', (e) => {
+    if (e.key == "Escape" && !formLoginComeForm.classList.contains("visually-hidden")) {
+        formLoginComeForm.classList.add("visually-hidden");
+    }
 });
 
 formOpenRegButton.addEventListener("click", () => {
     formLoginReg.classList.remove("visually-hidden");
     formLoginComeForm.classList.add("visually-hidden");
+    namePoleRegFormInput.focus();
 });
 
 formLoginCloseButton.addEventListener("click", () => {
     formLoginComeForm.classList.add("visually-hidden");
+});
+
+window.addEventListener('keydown', (e) => {
+    if (e.key == "Escape" && !formLoginReg.classList.contains("visually-hidden")) {
+        formLoginReg.classList.add("visually-hidden");
+        formLoginComeForm.classList.remove("visually-hidden");
+    }
 });
 
 formRegCloseButton.addEventListener("click", () => {
@@ -58,15 +73,19 @@ loginPoleFormInput.addEventListener("change", () => {
     };
 });
 
-passwordPoleFormInput.addEventListener("change", () => {
-    const passwordPoleFormInputLength = passwordPoleFormInput.value.length;
+passwordPoleFormInput.addEventListener("change", (evt) => {
+    const PoleFormInputValue = evt.target.value;
+    const regExpPassword = /\D{4}(?=.*(\d{4}))/
+    const passwordPoleFormInputLength = PoleFormInputValue.length;
     if (passwordPoleFormInputLength > MAX_LENGTH_PASSWORD) {
         passwordPoleFormInput.setCustomValidity("Удалите лишние " + (passwordPoleFormInputLength - MAX_LENGTH_PASSWORD) + " симв.");
-    } else if (passwordPoleIRegFormInputLength < MIN_LENGTH_PASSWORD) {
+    } else if (passwordPoleFormInputLength < MIN_LENGTH_PASSWORD) {
         passwordPoleFormInput.setCustomValidity("Добавьте еще " + (MIN_LENGTH_PASSWORD - passwordPoleFormInputLength) + " симв.");
+    } else if (passwordPoleFormInput.textContent = !PoleFormInputValue.match(regExpPassword)) {
+        passwordPoleFormInput.setCustomValidity("Используйте буквы и числа");
     } else {
         passwordPoleFormInput.setCustomValidity("");
-    };
+    }
 });
 
 namePoleRegFormInput.addEventListener("change", () => {
@@ -80,9 +99,12 @@ namePoleRegFormInput.addEventListener("change", () => {
     };
 });
 
-agePoleIRegFormInput.addEventListener("change", () => {
-    const agePoleValue = agePoleIRegFormInput.value;
-    if (agePoleValue > MAX_PERMISSIBLE_AGE) {
+agePoleIRegFormInput.addEventListener("change", (evt) => {
+    const agePoleValue = evt.target.value;
+    const regExpAge = /\d/g
+    if (agePoleIRegFormInput.textContent = !agePoleValue.match(regExpAge)) {
+        agePoleIRegFormInput.setCustomValidity("Возраст можно написать только числами");
+    } else if (agePoleValue > MAX_PERMISSIBLE_AGE) {
         agePoleIRegFormInput.setCustomValidity("Изивините, вы не можете быть насколько старым");
     } else if (agePoleValue < MIN_PERMISSIBLE_AGE) {
         agePoleIRegFormInput.setCustomValidity("Изивините, вы слишком молодой");
@@ -123,13 +145,17 @@ loginPoleIRegFormInput.addEventListener("change", () => {
     };
 });
 
-passwordPoleIRegFormInput.addEventListener("change", () => {
-    const passwordPoleIRegFormInputLength = passwordPoleIRegFormInput.value.length;
-    if (passwordPoleIRegFormInputLength > MAX_LENGTH_PASSWORD) {
-        passwordPoleIRegFormInput.setCustomValidity("Удалите лишние " + (passwordPoleIRegFormInputLength - MAX_LENGTH_PASSWORD) + " симв.");
-    } else if (passwordPoleIRegFormInputLength < MIN_LENGTH_PASSWORD) {
-        passwordPoleIRegFormInput.setCustomValidity("Добавьте еще " + (MIN_LENGTH_PASSWORD - passwordPoleIRegFormInputLength) + " симв.");
+passwordPoleRegFormInput.addEventListener("change", (evt) => {
+    const PoleRegFormInputValue = evt.target.value;
+    const regExpPasswordReg = /\D{4}(?=.*(\d{4}))/
+    const passwordPoleRegFormInputLength = PoleRegFormInputValue.length;
+    if (passwordPoleRegFormInputLength > MAX_LENGTH_PASSWORD) {
+        passwordPoleRegFormInput.setCustomValidity("Удалите лишние " + (passwordPoleRegFormInputLength - MAX_LENGTH_PASSWORD) + " симв.");
+    } else if (passwordPoleRegFormInputLength < MIN_LENGTH_PASSWORD) {
+        passwordPoleRegFormInput.setCustomValidity("Добавьте еще " + (MIN_LENGTH_PASSWORD - passwordPoleRegFormInputLength) + " симв.");
+    } else if (passwordPoleRegFormInput.textContent = !PoleRegFormInputValue.match(regExpPasswordReg)) {
+        passwordPoleRegFormInput.setCustomValidity("Используйте буквы и числа");
     } else {
-        passwordPoleIRegFormInput.setCustomValidity("");
-    };
+        passwordPoleRegFormInput.setCustomValidity("");
+    }
 });

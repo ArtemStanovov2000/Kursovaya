@@ -1,4 +1,5 @@
 const UNITS_IN_KILO = 1000;
+const MAX_INPUT_VALUE = 1000;
 const MAX_INCREASED_ACCURACY_NUMBER = 10;
 const REGULAR_NUMBERS_FRACTIONAL_DIGITS_COUNT = 0;
 const INCREASED_ACCURACY_NUMBERS_FRACTIONAL_DIGITS_COUNT = 2;
@@ -21,6 +22,11 @@ const selectingRadioButtonValue = function selectingRadioButtonValue(radioButton
 }
 
 const conversionFromKiloToUnits = function conversionFromKiloToUnits(value) {
+    if (value > MAX_INPUT_VALUE) {
+        value = MAX_INPUT_VALUE
+    } else {
+        value = value
+    }
     let result = value * UNITS_IN_KILO;
     if (Number.isInteger(result)) {
         return result.toFixed(0);
@@ -62,4 +68,3 @@ fullPowerConversionButton.addEventListener("click", () => {
         fullPowerResultOutputElement.innerHTML = fullPowerResult.toFixed(2);
     }
 });
-
