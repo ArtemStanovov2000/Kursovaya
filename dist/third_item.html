@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navigation">
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a href="#" class="navigation__item__link">Конвертер</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__item__link">О нас</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__item__link">Каталог услуг</a></li>
+                    <li class="navigation__item" id="form_login_open_link"><a href="#"
+                            class="navigation__item__link">Войдите</a></li>
+                </ul>
+            </nav>
+            <form class="form__login visually-hidden" id="form_login_come" action="#" method="post" target="_blank"
+                autocomplete="off">
+                <button class="form__login__close__btn" id="form_login_close_btn"></button>
+                <h2 class="form__title">Войдите в аккаунт</h2>
+                <fieldset class="fieldset">
+                    <ul class="field__login__list">
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="name">Логин:</label>
+                            <input class="field__login__item__input" type="login" name="login" placeholder="loob_job123"
+                                id="login_pole" minlength="8" maxlength="20" required>
+                        </li>
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="age">Пароль:</label>
+                            <input class="field__login__item__input" type="password" name="password"
+                                placeholder="******" id="password_pole" minlength="10" maxlength="25" required>
+                        </li>
+                    </ul>
+                </fieldset>
+                <div class="form__button__box">
+                    <button class="form__button" id="submit_login_form_btn" type="submit">Отправить</button>
+                    <button class="form__button" id="open_reg_form_btn" type="button">Создать аккаунт</button>
+                </div>
+            </form>
+            <form class="form__login visually-hidden" action="#" id="form_login_open_reg" method="post" target="_blank"
+                autocomplete="off">
+                <button class="form__login__close__btn" id="form_reg_close_btn"></button>
+                <h2 class="form__title">Зарегестрируйтесь</h2>
+                <fieldset class="fieldset">
+                    <ul class="field__login__list">
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="name">Имя:*</label>
+                            <input class="field__login__item__input" type="text" name="name" placeholder="Иван Иванов"
+                                id="name_pole_reg_form" required>
+                        </li>
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="age">Возраст:</label>
+                            <input class="field__login__item__input" type="text" name="age" placeholder="27"
+                                id="age_pole_reg_form" required>
+                        </li>
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="email">E-mail:*</label>
+                            <input class="field__login__item__input" type="email" name="mail"
+                                placeholder="ivanov@gmail.com" id="email_pole_reg_form" required>
+                        </li>
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="phone_number">Телефон:*</label>
+                            <input class="field__login__item__input" type="tel" name="phone"
+                                placeholder="+7 000 000-00-00" id="phone_number_pole_reg_form" maxlength="21" required>
+                        </li>
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="name">Логин:</label>
+                            <input class="field__login__item__input" type="login" name="login" placeholder="loob_job123"
+                                id="login_pole_reg_form" required>
+                        </li>
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="age">Пароль:</label>
+                            <input class="field__login__item__input" type="password" name="password"
+                                placeholder="******" id="password_pole_reg_form" required>
+                        </li>
+                    </ul>
+                </fieldset>
+                <div class="form__regist__box">
+                    <button type="submit" class="form__button" id="regist_button_reg_form">Зарегистроваться</button>
+                    <p class="form__regist__box__deck">* — Обязательные поля</p>
+                </div>
+            </form>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="coursework__third__item">
+                <h2 class="coursework__item__title">3 Расчет распределительных шинопроводов и шкафов</h2>
+                <p class="coursework__deck">Расчёт нагрузки шинопровода ведём методом коэффициента максимума.
+                    Для каждой группы ЭП определяем средние активную и реактивную мощности за
+                    более нагруженную смену.</p>
+                <article class="coursework__item__table">
+                    <h2 class="coursework__item__title">Таблица 3.1 – Электроприемники подключенные к ШРА-1</h2>
+                    <table class="table">
+                        <tbody class="table__body">
+                            <tr class="table__title">
+                                <th class="table__title__item table__item__number">№</th>
+                                <th class="table__title__item table__item__deck">Группы ЭП</th>
+                                <th class="table__title__item table__item__count">n</th>
+                                <th class="table__title__item table__item__power">Pуст Общ</th>
+                                <th class="table__title__item table__item__coefficient">Kи</th>
+                                <th class="table__title__item table__item__cos">Cosφ/tgφ</th>
+                                <th class="table__title__item table__item__percent">ПВ%</th>
+                                <th class="table__title__item table__item__active__power">Pсм кВт</th>
+                                <th class="table__title__item table__item__reactive__power">Qсм кВА</th>
+                            </tr>
+                            <tr class="table__item">
+                                <th class="table__title__item table__item__number"></th>
+                                <th class="table__title__item table__item__deck"></th>
+                                <th class="table__title__item table__item__count"></th>
+                                <th class="table__title__item table__item__power"></th>
+                                <th class="table__title__item table__item__coefficient"></th>
+                                <th class="table__title__item table__item__cos"></th>
+                                <th class="table__title__item table__item__percent"></th>
+                                <th class="table__title__item table__item__active__power"></th>
+                                <th class="table__title__item table__item__reactive__power"></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+        </div>
+    </main>
+    <script src="js/form.js"></script>
+    <script src="js/coursework.js"></script>
+</body>
+
+</html>

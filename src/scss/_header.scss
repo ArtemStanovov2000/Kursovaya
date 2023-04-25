@@ -29,6 +29,8 @@
 
 .navigation__item__link:hover {
     opacity: 1;
+    border-bottom: 3px solid var(--basic_violet);
+    padding-bottom: 12px;
 }
 
 .navigation__item__link:active {
@@ -86,6 +88,7 @@
     width: 100%;
     justify-content: space-between;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .field__login__item__label {
@@ -177,8 +180,8 @@
     }
 
     .navigation__item__link {
-        padding-left: 20px;
-        padding-right: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
         border-radius: 4px;
     }
 }

@@ -29,6 +29,8 @@
 
 .navigation__item__link:hover {
   opacity: 1;
+  border-bottom: 3px solid var(--basic_violet);
+  padding-bottom: 12px;
 }
 
 .navigation__item__link:active {
@@ -89,6 +91,7 @@
   width: 100%;
   justify-content: space-between;
   margin-bottom: 20px;
+  align-items: center;
 }
 
 .field__login__item__label {
@@ -176,8 +179,8 @@
     z-index: 2;
   }
   .navigation__item__link {
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     border-radius: 4px;
   }
 }
@@ -869,6 +872,89 @@
     margin-top: 0;
   }
 }
+.coursework__third__item {
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.coursework__item__title {
+  font-family: Oswald;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.coursework__deck {
+  font-family: Oswald;
+  font-size: 25px;
+  line-height: 35px;
+}
+
+.table {
+  width: 100%;
+}
+
+.table__title {
+  display: flex;
+}
+
+.table__item {
+  display: flex;
+  height: 50px;
+  border: 1px solid var(--black);
+}
+
+.table__title__item {
+  padding: 10px 0px;
+  border: 1px solid var(--black);
+  display: flex;
+  justify-content: center;
+  width: 20px;
+}
+
+.table__item__number {
+  width: 10%;
+  border: 1px solid var(--black);
+}
+
+.table__item__deck {
+  width: 20%;
+}
+
+.table__item__count {
+  width: 5%;
+}
+
+.table__item__power {
+  width: 12.5%;
+}
+
+.table__item__coefficient {
+  width: 12.5%;
+}
+
+.table__item__cos {
+  width: 12.5%;
+}
+
+.table__item__percent {
+  width: 12.5%;
+}
+
+.table__item__active__power {
+  width: 12.5%;
+}
+
+.table__item__reactive__power {
+  width: 12.5%;
+}
+
+.table__input {
+  width: 80%;
+  height: 20px;
+  display: flex;
+  text-align: center;
+}
+
 @font-face {
   font-family: "Oswald";
   src: local("Oswald"), url(Oswald/Oswald-VariableFont_wght.ttf);
