@@ -17,66 +17,139 @@
 
 .table {
     width: 100%;
+    margin-bottom: 60px;
 }
 
-.table__title {
+.table__row {
     display: flex;
+    height: 60px;
 }
 
-.table__item {
-    display: flex;
-    height: 50px;
-    border: 1px solid var(--black);
+.table__row:last-child {
+    background-color: var(--blue_darker);
 }
 
-.table__title__item {
-    padding: 10px 0px;
-    border: 1px solid var(--black);
+.table__column {
+    border: 1px solid black;
     display: flex;
     justify-content: center;
-    width: 20px;
+    align-items: center;
 }
 
-.table__item__number {
-    width: 10%;
-    border: 1px solid var(--black);
-}
-
-.table__item__deck {
-    width: 20%;
-}
-
-.table__item__count {
+.table__title__column__number {
     width: 5%;
 }
 
-.table__item__power {
+.table__title__column__name {
+    width: 15%;
+}
+
+.table__title__column__count {
+    width: 5%;
+}
+
+.table__title__column__power {
     width: 12.5%;
 }
 
-.table__item__coefficient {
+.table__title__column__rate {
     width: 12.5%;
 }
 
-.table__item__cos {
+.table__title__column__cos {
     width: 12.5%;
 }
 
-.table__item__percent {
+.table__title__column__percent {
     width: 12.5%;
 }
 
-.table__item__active__power {
+.table__title__column__active__power {
     width: 12.5%;
 }
 
-.table__item__reactive__power {
+.table__title__column__reactive__power {
+    width: 12.5%;
+}
+
+.table__column__number {
+    width: 5%;
+}
+
+.table__column__name {
+    width: 15%;
+}
+
+.table__column__count {
+    width: 5%;
+}
+
+.table__column__power {
+    width: 12.5%;
+}
+
+.table__column__rate {
+    width: 12.5%;
+}
+
+.table__column__cos {
+    width: 12.5%;
+}
+
+.table__column__percent {
+    width: 12.5%;
+}
+
+.table__column__active__power {
+    width: 12.5%;
+}
+
+.table__column__reactive__power {
     width: 12.5%;
 }
 
 .table__input {
-    width: 80%;
-    height: 20px;
-    display: flex;
+    width: 90%;
+    height: 80%;
+    padding: 0;
+    border: 1px solid var(--dark_blue);
+    border-radius: 6px;
     text-align: center;
+    font-size: 20px;
+}
+
+.table__result__number {
+    width: 5%;
+}
+
+.table__result__name {
+    width: 15%;
+}
+
+.table__result__count {
+    width: 5%;
+}
+
+.table__result__power {
+    width: 12.5%;
+}
+
+.table__result__rate {
+    width: 12.5%;
+}
+
+.table__result__cos {
+    width: 12.5%;
+}
+
+.table__result__percent {
+    width: 12.5%;
+}
+
+.table__result__active__power {
+    width: 12.5%;
+}
+
+.table__result__reactive__power {
+    width: 12.5%;
 }
