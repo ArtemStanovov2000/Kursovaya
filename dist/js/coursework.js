@@ -99,28 +99,46 @@ const tableCellReactivePower = document.createElement("th");
 tableCellReactivePower.classList.add("table__column", "table__result__reactive__power");
 tableRow.appendChild(tableCellReactivePower);
 
+const calculatePowerMachineOfHRA = function calculatePowerMachineOfHRA() {
+    let sumCountValue = 0;
+    let sumPowerValue = 0;
+    let sumActivePowerValue = 0;
+    let sumReactivePowerValue = 0;
+    tableItem.forEach((item, index) => {
+        sumCountValue += Number(AllInputCount[index].value);
+        sumPowerValue += Number(AllInputPower[index].value);
+        let activePowerValue = Number(AllInputPower[index].value) * Number(AllInputRate[index].value);
+        sumActivePowerValue += activePowerValue;
+        tableColumnActivePower[index].innerHTML = activePowerValue.toFixed(2);
+        let reactivePowerValue = activePowerValue * Number(AllInputCos[index].value);
+        sumReactivePowerValue += reactivePowerValue;
+        tableColumnReactivePower[index].innerHTML = reactivePowerValue.toFixed(2);
+    });
+    tableCellCount.innerHTML = sumCountValue.toFixed(0);
+    tableCellPower.innerHTML = sumPowerValue.toFixed(2);
+    tableCellActivePower.innerHTML = sumActivePowerValue.toFixed(2);
+    tableCellReactivePower.innerHTML = sumReactivePowerValue.toFixed(2);
+}
+
+const validationRowOfTable = function validationRowOfTable (row, validateInput, validateInput1, validateInput2) {
+    row.forEach((item, index) => {
+        if (Number(validateInput[index].value) > 100 || Number(validateInput1[index].value) > 1 || Number(validateInput2[index].value) < 1) {
+            row[index].style.backgroundColor = 'rgb(222, 20, 32)';
+        } else {
+            row[index].style.backgroundColor = '';
+        }
+    });
+}
+
 table.addEventListener("change", evt => {
     if (evt.target.classList.contains("table__input")) {
-        let sumCountValue = 0;
-        let sumPowerValue = 0;
-        let sumActivePowerValue = 0;
-        let sumReactivePowerValue = 0;
-        tableItem.forEach((item, index) => {
-            sumCountValue += Number(AllInputCount[index].value);
-            sumPowerValue += Number(AllInputPower[index].value);
-            let activePowerValue = Number(AllInputPower[index].value) * Number(AllInputRate[index].value);
-            sumActivePowerValue += activePowerValue;
-            tableColumnActivePower[index].innerHTML = activePowerValue.toFixed(2);
-            let reactivePowerValue = activePowerValue * Number(AllInputCos[index].value);
-            sumReactivePowerValue += reactivePowerValue;
-            tableColumnReactivePower[index].innerHTML = reactivePowerValue.toFixed(2);
-        });
-        tableCellCount.innerHTML = sumCountValue.toFixed(0);
-        tableCellPower.innerHTML = sumPowerValue.toFixed(2);
-        tableCellActivePower.innerHTML = sumActivePowerValue.toFixed(2);
-        tableCellReactivePower.innerHTML = sumReactivePowerValue.toFixed(2);
+        calculatePowerMachineOfHRA();
+        validationRowOfTable(tableItem, AllInputPercent, AllInputRate, AllInputCos);
     }
 });
+
+
+
 
 
 

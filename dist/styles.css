@@ -891,7 +891,7 @@
 
 .table {
   width: 100%;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .table__row {
@@ -1026,6 +1026,11 @@
 
 .table__result__reactive__power {
   width: 12.5%;
+}
+
+.formula {
+  display: flex;
+  justify-content: space-between;
 }
 
 @font-face {
