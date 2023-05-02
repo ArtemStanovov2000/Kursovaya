@@ -1,6 +1,12 @@
 const table = document.querySelector(".table__body")
 let tableItem = document.querySelectorAll(".table__item")
+const listPowerSettingCalculation = document.querySelector(".list__power__setting__calculation")
+
 const tableLineCount = 7;
+const MAX_VALUE_PERCENT = 100;
+const MAX_VALUE_COS = 1;
+const MAX_VALUE_RATE = 1;
+const COUNT_PERCENT_IN_UNIT = 100;
 
 //создаем строки таблицы
 for (let i = 0; i < tableLineCount; i++) {
@@ -109,23 +115,54 @@ const calculatePowerMachineOfHRA = function calculatePowerMachineOfHRA() {
         sumPowerValue += Number(AllInputPower[index].value);
         let activePowerValue = Number(AllInputPower[index].value) * Number(AllInputRate[index].value);
         sumActivePowerValue += activePowerValue;
-        tableColumnActivePower[index].innerHTML = activePowerValue.toFixed(2);
+        tableColumnActivePower[index].textContent = activePowerValue.toFixed(2);
         let reactivePowerValue = activePowerValue * Number(AllInputCos[index].value);
         sumReactivePowerValue += reactivePowerValue;
-        tableColumnReactivePower[index].innerHTML = reactivePowerValue.toFixed(2);
+        tableColumnReactivePower[index].textContent = reactivePowerValue.toFixed(2);
     });
-    tableCellCount.innerHTML = sumCountValue.toFixed(0);
-    tableCellPower.innerHTML = sumPowerValue.toFixed(2);
-    tableCellActivePower.innerHTML = sumActivePowerValue.toFixed(2);
-    tableCellReactivePower.innerHTML = sumReactivePowerValue.toFixed(2);
+    tableCellCount.textContent = sumCountValue.toFixed(0);
+    tableCellPower.textContent = sumPowerValue.toFixed(2);
+    tableCellActivePower.textContent = sumActivePowerValue.toFixed(2);
+    tableCellReactivePower.textContent = sumReactivePowerValue.toFixed(2);
 }
 
-const validationRowOfTable = function validationRowOfTable (row, validateInput, validateInput1, validateInput2) {
+const comparisonSignMoreThen = ">"
+const comparisonSignLessThan = "<"
+
+const validationCellOfRow = function validationCellOfRow(row, validateInput, validValue, comparison) {
     row.forEach((item, index) => {
-        if (Number(validateInput[index].value) > 100 || Number(validateInput1[index].value) > 1 || Number(validateInput2[index].value) < 1) {
-            row[index].style.backgroundColor = 'rgb(222, 20, 32)';
+        if (comparison == ">") {
+            if (Number(validateInput[index].value) > validValue) {
+                validateInput[index].style.backgroundColor = 'rgb(222, 20, 32)';
+            } else {
+                validateInput[index].style.backgroundColor = '';
+            }
         } else {
-            row[index].style.backgroundColor = '';
+            if (Number(validateInput[index].value) < validValue) {
+                validateInput[index].style.backgroundColor = 'rgb(222, 20, 32)';
+            } else {
+                validateInput[index].style.backgroundColor = '';
+            }
+        }
+    });
+}
+
+const validationRowOfTable = function validationRowOfTable() {
+    validationCellOfRow(tableItem, AllInputPercent, MAX_VALUE_PERCENT, comparisonSignMoreThen);
+    validationCellOfRow(tableItem, AllInputCos, MAX_VALUE_COS, comparisonSignLessThan);
+    validationCellOfRow(tableItem, AllInputRate, MAX_VALUE_RATE, comparisonSignMoreThen);
+}
+
+const getPercentLess100 = function getPercentLess100(row, validateInput) {
+    listPowerSettingCalculation.innerHTML = "";
+    row.forEach((item, index) => {
+        if (Number(validateInput[index].value) < MAX_VALUE_PERCENT) {
+            let PVPercent = Number(validateInput[index].value)/COUNT_PERCENT_IN_UNIT;
+            let fullPower = (Number(AllInputPower[index].value) / Math.sqrt(PVPercent)).toFixed(1);
+            const itemPVCalculateTable = document.createElement("li");
+            itemPVCalculateTable.classList.add("power__setting__calculation__item");
+            itemPVCalculateTable.textContent = `Руст` + `${index + 1}`+` `+`=`+` `+`${fullPower}`+` `+`*`+` `+`√`+`${PVPercent}`
+            listPowerSettingCalculation.appendChild(itemPVCalculateTable);
         }
     });
 }
@@ -133,10 +170,10 @@ const validationRowOfTable = function validationRowOfTable (row, validateInput, 
 table.addEventListener("change", evt => {
     if (evt.target.classList.contains("table__input")) {
         calculatePowerMachineOfHRA();
-        validationRowOfTable(tableItem, AllInputPercent, AllInputRate, AllInputCos);
+        validationRowOfTable();
+        getPercentLess100(tableItem, AllInputPercent);
     }
 });
-
 
 
 

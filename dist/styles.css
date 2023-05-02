@@ -1033,6 +1033,22 @@
   justify-content: space-between;
 }
 
+.list__power {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.power__setting__calculation__item {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: Oswald;
+  font-size: 25px;
+  line-height: 25px;
+}
+
 @font-face {
   font-family: "Oswald";
   src: local("Oswald"), url(Oswald/Oswald-VariableFont_wght.ttf);
