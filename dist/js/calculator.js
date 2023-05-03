@@ -39,19 +39,19 @@ const conversionFromKiloToUnits = function conversionFromKiloToUnits(value) {
 amperageConversionButton.addEventListener("click", () => {
     const amperageValue = document.getElementById("amperage_input").value;
     const amperageResultOutputElement = document.getElementById("amperage_result");
-    amperageResultOutputElement.innerHTML = conversionFromKiloToUnits(amperageValue);
+    amperageResultOutputElement.textContent = conversionFromKiloToUnits(amperageValue);
 });
 
 voltageConversionButton.addEventListener("click", () => {
     const voltageValue = document.getElementById("voltage_input").value;
     const voltageResultOutputElement = document.getElementById("voltage_result");
-    voltageResultOutputElement.innerHTML = conversionFromKiloToUnits(voltageValue);
+    voltageResultOutputElement.textContent = conversionFromKiloToUnits(voltageValue);
 });
 
 electricalPowerConversionButton.addEventListener("click", () => {
     const electricalPowerValue = document.getElementById("electrical_power_input").value;
     const electricalPowerResultOutputElement = document.getElementById("electrical_power_result");
-    electricalPowerResultOutputElement.innerHTML = conversionFromKiloToUnits(electricalPowerValue);
+    electricalPowerResultOutputElement.textContent = conversionFromKiloToUnits(electricalPowerValue);
 });
 
 fullPowerConversionButton.addEventListener("click", () => {
@@ -63,8 +63,8 @@ fullPowerConversionButton.addEventListener("click", () => {
     console.log(fullPowerResult);
 
     if (fullPowerResult < MAX_INCREASED_ACCURACY_NUMBER) {
-        fullPowerResultOutputElement.innerHTML = fullPowerResult.toFixed(3);
+        fullPowerResultOutputElement.textContent = fullPowerResult.toFixed(3);
     } else {
-        fullPowerResultOutputElement.innerHTML = fullPowerResult.toFixed(2);
+        fullPowerResultOutputElement.textContent = fullPowerResult.toFixed(2);
     }
 });

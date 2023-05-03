@@ -1,6 +1,8 @@
 const table = document.querySelector(".table__body")
 let tableItem = document.querySelectorAll(".table__item")
 const listPowerSettingCalculation = document.querySelector(".list__power__setting__calculation")
+const listActivePowerSettingCalculation = document.querySelector(".list__active__power__setting__calculation")
+const listReactivePowerSettingCalculation = document.querySelector(".list__reactive__power__setting__calculation")
 
 const tableLineCount = 7;
 const MAX_VALUE_PERCENT = 100;
@@ -153,17 +155,40 @@ const validationRowOfTable = function validationRowOfTable() {
     validationCellOfRow(tableItem, AllInputRate, MAX_VALUE_RATE, comparisonSignMoreThen);
 }
 
-const getPercentLess100 = function getPercentLess100(row, validateInput) {
+const getPercentLessUnitList = function getPercentLessUnitList(row, validateInput) {
     listPowerSettingCalculation.innerHTML = "";
     row.forEach((item, index) => {
         if (Number(validateInput[index].value) < MAX_VALUE_PERCENT) {
-            let PVPercent = Number(validateInput[index].value)/COUNT_PERCENT_IN_UNIT;
+            let PVPercent = Number(validateInput[index].value) / COUNT_PERCENT_IN_UNIT;
             let fullPower = (Number(AllInputPower[index].value) / Math.sqrt(PVPercent)).toFixed(1);
             const itemPVCalculateTable = document.createElement("li");
             itemPVCalculateTable.classList.add("power__setting__calculation__item");
-            itemPVCalculateTable.textContent = `Руст` + `${index + 1}`+` `+`=`+` `+`${fullPower}`+` `+`*`+` `+`√`+`${PVPercent}`
+            itemPVCalculateTable.textContent = `Руст` + `${index + 1}` + ` ` + `=` + ` ` + `${fullPower}` + ` ` + `*` + ` ` + `√` + `${PVPercent}`
             listPowerSettingCalculation.appendChild(itemPVCalculateTable);
         }
+    });
+}
+
+const calculateActivePoverList = function calculateActivePoverList(row, value1, value2) {
+    listActivePowerSettingCalculation.innerHTML = "";
+    row.forEach((item, index) => {
+        const itemActivePoverCalculate = document.createElement("li");
+        itemActivePoverCalculate.classList.add("power__setting__calculation__item");
+        let activePover = value1[index].value * value2[index].value
+        itemActivePoverCalculate.textContent = `Рсм` + `${index + 1}` + ` ` + `=` + ` ` + `${value1[index].value}` + ` ` + `*` + ` ` + `${value2[index].value}` + ` ` + `=` + ` ` + `${activePover.toFixed(2)}` + ` ` + `кВт`
+        listActivePowerSettingCalculation.appendChild(itemActivePoverCalculate);
+    });
+}
+
+const calculateReactivePoverList = function calculateReactivePoverList(row, value1, value2, value3) {
+    listReactivePowerSettingCalculation.innerHTML = "";
+    row.forEach((item, index) => {
+        const itemReactivePoverCalculate = document.createElement("li");
+        itemReactivePoverCalculate.classList.add("power__setting__calculation__item");
+        let activePover = value1[index].value * value2[index].value;
+        let reactivePover = activePover * value3[index].value;
+        itemReactivePoverCalculate.textContent = `𝑄см` + `${index + 1}` + ` ` + `=` + ` ` + `${activePover.toFixed(2)}` + ` ` + `*` + ` ` + `${value2[index].value}` + ` ` + `=` + ` ` + `${reactivePover.toFixed(2)}` + ` ` + `квар`
+        listReactivePowerSettingCalculation.appendChild(itemReactivePoverCalculate);
     });
 }
 
@@ -171,8 +196,10 @@ table.addEventListener("change", evt => {
     if (evt.target.classList.contains("table__input")) {
         calculatePowerMachineOfHRA();
         validationRowOfTable();
-        getPercentLess100(tableItem, AllInputPercent);
-    }
+        getPercentLessUnitList(tableItem, AllInputPercent);
+        calculateActivePoverList(tableItem, AllInputPower, AllInputRate);
+        calculateReactivePoverList(tableItem, AllInputPower, AllInputRate, AllInputCos);
+    };
 });
 
 

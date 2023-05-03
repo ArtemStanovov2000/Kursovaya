@@ -886,7 +886,7 @@
 .coursework__deck {
   font-family: Oswald;
   font-size: 25px;
-  line-height: 35px;
+  line-height: 25px;
 }
 
 .table {
@@ -1047,6 +1047,22 @@
   font-family: Oswald;
   font-size: 25px;
   line-height: 25px;
+}
+
+.formula__with__fraction {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.formula__deck {
+  margin: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.formula__deck:first-child {
+  border-bottom: 2px solid black;
 }
 
 @font-face {
