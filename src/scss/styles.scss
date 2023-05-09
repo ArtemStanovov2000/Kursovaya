@@ -19,6 +19,7 @@
     --dark_blue: #0085FF;
 
     --white: #ffffff;
+    --white_darker: #f0f0f0;
     --light_grey: #D3D3D3;
     --grey: #545454;
     --black: #000000;
@@ -45,6 +46,10 @@
 body {
     background-color: var(--light_blue);
     margin: 0;
+}
+
+main {
+    margin-bottom: 40px;
 }
 
 .visually-hidden {

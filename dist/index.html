@@ -44,7 +44,8 @@
                     <button class="form__button" id="open_reg_form_btn" type="button">Создать аккаунт</button>
                 </div>
             </form>
-            <form class="form__login visually-hidden" action="#" id="form_login_open_reg" method="post" target="_blank" autocomplete="off">
+            <form class="form__login visually-hidden" action="#" id="form_login_open_reg" method="post" target="_blank"
+                autocomplete="off">
                 <button class="form__login__close__btn" id="form_reg_close_btn"></button>
                 <h2 class="form__title">Зарегестрируйтесь</h2>
                 <fieldset class="fieldset">
@@ -197,9 +198,30 @@
                         </ul>
                     </article>
                     <article class="weather">
-                        <p id="weather_temperature">1</p>
-                        <p id="weather_rain">2</p>
-                        <p id="weather_wind">3</p>
+                        <div class="weather__parameter__box">
+                            <p class="weather__parameter__deck">температура за окном</p>
+                            <div class="weather__parameter">
+                                <p class="weather__item" id="weather_temperature">1</p>
+                                <div class="weather__item weather__item--temperature" id="weather_temperature_icon"></div>
+                                <div class="weather__item weather__deck" id="weather_temperature_deck"></div>
+                            </div>
+                        </div>
+                        <div class="weather__parameter__box">
+                            <p class="weather__parameter__deck">что там с дождем?</p>
+                            <div class="weather__parameter">
+                                <p class="weather__item" id="weather_rain">2</p>
+                                <div class="weather__item" id="weather_rain_icon"></div>
+                                <div class="weather__item weather__deck" id="weather_rain_deck"></div>
+                            </div>
+                        </div>
+                        <div class="weather__parameter__box">
+                            <p class="weather__parameter__deck">сила ветра</p>
+                            <div class="weather__parameter">
+                                <p class="weather__item" id="weather_wind">3</p>
+                                <div class="weather__item" id="weather_wind_icon"></div>
+                                <div class="weather__item weather__deck" id="weather_wind_deck"></div>
+                            </div>
+                        </div>
                     </article>
                 </section>
                 <section class="reference">
@@ -340,7 +362,8 @@
                         <li class="promo__item">
                             <h2 class="promo__item__title">Ожидаемая оценка</h2>
                             <div class="range__box">
-                                <input type="range" class="promo__list__input" id="estimation" min="1" max="3" value="3" step="1">
+                                <input type="range" class="promo__list__input" id="estimation" min="1" max="3" value="3"
+                                    step="1">
                                 <div class="range__rate__box">
                                     <span class="range__rate">3</span>
                                     <span class="range__rate">4</span>
@@ -356,7 +379,8 @@
                         <li class="promo__item">
                             <h2 class="promo__item__title">Время ожидания</h2>
                             <div class="range__box">
-                                <input type="range" class="promo__list__input" id="waiting_time" min="1" max="22" value="2" step="1">
+                                <input type="range" class="promo__list__input" id="waiting_time" min="1" max="22"
+                                    value="2" step="1">
                                 <div class="range__rate__box">
                                     <span class="range__rate">1</span>
                                     <span class="range__rate">2</span>
@@ -377,7 +401,8 @@
                         <li class="promo__item">
                             <h2 class="promo__item__title">Количество пунктов</h2>
                             <div class="range__box">
-                                <input type="range" class="promo__list__input" id="number_of_item" min="1" max="9" value="2" step="1">
+                                <input type="range" class="promo__list__input" id="number_of_item" min="1" max="9"
+                                    value="2" step="1">
                                 <div class="range__rate__box">
                                     <span class="range__rate">1</span>
                                     <span class="range__rate">2</span>
