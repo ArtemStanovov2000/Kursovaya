@@ -60,7 +60,6 @@ fullPowerConversionButton.addEventListener("click", () => {
     const fullPowerResultOutputElement = document.getElementById("full_power");
 
     const fullPowerResult = Math.sqrt(Math.pow(activePowerValue, 2) + Math.pow(reactivePowerValue, 2));
-    console.log(fullPowerResult);
 
     if (fullPowerResult < MAX_INCREASED_ACCURACY_NUMBER) {
         fullPowerResultOutputElement.textContent = fullPowerResult.toFixed(3);
