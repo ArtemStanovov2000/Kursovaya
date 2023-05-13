@@ -24,8 +24,6 @@ const selectingRadioButtonValue = function selectingRadioButtonValue(radioButton
 const conversionFromKiloToUnits = function conversionFromKiloToUnits(value) {
     if (value > MAX_INPUT_VALUE) {
         value = MAX_INPUT_VALUE
-    } else {
-        value = value
     }
     let result = value * UNITS_IN_KILO;
     if (Number.isInteger(result)) {
