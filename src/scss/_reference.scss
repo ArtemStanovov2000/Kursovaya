@@ -213,6 +213,11 @@
     background-color: var(--basic_green);
 }
 
+.conversion__button--check {
+    background-color: var(--basic_green3);
+    box-shadow: 0px 0px 8px 6px var(--basic_green3);
+}
+
 .conversion__button--button {
     padding-left: 40px;
     padding-right: 40px;

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navigation">
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a href="index.html" class="navigation__item__link">Главная</a></li>
+                    <li class="navigation__item"><a href="https://edinici.ru" target="_blank"
+                            class="navigation__item__link">Конвертер</a></li>
+                    <li class="navigation__item" id="about"><a href="#" class="navigation__item__link">О нас</a></li>
+                    <li class="navigation__item" id="form_login_open_link"><a href="#"
+                            class="navigation__item__link">Войти</a></li>
+                </ul>
+            </nav>
+            <article class="nav__article visually-hidden">
+                <button class="form__login__close__btn" id="about_close_btn"></button>
+                <h2 class="nav__article__title">О нас:</h2>
+                <p class="nav__article__deck">наша команда опытных студентов прилагала колоссальные усилия решая все
+                    вручную, и сделала все, чтобы вам не пришлось делать тоже самое.</p>
+            </article>
+            <form class="form__login visually-hidden" id="form_login_come" action="#" method="post" target="_blank"
+                autocomplete="off">
+                <button class="form__login__close__btn" id="form_login_close_btn"></button>
+                <h2 class="form__title">Войдите в аккаунт</h2>
+                <fieldset class="fieldset">
+                    <ul class="field__login__list">
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="name">Логин:</label>
+                            <input class="field__login__item__input" type="login" name="login" placeholder="loob_job123"
+                                id="login_pole" minlength="8" maxlength="20" required>
+                        </li>
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="age">Пароль:</label>
+                            <input class="field__login__item__input" type="password" name="password"
+                                placeholder="******" id="password_pole" minlength="10" maxlength="25" required>
+                        </li>
+                    </ul>
+                </fieldset>
+                <div class="form__button__box">
+                    <button class="form__button" id="submit_login_form_btn" type="submit">Войти</button>
+                    <button class="form__button" id="open_reg_form_btn" type="button">Создать аккаунт</button>
+                </div>
+            </form>
+            <form class="form__login visually-hidden" action="#" id="form_login_open_reg" method="post" target="_blank"
+                autocomplete="off">
+                <button class="form__login__close__btn" id="form_reg_close_btn"></button>
+                <h2 class="form__title">Зарегистрируйтесь</h2>
+                <fieldset class="fieldset">
+                    <ul class="field__login__list">
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="name">Имя:*</label>
+                            <input class="field__login__item__input" type="text" name="name" placeholder="Иван Иванов"
+                                id="name_pole_reg_form" required>
+                        </li>
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="age">Возраст:</label>
+                            <input class="field__login__item__input" type="text" name="age" placeholder="27"
+                                id="age_pole_reg_form">
+                        </li>
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="email">E-mail:*</label>
+                            <input class="field__login__item__input" type="email" name="mail"
+                                placeholder="ivanov@gmail.com" id="email_pole_reg_form" required>
+                        </li>
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="phone_number">Телефон:*</label>
+                            <input class="field__login__item__input" type="tel" name="phone" placeholder="88005553535"
+                                id="phone_number_pole_reg_form" maxlength="21" required>
+                        </li>
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="name">Логин:</label>
+                            <input class="field__login__item__input" type="login" name="login" placeholder="loob_job123"
+                                id="login_pole_reg_form">
+                        </li>
+                        <li class="field__login__item">
+                            <label class="field__login__item__label" for="age">Пароль:</label>
+                            <input class="field__login__item__input" type="password" name="password"
+                                placeholder="******" id="password_pole_reg_form">
+                        </li>
+                    </ul>
+                </fieldset>
+                <div class="form__regist__box">
+                    <button type="submit" class="form__button" id="regist_button_reg_form">Зарегестрироваться</button>
+                    <p class="form__regist__box__deck">* — Обязательные поля</p>
+                </div>
+            </form>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="coursework__third__item">
+                <h2 class="coursework__item__title">4 Выбор числа и мощности трансформатора</h2>
+                <p class="coursework__deck">Определяем расчётную нагрузку на выводе низкого напряжения 0.38 кВ
+                    трансформаторной подстанции цеха. Определяем группой коэффициент использования и эффективное число
+                    электроприемников.</p>
+            </section>
+        </div>
+    </main>
+    <script src="/src/js/coursework.js"></script>
+    <script src="/src/js/form.js"></script>
+</body>
+
+</html>

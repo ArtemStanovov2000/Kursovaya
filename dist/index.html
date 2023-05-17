@@ -14,13 +14,18 @@
         <div class="container">
             <nav class="navigation">
                 <ul class="navigation__list">
-                    <li class="navigation__item"><a href="#" class="navigation__item__link">Конвертер</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__item__link">О нас</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__item__link">Каталог услуг</a></li>
+                    <li class="navigation__item"><a class="navigation__item__link">Главная</a></li>
+                    <li class="navigation__item"><a href="https://edinici.ru" target="_blank" class="navigation__item__link">Конвертер</a></li>
+                    <li class="navigation__item" id="about"><a href="#" class="navigation__item__link">О нас</a></li>
                     <li class="navigation__item" id="form_login_open_link"><a href="#"
-                            class="navigation__item__link">Войдите</a></li>
+                            class="navigation__item__link">Войти</a></li>
                 </ul>
             </nav>
+            <article class="nav__article visually-hidden">
+                <button class="form__login__close__btn" id="about_close_btn"></button>
+                <h2 class="nav__article__title">О нас:</h2>
+                <p class="nav__article__deck">наша команда опытных студентов прилагала колоссальные усилия решая все вручную, и сделала все, чтобы вам не пришлось делать тоже самое.</p>
+            </article>
             <form class="form__login visually-hidden" id="form_login_come" action="#" method="post" target="_blank"
                 autocomplete="off">
                 <button class="form__login__close__btn" id="form_login_close_btn"></button>
@@ -40,14 +45,14 @@
                     </ul>
                 </fieldset>
                 <div class="form__button__box">
-                    <button class="form__button" id="submit_login_form_btn" type="submit">Отправить</button>
+                    <button class="form__button" id="submit_login_form_btn" type="submit">Войти</button>
                     <button class="form__button" id="open_reg_form_btn" type="button">Создать аккаунт</button>
                 </div>
             </form>
             <form class="form__login visually-hidden" action="#" id="form_login_open_reg" method="post" target="_blank"
                 autocomplete="off">
                 <button class="form__login__close__btn" id="form_reg_close_btn"></button>
-                <h2 class="form__title">Зарегестрируйтесь</h2>
+                <h2 class="form__title">Зарегистрируйтесь</h2>
                 <fieldset class="fieldset">
                     <ul class="field__login__list">
                         <li class="field__login__item">
@@ -58,7 +63,7 @@
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="age">Возраст:</label>
                             <input class="field__login__item__input" type="text" name="age" placeholder="27"
-                                id="age_pole_reg_form" required>
+                                id="age_pole_reg_form">
                         </li>
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="email">E-mail:*</label>
@@ -67,23 +72,23 @@
                         </li>
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="phone_number">Телефон:*</label>
-                            <input class="field__login__item__input" type="tel" name="phone"
-                                placeholder="+7 000 000-00-00" id="phone_number_pole_reg_form" maxlength="21" required>
+                            <input class="field__login__item__input" type="tel" name="phone" placeholder="88005553535"
+                                id="phone_number_pole_reg_form" maxlength="21" required>
                         </li>
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="name">Логин:</label>
                             <input class="field__login__item__input" type="login" name="login" placeholder="loob_job123"
-                                id="login_pole_reg_form" required>
+                                id="login_pole_reg_form">
                         </li>
                         <li class="field__login__item">
                             <label class="field__login__item__label" for="age">Пароль:</label>
                             <input class="field__login__item__input" type="password" name="password"
-                                placeholder="******" id="password_pole_reg_form" required>
+                                placeholder="******" id="password_pole_reg_form">
                         </li>
                     </ul>
                 </fieldset>
                 <div class="form__regist__box">
-                    <button type="submit" class="form__button" id="regist_button_reg_form">Зарегистроваться</button>
+                    <button type="submit" class="form__button" id="regist_button_reg_form">Зарегестрироваться</button>
                     <p class="form__regist__box__deck">* — Обязательные поля</p>
                 </div>
             </form>
@@ -112,19 +117,19 @@
                     <article class="coursework">
                         <h2 class="coursework__title">Кривенкова</h2>
                         <ul class="coursework__list">
-                            <li class="coursework__item coursework__item--development">
-                                <a href="third_item.html" target="_blank" class="coursework__item__link">
+                            <li class="coursework__item">
+                                <a href="third_item.html" class="coursework__item__link">
                                     <h3 class="coursework__item__link__title">3-й пункт</h3>
                                     <p class="coursework__item__link__deck">Расчет ШРА</p>
                                 </a>
                             </li>
-                            <li class="coursework__item">
-                                <a href="#" target="_blank" class="coursework__item__link">
+                            <li class="coursework__item coursework__item--development">
+                                <a href="fourth_item.html" class="coursework__item__link">
                                     <h3 class="coursework__item__link__title">4-й пункт</h3>
                                     <p class="coursework__item__link__deck">Расчет КТП</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--development">
+                            <li class="coursework__item coursework__item--absent">
                                 <a href="#" class="coursework__item__link">
                                     <h3 class="coursework__item__link__title">5-й пункт</h3>
                                     <p class="coursework__item__link__deck">Расчет КВА</p>
@@ -136,31 +141,31 @@
                                     <p class="coursework__item__link__deck">Кабель КТП</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--development">
+                            <li class="coursework__item coursework__item--absent">
                                 <a href="#" class="coursework__item__link">
                                     <h3 class="coursework__item__link__title">7-й пункт</h3>
                                     <p class="coursework__item__link__deck">Расчёт ШМА</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--development">
+                            <li class="coursework__item coursework__item--absent">
                                 <a href="#" class="coursework__item__link">
                                     <h3 class="coursework__item__link__title">8-й пункт</h3>
                                     <p class="coursework__item__link__deck">Провода</p>
                                 </a>
                             </li>
-                            <li class="coursework__item">
+                            <li class="coursework__item coursework__item--absent">
                                 <a href="#" class="coursework__item__link">
                                     <h3 class="coursework__item__link__title">9-й пункт</h3>
                                     <p class="coursework__item__link__deck">Защита</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--development">
+                            <li class="coursework__item coursework__item--absent">
                                 <a href="#" class="coursework__item__link">
                                     <h3 class="coursework__item__link__title">10-й пункт</h3>
                                     <p class="coursework__item__link__deck">Iкз КТП</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--development">
+                            <li class="coursework__item coursework__item--absent">
                                 <a href="#" class="coursework__item__link">
                                     <h3 class="coursework__item__link__title">12-й пункт</h3>
                                     <p class="coursework__item__link__deck">Выключатель</p>
@@ -171,19 +176,19 @@
                     <article class="coursework">
                         <h2 class="coursework__title">Дорогова</h2>
                         <ul class="coursework__list coursework__list--practical">
-                            <li class="coursework__item">
+                            <li class="coursework__item coursework__item--absent">
                                 <a href="#" class="coursework__item__link">
                                     <h3 class="coursework__item__link__title">24</h3>
                                     <p class="coursework__item__link__deck">Практическая</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--development">
+                            <li class="coursework__item coursework__item--absent">
                                 <a href="#" class="coursework__item__link">
                                     <h3 class="coursework__item__link__title">25</h3>
                                     <p class="coursework__item__link__deck">Практическая</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--development">
+                            <li class="coursework__item coursework__item--absent">
                                 <a href="#" class="coursework__item__link">
                                     <h3 class="coursework__item__link__title">26</h3>
                                     <p class="coursework__item__link__deck">Практическая</p>
@@ -202,7 +207,8 @@
                             <p class="weather__parameter__deck">температура за окном</p>
                             <div class="weather__parameter">
                                 <p class="weather__item" id="weather_temperature">1</p>
-                                <div class="weather__item weather__item--temperature" id="weather_temperature_icon"></div>
+                                <div class="weather__item weather__item--temperature" id="weather_temperature_icon">
+                                </div>
                                 <div class="weather__item weather__deck" id="weather_temperature_deck"></div>
                             </div>
                         </div>
@@ -229,31 +235,34 @@
                     <ul class="reference__list">
                         <h3 class="reference__list__title">Ссылки на источники</h3>
                         <li class="reference__item">
-                            <a href="#" class="reference__item__link">Закон Ома</a>
+                            <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BA%D0%BE%D0%BD_%D0%9E%D0%BC%D0%B0" class="reference__item__link" target="_blank">Закон Ома</a>
                         </li>
                         <li class="reference__item">
-                            <a href="#" class="reference__item__link">Трансформаторы</a>
+                            <a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B0%D0%BD%D1%81%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%BE%D1%80" class="reference__item__link" target="_blank">Трансформаторы</a>
                         </li>
                         <li class="reference__item">
-                            <a href="#" class="reference__item__link">Б.Ю. Липкин Электроснабжение</a>
+                            <a href="https://www.studmed.ru/lipkin-byu-elektrosnabzhenie-promyshlennyh-predpriyatiy-i-ustanovok_f3209ce2859.html?ysclid=lhqoz9lmjl356419640" class="reference__item__link" target="_blank">Б.Ю. Липкин Электроснабжение</a>
                         </li>
                         <li class="reference__item">
-                            <a href="#" class="reference__item__link">Рубильники</a>
+                            <a href="https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA" class="reference__item__link" target="_blank">Рубильники</a>
                         </li>
                         <li class="reference__item">
-                            <a href="#" class="reference__item__link">Шинопроводы</a>
+                            <a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B8%D0%BD%D0%B0_(%D1%8D%D0%BD%D0%B5%D1%80%D0%B3%D0%BE%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0)" class="reference__item__link" target="_blank">Шинопроводы</a>
                         </li>
                         <li class="reference__item">
-                            <a href="#" class="reference__item__link">Станки</a>
+                            <a href="https://www.stanki.ru/catalog/raskroechnye_tsentry/filato/?utm_source=yandex&utm_medium=cpc&utm_campaign=Mebel_Formatno_raskroechnye_centry_Avtotargeting&utm_term=---autotargeting&utm_content=Celevye_zaprosy_AD_4&_openstat=ZGlyZWN0LnlhbmRleC5ydTs4Mzc3MjQ1MjsxNDA2ODQ1ODIyNDt5YW5kZXgucnU6cHJlbWl1bQ&yclid=2381495257765773311"
+                                class="reference__item__link" target="_blank">Станки</a>
                         </li>
                         <li class="reference__item">
-                            <a href="#" class="reference__item__link">PhotoMath</a>
+                            <a href="https://photomath.com/" class="reference__item__link" target="_blank">PhotoMath</a>
                         </li>
                         <li class="reference__item">
-                            <a href="#" class="reference__item__link">Асинхронный двигатель</a>
+                            <a href="https://ru.wikipedia.org/wiki/%D0%90%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0"
+                                class="reference__item__link" target="_blank">Асинхронный двигатель</a>
                         </li>
                         <li class="reference__item">
-                            <a href="#" class="reference__item__link">Короткое замыкание</a>
+                            <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%BE%D0%B5_%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B5"
+                                class="reference__item__link" target="_blank">Короткое замыкание</a>
                         </li>
                     </ul>
                     <ul class="conversion__list">
@@ -371,9 +380,9 @@
                                 </div>
                             </div>
                             <div class="range__rate__deck__box">
-                                <p class="range__rate__deck">3 - только расчет</p>
-                                <p class="range__rate__deck">4 - расчет + описание</p>
-                                <p class="range__rate__deck">5 - как на 4 + подготовка речи</p>
+                                <p class="range__rate__deck">3 - делаем расчеты, остальное сами</p>
+                                <p class="range__rate__deck">4 - делаем расчеты, готовим описание, без речи</p>
+                                <p class="range__rate__deck">5 - как на 4 + отреппетируем речь</p>
                             </div>
                         </li>
                         <li class="promo__item">

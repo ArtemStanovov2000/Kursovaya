@@ -39,6 +39,8 @@ const calculationCostOfCourse = function calculationCostOfCourse() {
     };
 };
 
+calculationCostOfCourse()
+
 promoList.addEventListener("input", evt => {
     if (evt.target.classList.contains("promo__list__input")) {
         calculationCostOfCourse();

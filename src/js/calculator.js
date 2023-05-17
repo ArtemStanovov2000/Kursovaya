@@ -9,13 +9,17 @@ const voltageConversionButton = document.getElementById("voltage_conversion");
 const electricalPowerConversionButton = document.getElementById("power_conversion");
 const fullPowerConversionButton = document.getElementById("full_power_conversion");
 const radioButtonNumbersFractionalDigitsCount = document.querySelectorAll('input[name="amperage"]');
+const radioButton1 = document.querySelectorAll(".conversion__button--label");
 
 let numbersFractionalDigitsCount;
 
 const selectingRadioButtonValue = function selectingRadioButtonValue(radioButtonNumbersFractionalDigitsCount) {
-    radioButtonNumbersFractionalDigitsCount.forEach((radioButton) => {
+    radioButtonNumbersFractionalDigitsCount.forEach((radioButton, index) => {
         if (radioButton.checked) {
             numbersFractionalDigitsCount = radioButton.value;
+            radioButton1[index].classList.add("conversion__button--check");
+        } else {
+            radioButton1[index].classList.remove("conversion__button--check");
         }
         return numbersFractionalDigitsCount;
     });

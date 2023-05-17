@@ -15,6 +15,18 @@ const phoneNumberPoleIRegFormInput = document.getElementById("phone_number_pole_
 const loginPoleIRegFormInput = document.getElementById("login_pole_reg_form");
 const passwordPoleRegFormInput = document.getElementById("password_pole_reg_form");
 
+const navArticleElement = document.querySelector(".nav__article");
+const aboutLinkElement = document.getElementById("about");
+const aboutCloseButtonElement = document.getElementById("about_close_btn");
+
+aboutLinkElement.addEventListener("click", () => {
+    navArticleElement.classList.remove("visually-hidden");
+});
+
+aboutCloseButtonElement.addEventListener("click", () => {
+    navArticleElement.classList.add("visually-hidden");
+});
+
 const MAX_PERMISSIBLE_AGE = 120;
 const MIN_PERMISSIBLE_AGE = 10;
 const MAX_EMAIL_NAME = 40;
