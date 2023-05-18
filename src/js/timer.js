@@ -9,21 +9,24 @@ const DateMonthInput = document.getElementById('Date__months__input');
 const DateDayInput = document.getElementById('Date__days__input');
 const DateHoursInput = document.getElementById('Date__hours__input');
 
+const dateRateBox = document.querySelector(".Date__rate__box");
+const dateRateInput = document.querySelectorAll(".Date__input");
+
 const MAX_VALUE_YEAR = 2;
 
 const TimeCount = {
     MilliSeconds: {
-        inSeconds : 1000
+        inSeconds: 1000
     },
     Seconds: {
-        inMinutes : 60,
-        inHours : 3600,
+        inMinutes: 60,
+        inHours: 3600,
         inDays: 86400,
         inMonth: 2592000,
         inYear: 31536000,
     },
     Minutes: {
-        inHours : 60,
+        inHours: 60,
         inDays: 1440,
         inMonth: 43200,
         inYear: 525600,
@@ -89,7 +92,7 @@ const dateValueInputValidity = function dateValueInputValidity(inputYear, inputM
     }
 };
 
-const hoursValueInputValidity = function hoursValueInputValidity (inputYear, inputMonth, inputDate, inputHours, time, maxValue) {
+const hoursValueInputValidity = function hoursValueInputValidity(inputYear, inputMonth, inputDate, inputHours, time, maxValue) {
     if (((inputYear.value - time.getFullYear()) <= 0) && (inputMonth.value - (time.getMonth() + 1) <= 0) && ((inputDate.value - time.getDate()) <= 0)) {
         if ((inputHours.value - time.getHours()) <= 0) {
             return inputHours.value = (time.getHours() + 1);
@@ -125,13 +128,21 @@ function timer() {
     const nowMoment = now.getTime();
     const projectCompletionDate = new Date();
 
-    yearValueInputValidity(DateFullYearsInput, now, MAX_VALUE_YEAR);
+    DateFullYearsInput.addEventListener("change", () => {
+        yearValueInputValidity(DateFullYearsInput, now, MAX_VALUE_YEAR);
+    });
     const DateFullYearsInputValue = DateFullYearsInput.value;
-    monthValueInputValidity(DateFullYearsInput, DateMonthInput, now, TimeCount.Month.inYear);
+    DateMonthInput.addEventListener("change", () => {
+        monthValueInputValidity(DateFullYearsInput, DateMonthInput, now, TimeCount.Month.inYear);
+    });
     const DateMonthInputValue = DateMonthInput.value;
-    dateValueInputValidity(DateFullYearsInput, DateMonthInput, DateDayInput, now, TimeCount.Days.inMonth);
+    DateDayInput.addEventListener("change", () => {
+        dateValueInputValidity(DateFullYearsInput, DateMonthInput, DateDayInput, now, TimeCount.Days.inMonth);
+    });
     const DateDayInputValue = DateDayInput.value;
-    hoursValueInputValidity(DateFullYearsInput, DateMonthInput, DateDayInput, DateHoursInput, now, TimeCount.Hours.inDays);
+    DateHoursInput.addEventListener("change", () => {
+        hoursValueInputValidity(DateFullYearsInput, DateMonthInput, DateDayInput, DateHoursInput, now, TimeCount.Hours.inDays);
+    });
     const DateHoursInputValue = DateHoursInput.value;
     setTimeValue(projectCompletionDate, DateFullYearsInputValue, DateMonthInputValue, DateDayInputValue, DateHoursInputValue, 0, 0);
     const projectCompletionDateTimeValue = projectCompletionDate.getTime();
