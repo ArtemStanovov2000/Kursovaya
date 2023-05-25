@@ -2,17 +2,17 @@ let weather;
 const date = new Date();
 const hour = date.getHours();
 
-const weatherTemperature = document.getElementById("weather_temperature");
-const weatherRain = document.getElementById("weather_rain");
-const weatherWind = document.getElementById("weather_wind");
+const temperatureValueElement = document.getElementById("temperature-value-element");
+const rainValueElement = document.getElementById("rain-value-element");
+const windValueElement = document.getElementById("wind-value-element");
 
-const weatherTemperatureIcon = document.getElementById("weather_temperature_icon");
-const weatherRainIcon = document.getElementById("weather_rain_icon");
-const weatherWindIcon = document.getElementById("weather_wind_icon");
+const temperatureIconElement = document.getElementById("temperature-icon-element");
+const rainIconElement = document.getElementById("rain-icon-element");
+const windIconElement = document.getElementById("wind-icon-element");
 
-const weatherTemperatureDeck = document.getElementById("weather_temperature_deck");
-const weatherRainDeck = document.getElementById("weather_rain_deck");
-const weatherWindDeck = document.getElementById("weather_wind_deck");
+const temperatureDescElement = document.getElementById("temperature-desc-element");
+const rainDescElement = document.getElementById("rain-desc-element");
+const windDescElement = document.getElementById("wind-desc-element");
 
 navigator.geolocation.getCurrentPosition(position => {
     const { latitude, longitude } = position.coords
@@ -23,97 +23,98 @@ navigator.geolocation.getCurrentPosition(position => {
             })
             .then((data) => {
                 weather = data;
-                weatherTemperature.textContent = weather.hourly.temperature_2m[hour] + `°C`;
-                weatherRain.textContent = weather.hourly.rain[hour] + ` ` + `мм`;
-                weatherWind.textContent = weather.hourly.windspeed_10m[hour] + ` ` + `км/ч`;
+                temperatureValueElement.textContent = weather.hourly.temperature_2m[hour] + `°C`;
+                rainValueElement.textContent = weather.hourly.rain[hour] + ` ` + `мм`;
+                windValueElement.textContent = weather.hourly.windspeed_10m[hour] + ` ` + `км/ч`;
 
                 if (weather.hourly.temperature_2m[hour] < -25) {
-                    weatherTemperatureDeck.textContent = "крайне холодно"
-                    weatherTemperatureIcon.classList.add("weather__temperature__frost");
+                    temperatureDescElement.textContent = "крайне холодно"
+                    temperatureIconElement.classList.add("temperature-frost");
                 } else if (weather.hourly.temperature_2m[hour] >= -25 && weather.hourly.temperature_2m[hour] < -10) {
-                    weatherTemperatureDeck.textContent = "очень холодно"
-                    weatherTemperatureIcon.classList.remove("weather__temperature__frost");
-                    weatherTemperatureIcon.classList.add("weather__temperature__cold");
+                    temperatureDescElement.textContent = "очень холодно"
+                    temperatureIconElement.classList.remove("temperature-frost");
+                    temperatureIconElement.classList.add("temperature-cold");
                 } else if (weather.hourly.temperature_2m[hour] >= -10 && weather.hourly.temperature_2m[hour] < -0) {
-                    weatherTemperatureDeck.textContent = "холодно"
-                    weatherTemperatureIcon.classList.remove("weather__temperature__cold");
-                    weatherTemperatureIcon.classList.add("weather__temperature__thaw");
+                    temperatureDescElement.textContent = "холодно"
+                    temperatureIconElement.classList.remove("temperature-cold");
+                    temperatureIconElement.classList.add("temperature-thaw");
                 } else if (weather.hourly.temperature_2m[hour] >= 0 && weather.hourly.temperature_2m[hour] < 10) {
-                    weatherTemperatureDeck.textContent = "прохладно"
-                    weatherTemperatureIcon.classList.remove("weather__temperature__thaw");
-                    weatherTemperatureIcon.classList.add("weather__temperature__warm");
+                    temperatureDescElement.textContent = "прохладно"
+                    temperatureIconElement.classList.remove("temperature-thaw");
+                    temperatureIconElement.classList.add("temperature-warm");
                 } else if (weather.hourly.temperature_2m[hour] >= 10 && weather.hourly.temperature_2m[hour] < 20) {
-                    weatherTemperatureDeck.textContent = "умеренно"
-                    weatherTemperatureIcon.classList.remove("weather__temperature__warm");
-                    weatherTemperatureIcon.classList.add("weather__temperature__hot");
+                    temperatureDescElement.textContent = "умеренно"
+                    temperatureIconElement.classList.remove("temperature-warm");
+                    temperatureIconElement.classList.add("temperature-hot");
                 } else if (weather.hourly.temperature_2m[hour] >= 20 && weather.hourly.temperature_2m[hour] < 30) {
-                    weatherTemperatureDeck.textContent = "тепло"
-                    weatherTemperatureIcon.classList.remove("weather__temperature__hot");
-                    weatherTemperatureIcon.classList.add("weather__temperature__hotly");
+                    temperatureDescElement.textContent = "тепло"
+                    temperatureIconElement.classList.remove("temperature-hot");
+                    temperatureIconElement.classList.add("temperature-hotly");
                 } else if (weather.hourly.temperature_2m[hour] >= 30) {
-                    weatherTemperatureDeck.textContent = "жарко"
+                    temperatureDescElement.textContent = "жарко"
                 }
 
                 if (weather.hourly.rain[hour] == 0) {
-                    weatherRainIcon.classList.add("weather__rain__sun");
-                    weatherRainDeck.textContent = "безопасно"
+                    rainIconElement.classList.add("rain-sun");
+                    rainDescElement.textContent = "безопасно"
                 } else if (weather.hourly.rain[hour] > 0 && weather.hourly.rain[hour] <= 0.1) {
-                    weatherRainIcon.classList.remove("weather__rain__sun");
-                    weatherRainIcon.classList.add("weather__rain__cloud");
-                    weatherRainDeck.textContent = "безопасно"
+                    rainIconElement.classList.remove("rain-sun");
+                    rainIconElement.classList.add("rain-cloud");
+                    rainDescElement.textContent = "безопасно"
                 } else if (weather.hourly.rain[hour] > 0.1 && weather.hourly.rain[hour] <= 1) {
-                    weatherRainIcon.classList.remove("weather__rain__cloud");
-                    weatherRainIcon.classList.add("weather__rain__small__rain");
-                    weatherRainDeck.textContent = "осторожно"
+                    rainIconElement.classList.remove("rain-cloud");
+                    rainIconElement.classList.add("rain-small-rain");
+                    rainDescElement.textContent = "осторожно"
                 } else if (weather.hourly.rain[hour] > 1 && weather.hourly.rain[hour] <= 3) {
-                    weatherRainIcon.classList.remove("weather__rain__small__rain");
-                    weatherRainIcon.classList.add("weather__rain__middle__rain");
-                    weatherRainDeck.textContent = "курсовая промокнет"
+                    rainIconElement.classList.remove("rain-small-rain");
+                    rainIconElement.classList.add("rain-middle-rain");
+                    rainDescElement.textContent = "курсовая промокнет"
                 } else if (weather.hourly.rain[hour] > 3) {
-                    weatherRainIcon.classList.remove("weather__rain__middle__rain");
-                    weatherRainIcon.classList.add("weather__rain__large__rain");
-                    weatherRainDeck.textContent = "даже не пытайся"
+                    rainIconElement.classList.remove("rain-middle-rain");
+                    rainIconElement.classList.add("rain-large-rain");
+                    rainDescElement.textContent = "даже не пытайся"
                 }
 
+                //шкала ветра была взята с источника https://ru.wikipedia.org/wiki/%D0%A8%D0%BA%D0%B0%D0%BB%D0%B0_%D0%91%D0%BE%D1%84%D0%BE%D1%80%D1%82%D0%B0
                 if (weather.hourly.windspeed_10m[hour] >= 0 && weather.hourly.windspeed_10m[hour] <= 2) {
-                    weatherWindIcon.classList.add("weather__wind__0");
-                    weatherWindDeck.textContent = "штиль"
+                    windIconElement.classList.add("wind-klass-0");
+                    windDescElement.textContent = "штиль"
                 } else if (weather.hourly.windspeed_10m[hour] > 2 && weather.hourly.windspeed_10m[hour] <= 5) {
-                    weatherWindIcon.classList.remove("weather__wind__0");
-                    weatherWindIcon.classList.add("weather__wind__1");
-                    weatherWindDeck.textContent = "очень лёгкий ветер"
+                    windIconElement.classList.remove("wind-klass-0");
+                    windIconElement.classList.add("wind-klass-1");
+                    windDescElement.textContent = "очень лёгкий ветер"
                 } else if (weather.hourly.windspeed_10m[hour] > 5 && weather.hourly.windspeed_10m[hour] <= 19) {
-                    weatherWindIcon.classList.remove("weather__wind__1");
-                    weatherWindIcon.classList.add("weather__wind__2_3");
-                    weatherWindDeck.textContent = "слабый"
+                    windIconElement.classList.remove("wind-klass-1");
+                    windIconElement.classList.add("wind-klass-2_3");
+                    windDescElement.textContent = "слабый"
                 } else if (weather.hourly.windspeed_10m[hour] > 19 && weather.hourly.windspeed_10m[hour] <= 38) {
-                    weatherWindIcon.classList.remove("weather__wind__2_3");
-                    weatherWindIcon.classList.add("weather__wind__4_5");
-                    weatherWindDeck.textContent = "свежий"
+                    windIconElement.classList.remove("wind-klass-2_3");
+                    windIconElement.classList.add("wind-klass-4_5");
+                    windDescElement.textContent = "свежий"
                 } else if (weather.hourly.windspeed_10m[hour] > 38 && weather.hourly.windspeed_10m[hour] <= 61) {
-                    weatherWindIcon.classList.remove("weather__wind__4_5");
-                    weatherWindIcon.classList.add("weather__wind__6_7");
-                    weatherWindDeck.textContent = "крепкий"
+                    windIconElement.classList.remove("wind-klass-4_5");
+                    windIconElement.classList.add("wind-klass-6_7");
+                    windDescElement.textContent = "крепкий"
                 } else if (weather.hourly.windspeed_10m[hour] > 61 && weather.hourly.windspeed_10m[hour] <= 74) {
-                    weatherWindIcon.classList.remove("weather__wind__6_7");
-                    weatherWindIcon.classList.add("weather__wind__8");
-                    weatherWindDeck.textContent = "очень крепкий"
+                    windIconElement.classList.remove("wind-klass-6_7");
+                    windIconElement.classList.add("wind-klass-8");
+                    windDescElement.textContent = "очень крепкий"
                 } else if (weather.hourly.windspeed_10m[hour] > 74 && weather.hourly.windspeed_10m[hour] <= 88) {
-                    weatherWindIcon.classList.remove("weather__wind__8");
-                    weatherWindIcon.classList.add("weather__wind__9");
-                    weatherWindDeck.textContent = "шторм"
+                    windIconElement.classList.remove("wind-klass-8");
+                    windIconElement.classList.add("wind-klass-9");
+                    windDescElement.textContent = "шторм"
                 } else if (weather.hourly.windspeed_10m[hour] > 88 && weather.hourly.windspeed_10m[hour] <= 102) {
-                    weatherWindIcon.classList.remove("weather__wind__9");
-                    weatherWindIcon.classList.add("weather__wind__10");
-                    weatherWindDeck.textContent = "сильный шторм"
+                    windIconElement.classList.remove("wind-klass-9");
+                    windIconElement.classList.add("wind-klass-10");
+                    windDescElement.textContent = "сильный шторм"
                 } else if (weather.hourly.windspeed_10m[hour] > 102 && weather.hourly.windspeed_10m[hour] <= 117) {
-                    weatherWindIcon.classList.remove("weather__wind__10");
-                    weatherWindIcon.classList.add("weather__wind__11");
-                    weatherWindDeck.textContent = "жестокий шторм"
+                    windIconElement.classList.remove("wind-klass-10");
+                    windIconElement.classList.add("wind-klass-11");
+                    windDescElement.textContent = "жестокий шторм"
                 } else if (weather.hourly.windspeed_10m[hour] > 117) {
-                    weatherWindIcon.classList.remove("weather__wind__11");
-                    weatherWindIcon.classList.add("weather__wind__12");
-                    weatherWindDeck.textContent = "ураган"
+                    windIconElement.classList.remove("wind-klass-11");
+                    windIconElement.classList.add("wind-klass-12");
+                    windDescElement.textContent = "ураган"
                 }
             });
     }

@@ -14,476 +14,488 @@
         <div class="container">
             <nav class="navigation">
                 <ul class="navigation__list">
-                    <li class="navigation__item"><a class="navigation__item__link">Главная</a></li>
-                    <li class="navigation__item"><a href="https://edinici.ru" target="_blank" class="navigation__item__link">Конвертер</a></li>
-                    <li class="navigation__item" id="about"><a href="#" class="navigation__item__link">О нас</a></li>
-                    <li class="navigation__item" id="form_login_open_link"><a href="#"
-                            class="navigation__item__link">Войти</a></li>
+                    <li class="navigation__item">
+                        <a class="navigation__link">Главная</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="https://edinici.ru" target="_blank" class="navigation__link">Конвертер</a>
+                    </li>
+                    <li class="navigation__item" id="about">
+                        <a href="#" class="navigation__link">О нас</a>
+                    </li>
+                    <li class="navigation__item" id="open-login-form-link">
+                        <a href="#" class="navigation__link">Войти</a>
+                    </li>
                 </ul>
             </nav>
-            <article class="nav__article visually-hidden">
-                <button class="form__login__close__btn" id="about_close_btn"></button>
-                <h2 class="nav__article__title">О нас:</h2>
-                <p class="nav__article__deck">наша команда опытных студентов прилагала колоссальные усилия решая все вручную, и сделала все, чтобы вам не пришлось делать тоже самое.</p>
+            <article class="about visually-hidden">
+                <button class="close-button" id="about-close-button"></button>
+                <h2 class="about__title">О нас:</h2>
+                <p class="about__desc">Наша команда опытных студентов прилагала колоссальные усилия решая все
+                    вручную, и сделала все, чтобы вам не пришлось делать тоже самое.</p>
             </article>
-            <form class="form__login visually-hidden" id="form_login_come" action="#" method="post" target="_blank"
+            <form class="login-form visually-hidden" id="login-form" action="#" method="post" target="_blank"
                 autocomplete="off">
-                <button class="form__login__close__btn" id="form_login_close_btn"></button>
-                <h2 class="form__title">Войдите в аккаунт</h2>
+                <button class="close-button" id="login-form-close-button"></button>
+                <h2 class="login-form__title">Войдите в аккаунт</h2>
                 <fieldset class="fieldset">
-                    <ul class="field__login__list">
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="name">Логин:</label>
-                            <input class="field__login__item__input" type="login" name="login" placeholder="loob_job123"
-                                id="login_pole" minlength="8" maxlength="20" required>
+                    <ul class="fieldset__list">
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="user-login-input">Логин:</label>
+                            <input class="fieldset__input" type="text" name="login" placeholder="loob_job123"
+                                id="user-login-input" minlength="8" maxlength="20" required>
                         </li>
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="age">Пароль:</label>
-                            <input class="field__login__item__input" type="password" name="password"
-                                placeholder="******" id="password_pole" minlength="10" maxlength="25" required>
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="user-password-input">Пароль:</label>
+                            <input class="fieldset__input" type="password" name="password" placeholder="******"
+                                id="user-password-input" minlength="10" maxlength="25" required>
                         </li>
                     </ul>
                 </fieldset>
-                <div class="form__button__box">
-                    <button class="form__button" id="submit_login_form_btn" type="submit">Войти</button>
-                    <button class="form__button" id="open_reg_form_btn" type="button">Создать аккаунт</button>
+                <div class="form__button-box">
+                    <button class="form__button" id="login-form-enter-button" type="submit">Войти</button>
+                    <button class="form__button" id="create-account-button" type="button">Создать аккаунт</button>
                 </div>
             </form>
-            <form class="form__login visually-hidden" action="#" id="form_login_open_reg" method="post" target="_blank"
+            <form class="login-form visually-hidden" action="#" id="registation-form" method="post" target="_blank"
                 autocomplete="off">
-                <button class="form__login__close__btn" id="form_reg_close_btn"></button>
-                <h2 class="form__title">Зарегистрируйтесь</h2>
+                <button class="close-button" id="registation-form-close-button"></button>
+                <h2 class="login-form__title">Зарегестрируйтесь</h2>
                 <fieldset class="fieldset">
-                    <ul class="field__login__list">
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="name">Имя:*</label>
-                            <input class="field__login__item__input" type="text" name="name" placeholder="Иван Иванов"
-                                id="name_pole_reg_form" required>
+                    <ul class="fieldset__list">
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="registation-form-name-input">Имя:*</label>
+                            <input class="fieldset__input" type="text" name="name" placeholder="Иван Иванов"
+                                id="registation-form-name-input" required>
                         </li>
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="age">Возраст:</label>
-                            <input class="field__login__item__input" type="text" name="age" placeholder="27"
-                                id="age_pole_reg_form">
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="registation-form-age-input">Возраст:</label>
+                            <input class="fieldset__input" type="text" name="age" placeholder="27"
+                                id="registation-form-age-input">
                         </li>
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="email">E-mail:*</label>
-                            <input class="field__login__item__input" type="email" name="mail"
-                                placeholder="ivanov@gmail.com" id="email_pole_reg_form" required>
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="registation-form-mail-input">E-mail:*</label>
+                            <input class="fieldset__input" type="email" name="mail" placeholder="ivanov@gmail.com"
+                                id="registation-form-mail-input" required>
                         </li>
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="phone_number">Телефон:*</label>
-                            <input class="field__login__item__input" type="tel" name="phone" placeholder="88005553535"
-                                id="phone_number_pole_reg_form" maxlength="21" required>
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="registation-form-phone-number-input">Телефон:*</label>
+                            <input class="fieldset__input" type="tel" name="phone-number" placeholder="88005553535"
+                                id="registation-form-phone-number-input" maxlength="21" required>
                         </li>
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="name">Логин:</label>
-                            <input class="field__login__item__input" type="login" name="login" placeholder="loob_job123"
-                                id="login_pole_reg_form">
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="registation-form-login-input">Логин:</label>
+                            <input class="fieldset__input" type="login" name="login" placeholder="loob_job123"
+                                id="registation-form-login-input">
                         </li>
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="age">Пароль:</label>
-                            <input class="field__login__item__input" type="password" name="password"
-                                placeholder="******" id="password_pole_reg_form">
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="registation-form-password-input">Пароль:</label>
+                            <input class="fieldset__input" type="password" name="password" placeholder="******"
+                                id="registation-form-password-input">
                         </li>
                     </ul>
                 </fieldset>
-                <div class="form__regist__box">
-                    <button type="submit" class="form__button" id="regist_button_reg_form">Зарегестрироваться</button>
-                    <p class="form__regist__box__deck">* — Обязательные поля</p>
+                <div class="form__button-box">
+                    <button type="submit" class="form__button"
+                        id="registation-form-submit-button">Зарегестрироваться</button>
                 </div>
+                <p class="login-form__desc">* — Обязательные поля</p>
             </form>
         </div>
     </header>
     <main>
         <div class="container">
             <div class="main__inner">
-                <section class="calc__item">
-                    <h2 class="calc__item__title">Произвести рассчёт</h2>
-                    <ul class="status__list">
-                        <h3 class="status__list__title">Статус пунктов</h2>
-                            <li class="status__item">
-                                <div class="status__marker status__marker--absent"></div>
-                                <p class="status__deck">- отсутсвует</p>
+                <section class="task-list">
+                    <h2 class="task-list__title">Произвести рассчёт</h2>
+                    <ul class="item-status">
+                        <h3 class="item-status__title">Статус пунктов</h2>
+                            <li class="item-status__item">
+                                <div class="item-status__icon  item-status__icon--works"></div>
+                                <p class="item-status__desc">- отсутсвует</p>
                             </li>
-                            <li class="status__item">
-                                <div class="status__marker status__marker--development"></div>
-                                <p class="status__deck">- в разработке</p>
+                            <li class="item-status__item">
+                                <div class="item-status__icon  item-status__icon--developed"></div>
+                                <p class="item-status__desc">- в разработке</p>
                             </li>
-                            <li class="status__item">
-                                <div class="status__marker status__marker--work"></div>
-                                <p class="status__deck">- можно пользоваться</p>
+                            <li class="item-status__item">
+                                <div class="item-status__icon  item-status__icon--absent"></div>
+                                <p class="item-status__desc">- можно пользоваться</p>
                             </li>
                     </ul>
-                    <article class="coursework">
-                        <h2 class="coursework__title">Кривенкова</h2>
-                        <ul class="coursework__list">
-                            <li class="coursework__item">
-                                <a href="third_item.html" class="coursework__item__link">
-                                    <h3 class="coursework__item__link__title">3-й пункт</h3>
-                                    <p class="coursework__item__link__deck">Расчет ШРА</p>
+                    <article class="task">
+                        <h2 class="task__title">Кривенкова</h2>
+                        <ul class="task__list">
+                            <li class="task__item  task-item  task__item--works">
+                                <a href="third_item.html" class="task-item__link">
+                                    <h3 class="task-item__title">3-й пункт</h3>
+                                    <p class="task-item__desc">Расчет ШРА</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--development">
-                                <a href="fourth_item.html" class="coursework__item__link">
-                                    <h3 class="coursework__item__link__title">4-й пункт</h3>
-                                    <p class="coursework__item__link__deck">Расчет КТП</p>
+                            <li class="task__item  task-item  task__item--developed">
+                                <a href="fourth_item.html" class="task-item__link">
+                                    <h3 class="task-item__title">4-й пункт</h3>
+                                    <p class="task-item__desc">Расчет КТП</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--absent">
-                                <a href="#" class="coursework__item__link">
-                                    <h3 class="coursework__item__link__title">5-й пункт</h3>
-                                    <p class="coursework__item__link__deck">Расчет КВА</p>
+                            <li class="task__item  task-item  task__item--absent">
+                                <a href="#" class="task-item__link">
+                                    <h3 class="task-item__title">5-й пункт</h3>
+                                    <p class="task-item__desc">Расчет КВА</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--absent">
-                                <a href="#" class="coursework__item__link">
-                                    <h3 class="coursework__item__link__title">6-й пункт</h3>
-                                    <p class="coursework__item__link__deck">Кабель КТП</p>
+                            <li class="task__item  task-item  task__item--absent">
+                                <a href="#" class="task-item__link">
+                                    <h3 class="task-item__title">6-й пункт</h3>
+                                    <p class="task-item__desc">Кабель КТП</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--absent">
-                                <a href="#" class="coursework__item__link">
-                                    <h3 class="coursework__item__link__title">7-й пункт</h3>
-                                    <p class="coursework__item__link__deck">Расчёт ШМА</p>
+                            <li class="task__item  task-item  task__item--absent">
+                                <a href="#" class="task-item__link">
+                                    <h3 class="task-item__title">7-й пункт</h3>
+                                    <p class="task-item__desc">Расчёт ШМА</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--absent">
-                                <a href="#" class="coursework__item__link">
-                                    <h3 class="coursework__item__link__title">8-й пункт</h3>
-                                    <p class="coursework__item__link__deck">Провода</p>
+                            <li class="task__item  task-item  task__item--absent">
+                                <a href="#" class="task-item__link">
+                                    <h3 class="task-item__title">8-й пункт</h3>
+                                    <p class="task-item__desc">Провода</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--absent">
-                                <a href="#" class="coursework__item__link">
-                                    <h3 class="coursework__item__link__title">9-й пункт</h3>
-                                    <p class="coursework__item__link__deck">Защита</p>
+                            <li class="task__item  task-item  task__item--absent">
+                                <a href="#" class="task-item__link">
+                                    <h3 class="task-item__title">9-й пункт</h3>
+                                    <p class="task-item__desc">Защита</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--absent">
-                                <a href="#" class="coursework__item__link">
-                                    <h3 class="coursework__item__link__title">10-й пункт</h3>
-                                    <p class="coursework__item__link__deck">Iкз КТП</p>
+                            <li class="task__item  task-item  task__item--absent">
+                                <a href="#" class="task-item__link">
+                                    <h3 class="task-item__title">10-й пункт</h3>
+                                    <p class="task-item__desc">Iкз КТП</p>
                                 </a>
                             </li>
-                            <li class="coursework__item coursework__item--absent">
-                                <a href="#" class="coursework__item__link">
-                                    <h3 class="coursework__item__link__title">12-й пункт</h3>
-                                    <p class="coursework__item__link__deck">Выключатель</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </article>
-                    <article class="coursework">
-                        <h2 class="coursework__title">Дорогова</h2>
-                        <ul class="coursework__list coursework__list--practical">
-                            <li class="coursework__item coursework__item--absent">
-                                <a href="#" class="coursework__item__link">
-                                    <h3 class="coursework__item__link__title">24</h3>
-                                    <p class="coursework__item__link__deck">Практическая</p>
-                                </a>
-                            </li>
-                            <li class="coursework__item coursework__item--absent">
-                                <a href="#" class="coursework__item__link">
-                                    <h3 class="coursework__item__link__title">25</h3>
-                                    <p class="coursework__item__link__deck">Практическая</p>
-                                </a>
-                            </li>
-                            <li class="coursework__item coursework__item--absent">
-                                <a href="#" class="coursework__item__link">
-                                    <h3 class="coursework__item__link__title">26</h3>
-                                    <p class="coursework__item__link__deck">Практическая</p>
-                                </a>
-                            </li>
-                            <li class="coursework__item coursework__item--absent">
-                                <a href="#" class="coursework__item__link">
-                                    <h3 class="coursework__item__link__title">28</h3>
-                                    <p class="coursework__item__link__deck">Практическая</p>
+                            <li class="task__item  task-item  task__item--absent">
+                                <a href="#" class="task-item__link">
+                                    <h3 class="task-item__title">12-й пункт</h3>
+                                    <p class="task-item__desc">Выключатель</p>
                                 </a>
                             </li>
                         </ul>
                     </article>
-                    <article class="weather">
-                        <div class="weather__parameter__box">
-                            <p class="weather__parameter__deck">температура за окном</p>
+                    <article class="task">
+                        <h2 class="task__title">Дорогова</h2>
+                        <ul class="task__list  task__list--practical">
+                            <li class="task__item  task-item  task__item--absent">
+                                <a href="#" class="task-item__link">
+                                    <h3 class="task-item__title">24</h3>
+                                    <p class="task-item__desc">Практическая</p>
+                                </a>
+                            </li>
+                            <li class="task__item  task-item  task__item--absent">
+                                <a href="#" class="task-item__link">
+                                    <h3 class="task-item__title">25</h3>
+                                    <p class="task-item__desc">Практическая</p>
+                                </a>
+                            </li>
+                            <li class="task__item  task-item  task__item--absent">
+                                <a href="#" class="task-item__link">
+                                    <h3 class="task-item__title">26</h3>
+                                    <p class="task-item__desc">Практическая</p>
+                                </a>
+                            </li>
+                            <li class="task__item  task-item  task__item--absent">
+                                <a href="#" class="task-item__link">
+                                    <h3 class="task-item__title">28</h3>
+                                    <p class="task-item__desc">Практическая</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="weather__container">
+                        <div class="weather">
+                            <h2 class="weather__title">Температура за окном</h2>
                             <div class="weather__parameter">
-                                <p class="weather__item" id="weather_temperature">1</p>
-                                <div class="weather__item weather__item--temperature" id="weather_temperature_icon">
-                                </div>
-                                <div class="weather__item weather__deck" id="weather_temperature_deck"></div>
+                                <p class="weather__value" id="temperature-value-element">1</p>
+                                <div class="weather__icon weather__icon--temperature" id="temperature-icon-element"></div>
+                                <div class="weather__desc" id="temperature-desc-element"></div>
                             </div>
                         </div>
-                        <div class="weather__parameter__box">
-                            <p class="weather__parameter__deck">что там с дождем?</p>
+                        <div class="weather">
+                            <h2 class="weather__title">Что там с дождем?</h2>
                             <div class="weather__parameter">
-                                <p class="weather__item" id="weather_rain">2</p>
-                                <div class="weather__item" id="weather_rain_icon"></div>
-                                <div class="weather__item weather__deck" id="weather_rain_deck"></div>
+                                <p class="weather__value" id="rain-value-element">2</p>
+                                <div class="weather__icon" id="rain-icon-element"></div>
+                                <div class="weather__desc" id="rain-desc-element"></div>
                             </div>
                         </div>
-                        <div class="weather__parameter__box">
-                            <p class="weather__parameter__deck">сила ветра</p>
+                        <div class="weather">
+                            <h2 class="weather__title">Сила ветра</h2>
                             <div class="weather__parameter">
-                                <p class="weather__item" id="weather_wind">3</p>
-                                <div class="weather__item" id="weather_wind_icon"></div>
-                                <div class="weather__item weather__deck" id="weather_wind_deck"></div>
+                                <p class="weather__value" id="wind-value-element">3</p>
+                                <div class="weather__icon" id="wind-icon-element"></div>
+                                <div class="weather__desc" id="wind-desc-element"></div>
                             </div>
                         </div>
                     </article>
                 </section>
-                <section class="reference">
-                    <h2 class="reference__title">Справочная информация</h2>
-                    <ul class="reference__list">
-                        <h3 class="reference__list__title">Ссылки на источники</h3>
-                        <li class="reference__item">
-                            <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BA%D0%BE%D0%BD_%D0%9E%D0%BC%D0%B0" class="reference__item__link" target="_blank">Закон Ома</a>
+                <section class="reference-data">
+                    <h2 class="reference-data__title">Справочная информация</h2>
+                    <ul class="reference-link-list">
+                        <h3 class="reference-link-list__title">Ссылки на источники</h3>
+                        <li class="reference-link-list__item">
+                            <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BA%D0%BE%D0%BD_%D0%9E%D0%BC%D0%B0"
+                                class="reference-link-list__link" target="_blank">Закон Ома</a>
                         </li>
-                        <li class="reference__item">
-                            <a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B0%D0%BD%D1%81%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%BE%D1%80" class="reference__item__link" target="_blank">Трансформаторы</a>
+                        <li class="reference-link-list__item">
+                            <a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B0%D0%BD%D1%81%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%BE%D1%80"
+                                class="reference-link-list__link" target="_blank">Трансформаторы</a>
                         </li>
-                        <li class="reference__item">
-                            <a href="https://www.studmed.ru/lipkin-byu-elektrosnabzhenie-promyshlennyh-predpriyatiy-i-ustanovok_f3209ce2859.html?ysclid=lhqoz9lmjl356419640" class="reference__item__link" target="_blank">Б.Ю. Липкин Электроснабжение</a>
+                        <li class="reference-link-list__item">
+                            <a href="https://www.studmed.ru/lipkin-byu-elektrosnabzhenie-promyshlennyh-predpriyatiy-i-ustanovok_f3209ce2859.html?ysclid=lhqoz9lmjl356419640"
+                                class="reference-link-list__link" target="_blank">Б.Ю. Липкин Электроснабжение</a>
                         </li>
-                        <li class="reference__item">
-                            <a href="https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA" class="reference__item__link" target="_blank">Рубильники</a>
+                        <li class="reference-link-list__item">
+                            <a href="https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA"
+                                class="reference-link-list__link" target="_blank">Рубильники</a>
                         </li>
-                        <li class="reference__item">
-                            <a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B8%D0%BD%D0%B0_(%D1%8D%D0%BD%D0%B5%D1%80%D0%B3%D0%BE%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0)" class="reference__item__link" target="_blank">Шинопроводы</a>
+                        <li class="reference-link-list__item">
+                            <a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B8%D0%BD%D0%B0_(%D1%8D%D0%BD%D0%B5%D1%80%D0%B3%D0%BE%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0)"
+                                class="reference-link-list__link" target="_blank">Шинопроводы</a>
                         </li>
-                        <li class="reference__item">
+                        <li class="reference-link-list__item">
                             <a href="https://www.stanki.ru/catalog/raskroechnye_tsentry/filato/?utm_source=yandex&utm_medium=cpc&utm_campaign=Mebel_Formatno_raskroechnye_centry_Avtotargeting&utm_term=---autotargeting&utm_content=Celevye_zaprosy_AD_4&_openstat=ZGlyZWN0LnlhbmRleC5ydTs4Mzc3MjQ1MjsxNDA2ODQ1ODIyNDt5YW5kZXgucnU6cHJlbWl1bQ&yclid=2381495257765773311"
-                                class="reference__item__link" target="_blank">Станки</a>
+                                class="reference-link-list__link" target="_blank">Станки</a>
                         </li>
-                        <li class="reference__item">
-                            <a href="https://photomath.com/" class="reference__item__link" target="_blank">PhotoMath</a>
+                        <li class="reference-link-list__item">
+                            <a href="https://photomath.com/" class="reference-link-list__link"
+                                target="_blank">PhotoMath</a>
                         </li>
-                        <li class="reference__item">
+                        <li class="reference-link-list__item">
                             <a href="https://ru.wikipedia.org/wiki/%D0%90%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0"
-                                class="reference__item__link" target="_blank">Асинхронный двигатель</a>
+                                class="reference-link-list__link" target="_blank">Асинхронный двигатель</a>
                         </li>
-                        <li class="reference__item">
+                        <li class="reference-link-list__item">
                             <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%BE%D0%B5_%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D0%B5"
-                                class="reference__item__link" target="_blank">Короткое замыкание</a>
+                                class="reference-link-list__link" target="_blank">Короткое замыкание</a>
                         </li>
                     </ul>
-                    <ul class="conversion__list">
-                        <h2 class="conversion__list__title">Небольшой калькулятор</h2>
-                        <div class="conversion_button_radio__box">
-                            <h2 class="conversion__list__title conversion__list__title--radio">знаков после запятой</h2>
-                            <div class="conversion_button_radio">
-                                <label for="amperage_radio_3"
-                                    class="conversion__button conversion__button--label"><input type="radio"
-                                        id="amperage_radio_3" name="amperage" value="3"
-                                        class="conversion__button__radio__item" checked>
-                                    0.001</label>
-                                <label for="amperage_radio_2"
-                                    class="conversion__button conversion__button--label"><input type="radio"
-                                        id="amperage_radio_2" name="amperage" value="2"
-                                        class="conversion__button__radio__item">
-                                    0.01</label>
-                                <label for="amperage_radio_1"
-                                    class="conversion__button conversion__button--label"><input type="radio"
-                                        id="amperage_radio_1" name="amperage" value="1"
-                                        class="conversion__button__radio__item">
-                                    0.1</label>
-                                <label for="amperage_radio_0"
-                                    class="conversion__button conversion__button--label"><input type="radio"
-                                        id="amperage_radio_0" name="amperage" value="0"
-                                        class="conversion__button__radio__item">
-                                    1</label>
+                    <ul class="calculator">
+                        <h2 class="calculator__title">Небольшой калькулятор</h2>
+                        <div class="accuracy-calculations__container">
+                            <h2 class="accuracy-calculations__title">знаков после запятой</h2>
+                            <div class="accuracy-calculations">
+                                <input type="radio" id="accuracy-radio-3" name="accuracy" value="3"
+                                    class="accuracy-calculations__radio" checked>
+                                <label for="accuracy-radio-3" class="accuracy-calculations__label" checked>0.001</label>
+                                <input type="radio" id="accuracy-radio-2" name="accuracy" value="2"
+                                    class="accuracy-calculations__radio">
+                                <label for="accuracy-radio-2" class="accuracy-calculations__label">0.01</label>
+                                <input type="radio" id="accuracy-radio-1" name="accuracy" value="1"
+                                    class="accuracy-calculations__radio">
+                                <label for="accuracy-radio-1" class="accuracy-calculations__label">0.1</label>
+                                <input type="radio" id="accuracy-radio-0" name="accuracy" value="0"
+                                    class="accuracy-calculations__radio">
+                                <label for="accuracy-radio-0" class="accuracy-calculations__label">1</label>
                             </div>
                         </div>
-                        <li class="conversion__item">
-                            <div class="conversion__item__inner">
-                                <div class="conversion__input__box">
-                                    <input class="conversion__input" id="amperage_input" name="amperage_input"
-                                        type="text" value="1" maxlength="8">
-                                    <h3 class="conversion__input__title">кА</h3>
+                        <li class="calculator-item">
+                            <div class="calculator-item__inner">
+                                <div class="calculator-item__value-box">
+                                    <input class="calculator-item__input" id="amperage-input" name="amperage-input"
+                                        type="text" value="1" maxlength="8" placeholder="1.075">
+                                    <h3 class="calculator-item__desc">кА</h3>
                                 </div>
-                                <div class="conversion__input__equal">=</div>
-                                <div class="conversion__input__box">
-                                    <p class="conversion__output" id="amperage_result"></p>
-                                    <h3 class="conversion__input__title">А</h3>
+                                <div class="calculator-item__simbol">=</div>
+                                <div class="calculator-item__value-box">
+                                    <p class="calculator-item__output" id="amperage-result"></p>
+                                    <h3 class="calculator-item__desc">А</h3>
                                 </div>
                             </div>
-                            <button class="conversion__button" id="amperage_conversion" type="button">Перевести</button>
+                            <button class="calculator-item__button" id="amperage-conversion-button"
+                                type="button">Перевести</button>
                         </li>
-                        <li class="conversion__item">
-                            <div class="conversion__item__inner">
-                                <div class="conversion__input__box">
-                                    <input class="conversion__input" id="voltage_input" name="voltage_input" type="text"
-                                        value="1" maxlength="8">
-                                    <h3 class="conversion__input__title">кВ</h3>
+                        <li class="calculator-item">
+                            <div class="calculator-item__inner">
+                                <div class="calculator-item__value-box">
+                                    <input class="calculator-item__input" id="voltage-input" name="voltage-input"
+                                        type="text" value="1" maxlength="8" placeholder="1.075">
+                                    <h3 class="calculator-item__desc">кВ</h3>
                                 </div>
-                                <div class="conversion__input__equal">=</div>
-                                <div class="conversion__input__box">
-                                    <p class="conversion__output" id="voltage_result"></p>
-                                    <h3 class="conversion__input__title">В</h3>
+                                <div class="calculator-item__simbol">=</div>
+                                <div class="calculator-item__value-box">
+                                    <p class="calculator-item__output" id="voltage-result"></p>
+                                    <h3 class="calculator-item__desc">В</h3>
                                 </div>
                             </div>
-                            <button class="conversion__button" id="voltage_conversion" type="button">Перевести</button>
+                            <button class="calculator-item__button" id="voltage-conversion-button"
+                                type="button">Перевести</button>
                         </li>
-                        <li class="conversion__item">
-                            <div class="conversion__item__inner">
-                                <div class="conversion__input__box">
-                                    <input class="conversion__input" id="electrical_power_input"
-                                        name="electrical_power_input" type="text" value="1" maxlength="8">
-                                    <h3 class="conversion__input__title">кВт</h3>
+                        <li class="calculator-item">
+                            <div class="calculator-item__inner">
+                                <div class="calculator-item__value-box">
+                                    <input class="calculator-item__input" id="electrical-power-input"
+                                        name="electrical-power-input" type="text" value="1" maxlength="8"
+                                        placeholder="1.075">
+                                    <h3 class="calculator-item__desc">кВт</h3>
                                 </div>
-                                <div class="conversion__input__equal">=</div>
-                                <div class="conversion__input__box">
-                                    <p class="conversion__output" id="electrical_power_result"></p>
-                                    <h3 class="conversion__input__title">Вт</h3>
+                                <div class="calculator-item__simbol">=</div>
+                                <div class="calculator-item__value-box">
+                                    <p class="calculator-item__output" id="electrical-power-result"></p>
+                                    <h3 class="calculator-item__desc">Вт</h3>
                                 </div>
                             </div>
-                            <button class="conversion__button" id="power_conversion" type="button">Перевести</button>
+                            <button class="calculator-item__button" id="power-conversion-button"
+                                type="button">Перевести</button>
                         </li>
-                        <li class="conversion__item">
-                            <div class="conversion__item__inner">
-                                <div class="conversion__input__box">
-                                    <input class="conversion__input" id="power_active_input" name="power_active"
-                                        type="text" value="1" maxlength="6">
-                                    <h3 class="conversion__input__title">Вт</h3>
+                        <li class="calculator-item">
+                            <div class="calculator-item__inner calculator-item__inner--large_box">
+                                <div class="calculator-item__value-box">
+                                    <input class="calculator-item__input" id="power-active-input"
+                                        name="power-active-input" type="text" value="1" maxlength="6"
+                                        placeholder="1.075">
+                                    <h3 class="calculator-item__desc">Вт</h3>
                                 </div>
-                                <div class="conversion__input__equal">+</div>
-                                <div class="conversion__input__box">
-                                    <input class="conversion__input" id="power_reactive_input" name="power_reactive"
-                                        type="text" value="1" maxlength="6">
-                                    <h3 class="conversion__input__title">ВАр</h3>
+                                <div class="calculator-item__simbol">+</div>
+                                <div class="calculator-item__value-box">
+                                    <input class="calculator-item__input" id="power-reactive-input"
+                                        name="power-reactive-input" type="text" value="1" maxlength="6"
+                                        placeholder="1.075">
+                                    <h3 class="calculator-item__desc">ВАр</h3>
                                 </div>
-                                <div class="conversion__input__equal">=</div>
-                                <div class="conversion__input__box">
-                                    <p class="conversion__output" id="full_power"></p>
-                                    <h3 class="conversion__input__title">ВА</h3>
+                                <div class="calculator-item__simbol">=</div>
+                                <div class="calculator-item__value-box">
+                                    <p class="calculator-item__output" id="full-power"></p>
+                                    <h3 class="calculator-item__desc">ВА</h3>
                                 </div>
                             </div>
-                            <button class="conversion__button" id="full_power_conversion"
+                            <button class="calculator-item__button" id="full-power-conversion"
                                 type="button">Рассчитать</button>
                         </li>
                     </ul>
                 </section>
                 <section class="promo">
                     <h2 class="promo__title">Не хотите делать - закажите!</h2>
-                    <p class="promo__deck">Наша команда опытных студентов предоставляет вам возможность упростить расчет
+                    <p class="promo__desc">Наша команда опытных студентов предоставляет вам возможность упростить расчет
                         курсовой, но
                         если так
                         уж лень, или не получается, то мы её сделаем за вас</p>
-                    <ul class="promo__list">
-                        <li class="promo__item">
-                            <h2 class="promo__item__title">Ожидаемая оценка</h2>
-                            <div class="range__box">
-                                <input type="range" class="promo__list__input" id="estimation" min="1" max="3" value="3"
-                                    step="1">
-                                <div class="range__rate__box">
-                                    <span class="range__rate">3</span>
-                                    <span class="range__rate">4</span>
-                                    <span class="range__rate">5</span>
+                    <ul class="parameter-estimation__list">
+                        <li class="parameter-estimation">
+                            <h2 class="parameter-estimation__title">Ожидаемая оценка</h2>
+                            <div class="parameter-estimation__range-container">
+                                <input type="range" class="range-container__input" id="estimation" min="1" max="3"
+                                    value="3" step="1">
+                                <div class="range-value__container">
+                                    <span class="range-value">3</span>
+                                    <span class="range-value">4</span>
+                                    <span class="range-value">5</span>
                                 </div>
                             </div>
-                            <div class="range__rate__deck__box">
-                                <p class="range__rate__deck">3 - делаем расчеты, остальное сами</p>
-                                <p class="range__rate__deck">4 - делаем расчеты, готовим описание, без речи</p>
-                                <p class="range__rate__deck">5 - как на 4 + отреппетируем речь</p>
+                            <div class="parameter-estimation__desc-container">
+                                <p class="desc-container__item">3 - делаем расчеты, остальное сами</p>
+                                <p class="desc-container__item">4 - делаем расчеты, готовим описание, без речи</p>
+                                <p class="desc-container__item">5 - как на 4 + отреппетируем речь</p>
                             </div>
                         </li>
-                        <li class="promo__item">
-                            <h2 class="promo__item__title">Время ожидания</h2>
-                            <div class="range__box">
-                                <input type="range" class="promo__list__input" id="waiting_time" min="1" max="22"
+                        <li class="parameter-estimation">
+                            <h2 class="parameter-estimation__title">Время ожидания</h2>
+                            <div class="parameter-estimation__range-container">
+                                <input type="range" class="range-container__input" id="waiting-time" min="1" max="22"
                                     value="2" step="1">
-                                <div class="range__rate__box">
-                                    <span class="range__rate">1</span>
-                                    <span class="range__rate">2</span>
-                                    <span class="range__rate">3</span>
-                                    <span class="range__rate">4</span>
+                                <div class="range-value__container">
+                                    <span class="range-value">1</span>
+                                    <span class="range-value">2</span>
+                                    <span class="range-value">3</span>
+                                    <span class="range-value">4</span>
                                 </div>
                             </div>
-                            <div class="range__rate__deck__box">
-                                <p class="range__rate__deck">*Время указано в неделях</p>
-                                <div class="time__remains__box">
-                                    <p class="time__remains" id="number_of_weeks">1</p>
-                                    <p class="time__remains" id="deck_weeks">Недель</p>
-                                    <p class="time__remains" id="number_of_days">1</p>
-                                    <p class="time__remains" id="deck_days">Дней</p>
-                                </div>
+                            <div class="parameter-estimation__desc-container">
+                                <p class="desc-container__item">*Время указано в неделях</p>
+                            </div>
+                            <div class="parameter-estimation__remain-value-container">
+                                <p class="remain-value" id="number-of-weeks">1</p>
+                                <p class="remain-value" id="deck-weeks">Недель</p>
+                                <p class="remain-value" id="number-of-days">1</p>
+                                <p class="remain-value" id="deck-days">Дней</p>
                             </div>
                         </li>
-                        <li class="promo__item">
-                            <h2 class="promo__item__title">Количество пунктов</h2>
-                            <div class="range__box">
-                                <input type="range" class="promo__list__input" id="number_of_item" min="1" max="9"
+                        <li class="parameter-estimation">
+                            <h2 class="parameter-estimation__title">Количество пунктов</h2>
+                            <div class="parameter-estimation__range-container">
+                                <input type="range" class="range-container__input" id="number-of-item" min="1" max="9"
                                     value="2" step="1">
-                                <div class="range__rate__box">
-                                    <span class="range__rate">1</span>
-                                    <span class="range__rate">2</span>
-                                    <span class="range__rate">3</span>
-                                    <span class="range__rate">4</span>
-                                    <span class="range__rate">5</span>
-                                    <span class="range__rate">6</span>
-                                    <span class="range__rate">7</span>
-                                    <span class="range__rate">8</span>
-                                    <span class="range__rate">9</span>
+                                <div class="range-value__container">
+                                    <span class="range-value">1</span>
+                                    <span class="range-value">2</span>
+                                    <span class="range-value">3</span>
+                                    <span class="range-value">4</span>
+                                    <span class="range-value">5</span>
+                                    <span class="range-value">6</span>
+                                    <span class="range-value">7</span>
+                                    <span class="range-value">8</span>
+                                    <span class="range-value">9</span>
                                 </div>
                             </div>
-                            <div class="range__rate__deck__box">
-                                <p class="range__rate__deck">*Расчет только для пунктов курсовой</p>
+                            <div class="parameter-estimation__desc-container">
+                                <p class="desc-container__item">*Расчет только для пунктов курсовой</p>
                             </div>
                         </li>
-                        <div class="price">
-                            <h2 class="price__title">Стоимость у нас:</h2>
-                            <div class="price__deck__box">
-                                <p class="price__deck" id="final_price">750</p>
-                                <p class="price__deck">₽</p>
-                            </div>
-                        </div>
-                        <div class="Date">
-                            <h2 class="Date__title">А когда у нас защита?</h2>
-                            <div class="Date__rate__box">
-                                <div class="Date__rate">
-                                    <input class="Date__input" id="Date__fullYears__input" type="number">
-                                    <h3 class="Date__input__title">Год</h3>
-                                </div>
-                                <div class="Date__rate">
-                                    <input class="Date__input" id="Date__months__input" type="number">
-                                    <h3 class="Date__input__title">Месяц</h3>
-                                </div>
-                                <div class="Date__rate">
-                                    <input class="Date__input" id="Date__days__input" type="number">
-                                    <h3 class="Date__input__title">Число</h3>
-                                </div>
-                                <div class="Date__rate">
-                                    <input class="Date__input" id="Date__hours__input" type="number">
-                                    <h3 class="Date__input__title">Час</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timer">
-                            <h2 class="timer__title">До защиты осталось:</h2>
-                            <div class="timer__box">
-                                <div class="timer__rate__box timer__rate__box--main">
-                                    <p class="timer__rate timer__rate--main" id="month">4</p>
-                                    <h3 class="timer__rate__title">Месяцев:</h3>
-                                </div>
-                                <div class="timer__block__rare__box">
-                                    <div class="timer__block__rare">
-                                        <p class="timer__rate" id="days">26</p>
-                                        <h3 class="timer__rate__title">Дней:</h3>
-                                    </div>
-                                    <div class="timer__block__rare">
-                                        <p class="timer__rate" id="hours">13</p>
-                                        <h3 class="timer__rate__title">Часов:</h3>
-                                    </div>
-                                    <div class="timer__block__rare">
-                                        <p class="timer__rate" id="minutes">58</p>
-                                        <h3 class="timer__rate__title">Минут:</h3>
-                                    </div>
-                                    <div class="timer__block__rare">
-                                        <p class="timer__rate" id="seconds">45</p>
-                                        <h3 class="timer__rate__title">Секунд:</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </ul>
+                    <article class="cost">
+                        <h2 class="cost__title">Стоимость у нас:</h2>
+                        <div class="cost__inner">
+                            <p class="cost__value" id="final-price">750</p>
+                            <p class="cost__value">₽</p>
+                        </div>
+                    </article>
+                    <article class="date-completion">
+                        <h2 class="date-completion__title">А когда у нас защита?</h2>
+                        <div class="date-completion__inner">
+                            <div class="date-input__container">
+                                <input class="date-input" id="date-fullYears-input" type="number" placeholder="2023">
+                                <h3 class="date-input__desc">Год</h3>
+                            </div>
+                            <div class="date-input__container">
+                                <input class="date-input" id="date-months-input" type="number" placeholder="11">
+                                <h3 class="date-input__desc">Месяц</h3>
+                            </div>
+                            <div class="date-input__container">
+                                <input class="date-input" id="date-days-input" type="number" placeholder="31">
+                                <h3 class="date-input__desc">Число</h3>
+                            </div>
+                            <div class="date-input__container">
+                                <input class="date-input" id="date-hours-input" type="number" placeholder="23">
+                                <h3 class="date-input__desc">Час</h3>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="remain-time">
+                        <h2 class="remain-time__title">До защиты осталось:</h2>
+                        <div class="remain-time__inner">
+                            <div class="time-rate__container">
+                                <p class="time-rate__value time-rate__value--large" id="month">4</p>
+                                <h3 class="time-rate__desc">Месяцев:</h3>
+                            </div>
+                            <div class="time-rate__container__container">
+                                <div class="time-rate__container">
+                                    <p class="time-rate__value" id="days">26</p>
+                                    <h3 class="time-rate__desc">Дней:</h3>
+                                </div>
+                                <div class="time-rate__container">
+                                    <p class="time-rate__value" id="hours">13</p>
+                                    <h3 class="time-rate__desc">Часов:</h3>
+                                </div>
+                                <div class="time-rate__container">
+                                    <p class="time-rate__value" id="minutes">58</p>
+                                    <h3 class="time-rate__desc">Минут:</h3>
+                                </div>
+                                <div class="time-rate__container">
+                                    <p class="time-rate__value" id="seconds">45</p>
+                                    <h3 class="time-rate__desc">Секунд:</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                 </section>
             </div>
         </div>

@@ -4,13 +4,10 @@ const hoursElement = document.getElementById('hours');
 const DaysElement = document.getElementById('days');
 const monthElement = document.getElementById('month');
 
-const DateFullYearsInput = document.getElementById('Date__fullYears__input');
-const DateMonthInput = document.getElementById('Date__months__input');
-const DateDayInput = document.getElementById('Date__days__input');
-const DateHoursInput = document.getElementById('Date__hours__input');
-
-const dateRateBox = document.querySelector(".Date__rate__box");
-const dateRateInput = document.querySelectorAll(".Date__input");
+const DateFullYearsInput = document.getElementById("date-fullYears-input");
+const DateMonthInput = document.getElementById("date-months-input");
+const DateDayInput = document.getElementById("date-days-input");
+const DateHoursInput = document.getElementById("date-hours-input");
 
 const MAX_VALUE_YEAR = 2;
 
@@ -149,6 +146,7 @@ function timer() {
 
     const timeDifferentInSeconds = (projectCompletionDateTimeValue - nowMoment) / TimeCount.MilliSeconds.inSeconds;
 
+
     const monthDifferent = Math.floor(timeDifferentInSeconds / TimeCount.Seconds.inMonth);
     const remainingSecondsFromMonths = timeDifferentInSeconds - (monthDifferent * TimeCount.Seconds.inMonth);
     const dayDifferent = Math.floor(remainingSecondsFromMonths / TimeCount.Seconds.inDays);
@@ -159,11 +157,19 @@ function timer() {
     const remainingSecondsFromMinutes = remainingSecondsFromHours - (minutesDifferent * TimeCount.Seconds.inMinutes);
     const secondsDifferent = Math.floor(remainingSecondsFromMinutes);
 
-    monthElement.textContent = monthDifferent;
-    DaysElement.textContent = dayDifferent;
-    hoursElement.textContent = hoursDifferent;
-    minutesElement.textContent = minutesDifferent;
-    secondsElement.textContent = secondsDifferent;
+    if (DateFullYearsInputValue == "") {
+        monthElement.textContent = "";
+        DaysElement.textContent = "";
+        hoursElement.textContent = "";
+        minutesElement.textContent = "";
+        secondsElement.textContent = "";
+    } else {
+        monthElement.textContent = monthDifferent;
+        DaysElement.textContent = dayDifferent;
+        hoursElement.textContent = hoursDifferent;
+        minutesElement.textContent = minutesDifferent;
+        secondsElement.textContent = secondsDifferent;
+    }
 };
 
 timeid = null;

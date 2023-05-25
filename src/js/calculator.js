@@ -4,12 +4,13 @@ const MAX_INCREASED_ACCURACY_NUMBER = 10;
 const REGULAR_NUMBERS_FRACTIONAL_DIGITS_COUNT = 0;
 const INCREASED_ACCURACY_NUMBERS_FRACTIONAL_DIGITS_COUNT = 2;
 
-const amperageConversionButton = document.getElementById("amperage_conversion");
-const voltageConversionButton = document.getElementById("voltage_conversion");
-const electricalPowerConversionButton = document.getElementById("power_conversion");
-const fullPowerConversionButton = document.getElementById("full_power_conversion");
-const radioButtonNumbersFractionalDigitsCount = document.querySelectorAll('input[name="amperage"]');
-const radioButton1 = document.querySelectorAll(".conversion__button--label");
+const amperageConversionButton = document.getElementById("amperage-conversion-button");
+const voltageConversionButton = document.getElementById("voltage-conversion-button");
+const electricalPowerConversionButton = document.getElementById("power-conversion-button");
+const fullPowerConversionButton = document.getElementById("full-power-conversion");
+const radioButtonNumbersFractionalDigitsCount = document.querySelectorAll('input[name="accuracy"]');
+const accuracyCalculationsLabel = document.querySelectorAll(".accuracy-calculations__label");
+const accuracyCalculations = document.querySelector(".accuracy-calculations");
 
 let numbersFractionalDigitsCount;
 
@@ -17,9 +18,6 @@ const selectingRadioButtonValue = function selectingRadioButtonValue(radioButton
     radioButtonNumbersFractionalDigitsCount.forEach((radioButton, index) => {
         if (radioButton.checked) {
             numbersFractionalDigitsCount = radioButton.value;
-            radioButton1[index].classList.add("conversion__button--check");
-        } else {
-            radioButton1[index].classList.remove("conversion__button--check");
         }
         return numbersFractionalDigitsCount;
     });
@@ -39,27 +37,27 @@ const conversionFromKiloToUnits = function conversionFromKiloToUnits(value) {
 }
 
 amperageConversionButton.addEventListener("click", () => {
-    const amperageValue = document.getElementById("amperage_input").value;
-    const amperageResultOutputElement = document.getElementById("amperage_result");
+    const amperageValue = document.getElementById("amperage-input").value;
+    const amperageResultOutputElement = document.getElementById("amperage-result");
     amperageResultOutputElement.textContent = conversionFromKiloToUnits(amperageValue);
 });
 
 voltageConversionButton.addEventListener("click", () => {
-    const voltageValue = document.getElementById("voltage_input").value;
-    const voltageResultOutputElement = document.getElementById("voltage_result");
+    const voltageValue = document.getElementById("voltage-input").value;
+    const voltageResultOutputElement = document.getElementById("voltage-result");
     voltageResultOutputElement.textContent = conversionFromKiloToUnits(voltageValue);
 });
 
 electricalPowerConversionButton.addEventListener("click", () => {
-    const electricalPowerValue = document.getElementById("electrical_power_input").value;
-    const electricalPowerResultOutputElement = document.getElementById("electrical_power_result");
+    const electricalPowerValue = document.getElementById("electrical-power-input").value;
+    const electricalPowerResultOutputElement = document.getElementById("electrical-power-result");
     electricalPowerResultOutputElement.textContent = conversionFromKiloToUnits(electricalPowerValue);
 });
 
 fullPowerConversionButton.addEventListener("click", () => {
-    const activePowerValue = document.getElementById("power_active_input").value;
-    const reactivePowerValue = document.getElementById("power_reactive_input").value;
-    const fullPowerResultOutputElement = document.getElementById("full_power");
+    const activePowerValue = document.getElementById("power-active-input").value;
+    const reactivePowerValue = document.getElementById("power-reactive-input").value;
+    const fullPowerResultOutputElement = document.getElementById("full-power");
 
     const fullPowerResult = Math.sqrt(Math.pow(activePowerValue, 2) + Math.pow(reactivePowerValue, 2));
 

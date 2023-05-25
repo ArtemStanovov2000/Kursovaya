@@ -1,15 +1,15 @@
-.coursework__third__item {
+.coursework-third-item {
     margin-left: 300px;
     margin-right: 300px;
 }
 
-.coursework__item__title {
+.coursework-item__title {
     font-family: Oswald;
     font-size: 30px;
     line-height: 30px;
 }
 
-.coursework__deck {
+.coursework-item__deck {
     font-family: Oswald;
     font-size: 25px;
     line-height: 25px;
@@ -36,75 +36,75 @@
     align-items: center;
 }
 
-.table__title__column__number {
+.column-number {
     width: 5%;
 }
 
-.table__title__column__name {
+.column-name {
     width: 15%;
 }
 
-.table__title__column__count {
+.column-count {
     width: 5%;
 }
 
-.table__title__column__power {
+.column-power {
     width: 12.5%;
 }
 
-.table__title__column__rate {
+.column-rate {
     width: 12.5%;
 }
 
-.table__title__column__cos {
+.column-cos {
     width: 12.5%;
 }
 
-.table__title__column__percent {
+.column-percent {
     width: 12.5%;
 }
 
-.table__title__column__active__power {
+.column-active-power {
     width: 12.5%;
 }
 
-.table__title__column__reactive__power {
+.column-reactive-power {
     width: 12.5%;
 }
 
-.table__column__number {
+.table__column-number {
     width: 5%;
 }
 
-.table__column__name {
+.table__column-name {
     width: 15%;
 }
 
-.table__column__count {
+.table__column-count {
     width: 5%;
 }
 
-.table__column__power {
+.table__column-power {
     width: 12.5%;
 }
 
-.table__column__rate {
+.table__column-rate {
     width: 12.5%;
 }
 
-.table__column__cos {
+.table__column-cos {
     width: 12.5%;
 }
 
-.table__column__percent {
+.table__column-percent {
     width: 12.5%;
 }
 
-.table__column__active__power {
+.table__column-active-power {
     width: 12.5%;
 }
 
-.table__column__reactive__power {
+.table__column-reactive-power {
     width: 12.5%;
 }
 
@@ -118,39 +118,39 @@
     font-size: 20px;
 }
 
-.table__result__number {
+.result__number {
     width: 5%;
 }
 
-.table__result__name {
+.result__name {
     width: 15%;
 }
 
-.table__result__count {
+.result__count {
     width: 5%;
 }
 
-.table__result__power {
+.result__power {
     width: 12.5%;
 }
 
-.table__result__rate {
+.result__rate {
     width: 12.5%;
 }
 
-.table__result__cos {
+.result__cos {
     width: 12.5%;
 }
 
-.table__result__percent {
+.result__percent {
     width: 12.5%;
 }
 
-.table__result__active__power {
+.result__active-power {
     width: 12.5%;
 }
 
-.table__result__reactive__power {
+.result__reactive-power {
     width: 12.5%;
 }
 
@@ -166,27 +166,11 @@
     margin-bottom: 20px;
 }
 
-.power__setting__calculation__item {
+.power-set-calculation-item {
     font-size: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: Oswald;
     font-size: 25px;
     line-height: 25px;
-}
-
-.formula__with__fraction {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.formula__deck {
-    margin: 0px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.formula__deck:first-child {
-    border-bottom: 2px solid black;
 }

@@ -1,0 +1,179 @@
+.weather__container {
+    display: grid;
+    gap: 20px;
+    background-color: var(--light_blue_darker);
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.weather {
+    background-color: var(--blue_darker);
+    padding: 15px;
+    padding-top: 5px;
+    border-radius: 8px;
+}
+
+.weather:hover {
+    box-shadow: 0px 0px 8px 2px var(--blue_darker);
+}
+
+.weather__title {
+    font-size: 26px;
+    line-height: 26px;
+    font-family: Oswald, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 14px;
+    text-align: center;
+}
+
+.weather__parameter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    height: 95px;
+    background-color: var(--dark_blue);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.weather__parameter:hover {
+    box-shadow: 0px 0px 8px 2px var(--dark_blue);
+}
+
+.weather__value {
+    font-size: 30px;
+    line-height: 30px;
+    font-family: Oswald, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    margin: 0;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.weather__value:hover {
+    box-shadow: 0px 0px 8px 2px var(--white);
+}
+
+.weather__icon {
+    background-color: var(--white_darker);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.weather__icon--temperature {
+    background-size: 70% 100%;
+    background-position: center;
+}
+
+.weather__icon:hover {
+    box-shadow: 0px 0px 8px 2px var(--white_darker);
+}
+
+.weather__desc {
+    background-color: var(--light_grey);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+    line-height: 25px;
+    font-family: Oswald, Arial, Helvetica, sans-serif;
+}
+
+.weather__desc:hover {
+    box-shadow: 0px 0px 8px 2px var(--light_grey);
+}
+
+.temperature-frost {
+    background-image: url(/img/temperature/frost.png);
+}
+
+.temperature-cold {
+    background-image: url(/img/temperature/cold.png);
+}
+
+.temperature-thaw {
+    background-image: url(/img/temperature/thaw.png);
+}
+
+.temperature-warm {
+    background-image: url(/img/temperature/warm.png);
+}
+
+.temperature-hot {
+    background-image: url(/img/temperature/hot.png);
+}
+
+.temperature-hotly {
+    background-image: url(/img/temperature/hotly.png);
+}
+
+.rain-sun {
+    background-image: url(/img/svg/rain/sun.svg);
+}
+
+.rain-cloud {
+    background-image: url(/img/svg/rain/cloud.svg);
+}
+
+.rain-small-rain {
+    background-image: url(/img/svg/rain/small_rain.svg);
+}
+
+.rain-middle-rain {
+    background-image: url(/img/svg/rain/middle_rain.svg);
+}
+
+.rain-large-rain {
+    background-image: url(/img/svg/rain/large_rain.svg);
+}
+
+.wind-klass-0 {
+    background-image: url(/img/wind/0.png);
+}
+
+.wind-klass-1 {
+    background-image: url(/img/wind/1.png);
+}
+
+.wind-klass-2_3 {
+    background-image: url(/img/wind/2-3.png);
+}
+
+.wind-klass-4_5 {
+    background-image: url(/img/wind/4-5.png);
+}
+
+.wind-klass-6_7 {
+    background-image: url(/img/wind/6-7.png);
+}
+
+.wind-klass-8 {
+    background-image: url(/img/wind/8.png);
+}
+
+.wind-klass-9 {
+    background-image: url(/img/wind/9.png);
+}
+
+.wind-klass-10 {
+    background-image: url(/img/wind/10.png);
+}
+
+.wind-klass-11 {
+    background-image: url(/img/wind/11.png);
+}
+
+.wind-klass-12 {
+    background-image: url(/img/wind/12.png);
+}

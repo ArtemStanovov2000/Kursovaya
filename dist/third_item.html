@@ -14,142 +14,155 @@
         <div class="container">
             <nav class="navigation">
                 <ul class="navigation__list">
-                    <li class="navigation__item"><a href="index.html" class="navigation__item__link">Главная</a></li>
-                    <li class="navigation__item"><a href="https://edinici.ru" target="_blank" class="navigation__item__link">Конвертер</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__item__link">О нас</a></li>
-                    <li class="navigation__item"><a href="#" class="navigation__item__link">Каталог услуг</a></li>
-                    <li class="navigation__item" id="form_login_open_link"><a href="#"
-                            class="navigation__item__link">Войти</a></li>
+                    <li class="navigation__item">
+                        <a href="index.html" class="navigation__link">Главная</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="https://edinici.ru" target="_blank" class="navigation__link">Конвертер</a>
+                    </li>
+                    <li class="navigation__item" id="about">
+                        <a href="#" class="navigation__link">О нас</a>
+                    </li>
+                    <li class="navigation__item" id="open-login-form-link">
+                        <a href="#" class="navigation__link">Войти</a>
+                    </li>
                 </ul>
             </nav>
-            <form class="form__login visually-hidden" id="form_login_come" action="#" method="post" target="_blank"
+            <article class="about visually-hidden">
+                <button class="close-button" id="about-close-button"></button>
+                <h2 class="about__title">О нас:</h2>
+                <p class="about__desc">Наша команда опытных студентов прилагала колоссальные усилия решая все
+                    вручную, и сделала все, чтобы вам не пришлось делать тоже самое.</p>
+            </article>
+            <form class="login-form visually-hidden" id="login-form" action="#" method="post" target="_blank"
                 autocomplete="off">
-                <button class="form__login__close__btn" id="form_login_close_btn"></button>
-                <h2 class="form__title">Войдите в аккаунт</h2>
+                <button class="close-button" id="login-form-close-button"></button>
+                <h2 class="login-form__title">Войдите в аккаунт</h2>
                 <fieldset class="fieldset">
-                    <ul class="field__login__list">
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="name">Логин:</label>
-                            <input class="field__login__item__input" type="login" name="login" placeholder="loob_job123"
-                                id="login_pole" minlength="8" maxlength="20" required>
+                    <ul class="fieldset__list">
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="user-login-input">Логин:</label>
+                            <input class="fieldset__input" type="text" name="login" placeholder="loob_job123"
+                                id="user-login-input" minlength="8" maxlength="20" required>
                         </li>
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="age">Пароль:</label>
-                            <input class="field__login__item__input" type="password" name="password"
-                                placeholder="******" id="password_pole" minlength="10" maxlength="25" required>
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="user-password-input">Пароль:</label>
+                            <input class="fieldset__input" type="password" name="password" placeholder="******"
+                                id="user-password-input" minlength="10" maxlength="25" required>
                         </li>
                     </ul>
                 </fieldset>
-                <div class="form__button__box">
-                    <button class="form__button" id="submit_login_form_btn" type="submit">Войти</button>
-                    <button class="form__button" id="open_reg_form_btn" type="button">Создать аккаунт</button>
+                <div class="form__button-box">
+                    <button class="form__button" id="login-form-enter-button" type="submit">Войти</button>
+                    <button class="form__button" id="create-account-button" type="button">Создать аккаунт</button>
                 </div>
             </form>
-            <form class="form__login visually-hidden" action="#" id="form_login_open_reg" method="post" target="_blank"
+            <form class="login-form visually-hidden" action="#" id="registation-form" method="post" target="_blank"
                 autocomplete="off">
-                <button class="form__login__close__btn" id="form_reg_close_btn"></button>
-                <h2 class="form__title">Зарегестрируйтесь</h2>
+                <button class="close-button" id="registation-form-close-button"></button>
+                <h2 class="login-form__title">Зарегестрируйтесь</h2>
                 <fieldset class="fieldset">
-                    <ul class="field__login__list">
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="name">Имя:*</label>
-                            <input class="field__login__item__input" type="text" name="name" placeholder="Иван Иванов"
-                                id="name_pole_reg_form" required>
+                    <ul class="fieldset__list">
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="registation-form-name-input">Имя:*</label>
+                            <input class="fieldset__input" type="text" name="name" placeholder="Иван Иванов"
+                                id="registation-form-name-input" required>
                         </li>
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="age">Возраст:</label>
-                            <input class="field__login__item__input" type="text" name="age" placeholder="27"
-                                id="age_pole_reg_form">
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="registation-form-age-input">Возраст:</label>
+                            <input class="fieldset__input" type="text" name="age" placeholder="27"
+                                id="registation-form-age-input">
                         </li>
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="email">E-mail:*</label>
-                            <input class="field__login__item__input" type="email" name="mail"
-                                placeholder="ivanov@gmail.com" id="email_pole_reg_form" required>
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="registation-form-mail-input">E-mail:*</label>
+                            <input class="fieldset__input" type="email" name="mail" placeholder="ivanov@gmail.com"
+                                id="registation-form-mail-input" required>
                         </li>
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="phone_number">Телефон:*</label>
-                            <input class="field__login__item__input" type="tel" name="phone"
-                                placeholder="88005553535" id="phone_number_pole_reg_form" maxlength="21" required>
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="registation-form-phone-number-input">Телефон:*</label>
+                            <input class="fieldset__input" type="tel" name="phone-number" placeholder="88005553535"
+                                id="registation-form-phone-number-input" maxlength="21" required>
                         </li>
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="name">Логин:</label>
-                            <input class="field__login__item__input" type="login" name="login" placeholder="loob_job123"
-                                id="login_pole_reg_form">
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="registation-form-login-input">Логин:</label>
+                            <input class="fieldset__input" type="login" name="login" placeholder="loob_job123"
+                                id="registation-form-login-input">
                         </li>
-                        <li class="field__login__item">
-                            <label class="field__login__item__label" for="age">Пароль:</label>
-                            <input class="field__login__item__input" type="password" name="password"
-                                placeholder="******" id="password_pole_reg_form">
+                        <li class="fieldset__item">
+                            <label class="fieldset__label" for="registation-form-password-input">Пароль:</label>
+                            <input class="fieldset__input" type="password" name="password" placeholder="******"
+                                id="registation-form-password-input">
                         </li>
                     </ul>
                 </fieldset>
-                <div class="form__regist__box">
-                    <button type="submit" class="form__button" id="regist_button_reg_form">Зарегистроваться</button>
-                    <p class="form__regist__box__deck">* — Обязательные поля</p>
+                <div class="form__button-box">
+                    <button type="submit" class="form__button"
+                        id="registation-form-submit-button">Зарегестрироваться</button>
                 </div>
+                <p class="login-form__desc">* — Обязательные поля</p>
             </form>
         </div>
     </header>
     <main>
         <div class="container">
-            <section class="coursework__third__item">
-                <h2 class="coursework__item__title">3 Расчет распределительных шинопроводов и шкафов</h2>
-                <p class="coursework__deck">Расчёт нагрузки шинопровода ведём методом коэффициента максимума.
+            <section class="coursework-third-item">
+                <h2 class="coursework-item__title">3 Расчет распределительных шинопроводов и шкафов</h2>
+                <p class="coursework-item__deck">Расчёт нагрузки шинопровода ведём методом коэффициента максимума.
                     Для каждой группы ЭП определяем средние активную и реактивную мощности за
                     более нагруженную смену.</p>
-                <article class="coursework__item__table">
-                    <h2 class="coursework__item__title">Таблица 3.1 – Электроприемники подключенные к ШРА-1</h2>
+                <article class="coursework-item__table">
+                    <h2 class="coursework-item__title">Таблица 3.1 – Электроприемники подключенные к ШРА-1</h2>
                     <table class="table">
                         <tbody class="table__body">
                             <tr class="table__title  table__row">
-                                <th class="table__column  table__title__column__number">№</th>
-                                <th class="table__column  table__title__column__name">Группы ЭП</th>
-                                <th class="table__column  table__title__column__count">n</th>
-                                <th class="table__column  table__title__column__power">Pуст Общ</th>
-                                <th class="table__column  table__title__column__rate">Kи</th>
-                                <th class="table__column  table__title__column__cos">Cosφ/tgφ</th>
-                                <th class="table__column  table__title__column__percent">ПВ%</th>
-                                <th class="table__column  table__title__column__active__power">Pсм кВт</th>
-                                <th class="table__column  table__title__column__reactive__power">Qсм кВА</th>
+                                <th class="table__column  column-number">№</th>
+                                <th class="table__column  column-name">Группы ЭП</th>
+                                <th class="table__column  column-count">n</th>
+                                <th class="table__column  column-power">Pуст Общ</th>
+                                <th class="table__column  column-rate">Kи</th>
+                                <th class="table__column  column-cos">Cosφ/tgφ</th>
+                                <th class="table__column  column-percent">ПВ%</th>
+                                <th class="table__column  column-active-power">Pсм кВт</th>
+                                <th class="table__column  column-reactive-power">Qсм кВА</th>
                             </tr>
                             <tr class="table__item  table__row">
-                                <th class="table__column  table__column__number"></th>
-                                <th class="table__column  table__column__name"></th>
-                                <th class="table__column  table__column__count"></th>
-                                <th class="table__column  table__column__power"></th>
-                                <th class="table__column  table__column__rate"></th>
-                                <th class="table__column  table__column__cos"></th>
-                                <th class="table__column  table__column__percent"></th>
-                                <th class="table__column  table__column__active__power"></th>
-                                <th class="table__column  table__column__reactive__power"></th>
+                                <th class="table__column  table__column-number"></th>
+                                <th class="table__column  table__column-name"></th>
+                                <th class="table__column  table__column-count"></th>
+                                <th class="table__column  table__column-power"></th>
+                                <th class="table__column  table__column-rate"></th>
+                                <th class="table__column  table__column-cos"></th>
+                                <th class="table__column  table__column-percent"></th>
+                                <th class="table__column  table__column-active-power"></th>
+                                <th class="table__column  table__column-reactive-power"></th>
                             </tr>
                         </tbody>
                     </table>
-                    <p class="coursework__deck">Определяем установочную мощность</p>
+                    <p class="coursework-item__deck">Определяем установочную мощность</p>
                     <div class="formula">
-                        <p class="coursework__deck">Руст = Рпасп √ПВ, кВт</p>
-                        <p class="coursework__deck">(3.1)</p>
+                        <p class="coursework-item__deck">Руст = Рпасп √ПВ, кВт</p>
+                        <p class="coursework-item__deck">(3.1)</p>
                     </div>
-                    <p class="coursework__deck">где ПВ берется в относительных единицах, %;</p>
-                    <p class="coursework__deck">Руст – мощность длительного режима, кВт;</p>
-                    <p class="coursework__deck">Рпасп – паспортная мощность оборудования, кВт.</p>
+                    <p class="coursework-item__deck">где ПВ берется в относительных единицах, %;</p>
+                    <p class="coursework-item__deck">Руст – мощность длительного режима, кВт;</p>
+                    <p class="coursework-item__deck">Рпасп – паспортная мощность оборудования, кВт.</p>
                 </article>
-                <ul class="list__power  list__power__setting__calculation"></ul>
+                <ul class="list-power  list-power__setting-calculation"></ul>
                 <article>
-                    <p class="coursework__deck">Определяем сменную мощность, и реактивную мощность</p>
+                    <p class="coursework-item__deck">Определяем сменную мощность, и реактивную мощность</p>
                     <div class="formula">
-                        <p class="coursework__deck">𝑃см = 𝐾и ∗ ∑ 𝑃см , кВт</p>
-                        <p class="coursework__deck">(3.2)</p>
+                        <p class="coursework-item__deck">𝑃см = 𝐾и ∗ ∑ 𝑃см , кВт</p>
+                        <p class="coursework-item__deck">(3.2)</p>
                     </div>
                     <div class="formula">
-                        <p class="coursework__deck">𝑄см = 𝑃см ∗ 𝑡𝑔𝜑, квар</p>
-                        <p class="coursework__deck">(3.3)</p>
+                        <p class="coursework-item__deck">𝑄см = 𝑃см ∗ 𝑡𝑔𝜑, квар</p>
+                        <p class="coursework-item__deck">(3.3)</p>
                     </div>
-                    <p class="coursework__deck">где Kи – коэффициент использования для каждой группы электроприемников;
+                    <p class="coursework-item__deck">где Kи – коэффициент использования для каждой группы электроприемников;
                     </p>
                 </article>
-                <ul class="list__power  list__active__power__setting__calculation"></ul>
-                <ul class="list__power  list__reactive__power__setting__calculation"></ul>
+                <ul class="list__power  active-power__setting-calculation"></ul>
+                <ul class="list__power  reactive-power__setting-calculation"></ul>
             </section>
         </div>
     </main>

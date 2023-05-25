@@ -1,8 +1,10 @@
 @import "header";
 @import "coursework";
-@import "reference";
+@import "reference_data";
 @import "promo";
 @import "coursework_item";
+@import "weather";
+@import "calculator";
 
 @font-face {
 	font-family: 'Oswald'; 
@@ -30,7 +32,7 @@
     --basic_green_light: #4cb33d;
     --basic_green: #49ab3a;
     --basic_green2: #49ab3a;
-    --basic_green3: #49ab3a;
+    --basic_green3: #3a9b2b;
 
     --basic_yellow: #b0b300;
     --basic_yellow_light: #d8db0f;
@@ -71,6 +73,10 @@ main {
 }
 
 @media (min-width: 450px) {
+    body {
+        margin-top: 30px;
+    }
+
     .container {
         padding-left: 100px;
         padding-right: 100px;
@@ -79,5 +85,6 @@ main {
     .main__inner {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
     }
 }

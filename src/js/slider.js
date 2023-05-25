@@ -1,12 +1,12 @@
 const estimationInput = document.getElementById("estimation");
-const waitingTimeInput = document.getElementById("waiting_time");
-const numberOfItemInput = document.getElementById("number_of_item");
-const finalPriceElement = document.getElementById("final_price");
-const numberOfWeeksElement = document.getElementById("number_of_weeks");
-const numberOfDaysElement = document.getElementById("number_of_days");
-const deckWeeksElement = document.getElementById("deck_weeks");
-const deckDaysElement = document.getElementById("deck_days");
-const promoList = document.querySelector(".promo__list");
+const waitingTimeInput = document.getElementById("waiting-time");
+const numberOfItemInput = document.getElementById("number-of-item");
+const finalPriceElement = document.getElementById("final-price");
+const numberOfWeeksElement = document.getElementById("number-of-weeks");
+const numberOfDaysElement = document.getElementById("number-of-days");
+const deckWeeksElement = document.getElementById("deck-weeks");
+const deckDaysElement = document.getElementById("deck-days");
+const parameterEstimationList = document.querySelector(".parameter-estimation__list");
 
 const MIN_PRICE = 750;
 const PRICE_FACTOR = 500;
@@ -41,8 +41,8 @@ const calculationCostOfCourse = function calculationCostOfCourse() {
 
 calculationCostOfCourse()
 
-promoList.addEventListener("input", evt => {
-    if (evt.target.classList.contains("promo__list__input")) {
+parameterEstimationList.addEventListener("input", evt => {
+    if (evt.target.classList.contains("range-container__input")) {
         calculationCostOfCourse();
     };
 });
