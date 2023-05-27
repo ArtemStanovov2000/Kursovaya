@@ -1,8 +1,8 @@
 const table = document.querySelector(".table__body")
-let tableItem = document.querySelectorAll(".table__item")
-const listPowerSettingCalculation = document.querySelector(".list-power__setting-calculation")
-const activePowerSettingCalculation = document.querySelector(".active-power__setting-calculation")
-const reactivePowerSettingCalculation = document.querySelector(".reactive-power__setting-calculation")
+let tableRowData = document.querySelectorAll(".table__row--data")
+const listPowerSettingCalculation = document.getElementById("list-power__setting-calculation")
+const activePowerSettingCalculation = document.getElementById("active-power__setting-calculation")
+const reactivePowerSettingCalculation = document.getElementById("reactive-power__setting-calculation")
 
 const tableLineCount = 7;
 const MAX_VALUE_PERCENT = 100;
@@ -12,107 +12,107 @@ const COUNT_PERCENT_IN_UNIT = 100;
 
 //создаем строки таблицы
 for (let i = 0; i < tableLineCount; i++) {
-    table.appendChild(tableItem[0].cloneNode(true))
+    table.appendChild(tableRowData[0].cloneNode(true))
 }
-tableItem = document.querySelectorAll(".table__item")
+tableRowData = document.querySelectorAll(".table__row--data")
 
-const tableColumnNumber = document.querySelectorAll(".table__column-number")
+const tableColumnNumber = document.querySelectorAll(".table-column--number")
 tableColumnNumber.forEach((item, index) => {
     item.innerHTML = index + 1;
 });
 
-const tableColumnName = document.querySelectorAll(".table__column-name")
+const tableColumnName = document.querySelectorAll(".table-column--name")
 tableColumnName.forEach((item, index) => {
     const inputName = document.createElement("input");
     inputName.classList.add("table__input", "input-name");
     tableColumnName[index].appendChild(inputName);
 });
 
-const tableColumnCount = document.querySelectorAll('.table__column-count')
+const tableColumnCount = document.querySelectorAll(".table-column--count")
 tableColumnCount.forEach((item, index) => {
     const inputCount = document.createElement("input");
     inputCount.classList.add("table__input", "input-count");
     tableColumnCount[index].appendChild(inputCount);
 });
 
-const tableColumnPower = document.querySelectorAll('.table__column-power')
+const tableColumnPower = document.querySelectorAll(".table-column--power")
 tableColumnPower.forEach((item, index) => {
     const inputPower = document.createElement("input");
-    inputPower.classList.add("table__input", "input__power");
+    inputPower.classList.add("table__input", "input-power");
     tableColumnPower[index].appendChild(inputPower);
 });
 
-const tableColumnRate = document.querySelectorAll('.table__column-rate')
+const tableColumnRate = document.querySelectorAll(".table-column--rate")
 tableColumnRate.forEach((item, index) => {
     const inputRate = document.createElement("input");
-    inputRate.classList.add("table__input", "input__rate");
+    inputRate.classList.add("table__input", "input-rate");
     tableColumnRate[index].appendChild(inputRate);
 });
 
-const tableColumnCos = document.querySelectorAll('.table__column-cos')
+const tableColumnCos = document.querySelectorAll(".table-column--cos")
 tableColumnCos.forEach((item, index) => {
     const inputCos = document.createElement("input");
-    inputCos.classList.add("table__input", "input__cos");
+    inputCos.classList.add("table__input", "input-cos");
     tableColumnCos[index].appendChild(inputCos);
 });
 
-const tableColumnPercent = document.querySelectorAll('.table__column-percent')
+const tableColumnPercent = document.querySelectorAll(".table-column--percent")
 tableColumnPercent.forEach((item, index) => {
     const inputPercent = document.createElement("input");
-    inputPercent.classList.add("table__input", "input__percent");
+    inputPercent.classList.add("table__input", "input-percent");
     tableColumnPercent[index].appendChild(inputPercent);
 });
 
 //находим созданные инпуты и ячейки вывода
-const AllInputName = document.querySelectorAll(".input__name");
-const AllInputCount = document.querySelectorAll(".input__count");
-const AllInputPower = document.querySelectorAll(".input__power");
-const AllInputRate = document.querySelectorAll(".input__rate");
-const AllInputCos = document.querySelectorAll(".input__cos");
-const AllInputPercent = document.querySelectorAll(".input__percent");
-const tableColumnActivePower = document.querySelectorAll(".table__column-active-power");
-const tableColumnReactivePower = document.querySelectorAll(".table__column-reactive-power");
+const AllInputName = document.querySelectorAll(".input-name");
+const AllInputCount = document.querySelectorAll(".input-count");
+const AllInputPower = document.querySelectorAll(".input-power");
+const AllInputRate = document.querySelectorAll(".input-rate");
+const AllInputCos = document.querySelectorAll(".input-cos");
+const AllInputPercent = document.querySelectorAll(".input-percent");
+const tableColumnActivePower = document.querySelectorAll(".table-column--active-power");
+const tableColumnReactivePower = document.querySelectorAll(".table-column--reactive-power");
 
 //создаем строку с суммами
-const tableRow = document.createElement("tr");
-tableRow.classList.add("table__row");
-table.appendChild(tableRow);
+const tableRowResult = document.createElement("tr");
+tableRowResult.classList.add("table__row");
+table.appendChild(tableRowResult);
 //наполняем строку сумм ячейками сумм
-const tableCellNumber = document.createElement("th");
-tableCellNumber.classList.add("table__column", "result__number");
+const tableCellNumber = document.createElement("td");
+tableCellNumber.classList.add("table__column", "table__column--number");
 tableCellNumber.innerHTML = "Σ"
-tableRow.appendChild(tableCellNumber);
-const tableCellName = document.createElement("th");
-tableCellName.classList.add("table__column", "result__name");
-tableRow.appendChild(tableCellName);
-const tableCellCount = document.createElement("th");
-tableCellCount.classList.add("table__column", "result__count");
-tableRow.appendChild(tableCellCount);
-const tableCellPower = document.createElement("th");
-tableCellPower.classList.add("table__column", "result__power");
-tableRow.appendChild(tableCellPower);
-const tableCellRate = document.createElement("th");
-tableCellRate.classList.add("table__column", "result__rate");
-tableRow.appendChild(tableCellRate);
-const tableCellCos = document.createElement("th");
-tableCellCos.classList.add("table__column", "result__cos");
-tableRow.appendChild(tableCellCos);
-const tableCellPercent = document.createElement("th");
-tableCellPercent.classList.add("table__column", "result__percent");
-tableRow.appendChild(tableCellPercent);
-const tableCellActivePower = document.createElement("th");
-tableCellActivePower.classList.add("table__column", "result__active-power");
-tableRow.appendChild(tableCellActivePower);
-const tableCellReactivePower = document.createElement("th");
-tableCellReactivePower.classList.add("table__column", "result-reactive-power");
-tableRow.appendChild(tableCellReactivePower);
+tableRowResult.appendChild(tableCellNumber);
+const tableCellName = document.createElement("td");
+tableCellName.classList.add("table__column", "table__column--name");
+tableRowResult.appendChild(tableCellName);
+const tableCellCount = document.createElement("td");
+tableCellCount.classList.add("table__column", "table__column--count");
+tableRowResult.appendChild(tableCellCount);
+const tableCellPower = document.createElement("td");
+tableCellPower.classList.add("table__column", "table__column--power");
+tableRowResult.appendChild(tableCellPower);
+const tableCellRate = document.createElement("td");
+tableCellRate.classList.add("table__column", "table__column--rate");
+tableRowResult.appendChild(tableCellRate);
+const tableCellCos = document.createElement("td");
+tableCellCos.classList.add("table__column", "table__column--cos");
+tableRowResult.appendChild(tableCellCos);
+const tableCellPercent = document.createElement("td");
+tableCellPercent.classList.add("table__column", "table__column--percent");
+tableRowResult.appendChild(tableCellPercent);
+const tableCellActivePower = document.createElement("td");
+tableCellActivePower.classList.add("table__column", "table__column--active-power");
+tableRowResult.appendChild(tableCellActivePower);
+const tableCellReactivePower = document.createElement("td");
+tableCellReactivePower.classList.add("table__column", "table__column--reactive-power");
+tableRowResult.appendChild(tableCellReactivePower);
 
 const calculatePowerMachineOfHRA = function calculatePowerMachineOfHRA() {
     let sumCountValue = 0;
     let sumPowerValue = 0;
     let sumActivePowerValue = 0;
     let sumReactivePowerValue = 0;
-    tableItem.forEach((item, index) => {
+    tableRowData.forEach((item, index) => {
         sumCountValue += Number(AllInputCount[index].value);
         sumPowerValue += Number(AllInputPower[index].value);
         let activePowerValue = Number(AllInputPower[index].value) * Number(AllInputRate[index].value);
@@ -150,9 +150,9 @@ const validationCellOfRow = function validationCellOfRow(row, validateInput, val
 }
 
 const validationRowOfTable = function validationRowOfTable() {
-    validationCellOfRow(tableItem, AllInputPercent, MAX_VALUE_PERCENT, comparisonSignMoreThen);
-    validationCellOfRow(tableItem, AllInputCos, MAX_VALUE_COS, comparisonSignLessThan);
-    validationCellOfRow(tableItem, AllInputRate, MAX_VALUE_RATE, comparisonSignMoreThen);
+    validationCellOfRow(tableRowData, AllInputPercent, MAX_VALUE_PERCENT, comparisonSignMoreThen);
+    validationCellOfRow(tableRowData, AllInputCos, MAX_VALUE_COS, comparisonSignLessThan);
+    validationCellOfRow(tableRowData, AllInputRate, MAX_VALUE_RATE, comparisonSignMoreThen);
 }
 
 const getPercentLessUnitList = function getPercentLessUnitList(row, validateInput) {
@@ -196,9 +196,9 @@ table.addEventListener("change", evt => {
     if (evt.target.classList.contains("table__input")) {
         calculatePowerMachineOfHRA();
         validationRowOfTable();
-        getPercentLessUnitList(tableItem, AllInputPercent);
-        calculateActivePoverList(tableItem, AllInputPower, AllInputRate);
-        calculateReactivePoverList(tableItem, AllInputPower, AllInputRate, AllInputCos);
+        getPercentLessUnitList(tableRowData, AllInputPercent);
+        calculateActivePoverList(tableRowData, AllInputPower, AllInputRate);
+        calculateReactivePoverList(tableRowData, AllInputPower, AllInputRate, AllInputCos);
     };
 });
 

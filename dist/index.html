@@ -20,11 +20,11 @@
                     <li class="navigation__item">
                         <a href="https://edinici.ru" target="_blank" class="navigation__link">Конвертер</a>
                     </li>
-                    <li class="navigation__item" id="about">
-                        <a href="#" class="navigation__link">О нас</a>
+                    <li class="navigation__item">
+                        <a href="#" class="navigation__link" id="open-about-modal-link">О нас</a>
                     </li>
-                    <li class="navigation__item" id="open-login-form-link">
-                        <a href="#" class="navigation__link">Войти</a>
+                    <li class="navigation__item">
+                        <a href="#" class="navigation__link" id="open-login-form-link">Войти</a>
                     </li>
                 </ul>
             </nav>
@@ -32,7 +32,7 @@
                 <button class="close-button" id="about-close-button"></button>
                 <h2 class="about__title">О нас:</h2>
                 <p class="about__desc">Наша команда опытных студентов прилагала колоссальные усилия решая все
-                    вручную, и сделала все, чтобы вам не пришлось делать тоже самое.</p>
+                    вручную, и сделала все, чтобы вам не пришлось делать то же самое.</p>
             </article>
             <form class="login-form visually-hidden" id="login-form" action="#" method="post" target="_blank"
                 autocomplete="off">
@@ -57,47 +57,47 @@
                     <button class="form__button" id="create-account-button" type="button">Создать аккаунт</button>
                 </div>
             </form>
-            <form class="login-form visually-hidden" action="#" id="registation-form" method="post" target="_blank"
+            <form class="login-form visually-hidden" action="#" id="registration-form" method="post" target="_blank"
                 autocomplete="off">
-                <button class="close-button" id="registation-form-close-button"></button>
-                <h2 class="login-form__title">Зарегестрируйтесь</h2>
+                <button class="close-button" id="registration-form-close-button"></button>
+                <h2 class="login-form__title">Зарегистрируйтесь</h2>
                 <fieldset class="fieldset">
                     <ul class="fieldset__list">
                         <li class="fieldset__item">
-                            <label class="fieldset__label" for="registation-form-name-input">Имя:*</label>
+                            <label class="fieldset__label" for="registration-form-name-input">Имя:*</label>
                             <input class="fieldset__input" type="text" name="name" placeholder="Иван Иванов"
-                                id="registation-form-name-input" required>
+                                id="registration-form-name-input" required>
                         </li>
                         <li class="fieldset__item">
-                            <label class="fieldset__label" for="registation-form-age-input">Возраст:</label>
+                            <label class="fieldset__label" for="registration-form-age-input">Возраст:</label>
                             <input class="fieldset__input" type="text" name="age" placeholder="27"
-                                id="registation-form-age-input">
+                                id="registration-form-age-input">
                         </li>
                         <li class="fieldset__item">
-                            <label class="fieldset__label" for="registation-form-mail-input">E-mail:*</label>
+                            <label class="fieldset__label" for="registration-form-mail-input">E-mail:*</label>
                             <input class="fieldset__input" type="email" name="mail" placeholder="ivanov@gmail.com"
-                                id="registation-form-mail-input" required>
+                                id="registration-form-mail-input" required>
                         </li>
                         <li class="fieldset__item">
-                            <label class="fieldset__label" for="registation-form-phone-number-input">Телефон:*</label>
+                            <label class="fieldset__label" for="registration-form-phone-number-input">Телефон:*</label>
                             <input class="fieldset__input" type="tel" name="phone-number" placeholder="88005553535"
-                                id="registation-form-phone-number-input" maxlength="21" required>
+                                id="registration-form-phone-number-input" maxlength="21" required>
                         </li>
                         <li class="fieldset__item">
-                            <label class="fieldset__label" for="registation-form-login-input">Логин:</label>
-                            <input class="fieldset__input" type="login" name="login" placeholder="loob_job123"
-                                id="registation-form-login-input">
+                            <label class="fieldset__label" for="registration-form-login-input">Логин:</label>
+                            <input class="fieldset__input" type="text" name="login" placeholder="loob_job123"
+                                id="registration-form-login-input">
                         </li>
                         <li class="fieldset__item">
-                            <label class="fieldset__label" for="registation-form-password-input">Пароль:</label>
+                            <label class="fieldset__label" for="registration-form-password-input">Пароль:</label>
                             <input class="fieldset__input" type="password" name="password" placeholder="******"
-                                id="registation-form-password-input">
+                                id="registration-form-password-input">
                         </li>
                     </ul>
                 </fieldset>
                 <div class="form__button-box">
                     <button type="submit" class="form__button"
-                        id="registation-form-submit-button">Зарегестрироваться</button>
+                        id="registration-form-submit-button">Зарегистрироваться</button>
                 </div>
                 <p class="login-form__desc">* — Обязательные поля</p>
             </form>

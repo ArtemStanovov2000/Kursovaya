@@ -675,7 +675,7 @@
     line-height: 30px;
   }
 }
-.coursework-third-item {
+.coursework-item {
   margin-left: 300px;
   margin-right: 300px;
 }
@@ -686,7 +686,7 @@
   line-height: 30px;
 }
 
-.coursework-item__deck {
+.coursework-item__desc {
   font-family: Oswald;
   font-size: 25px;
   line-height: 25px;
@@ -713,75 +713,39 @@
   align-items: center;
 }
 
-.column-number {
+.table__column--number {
   width: 5%;
 }
 
-.column-name {
+.table__column--name {
   width: 15%;
 }
 
-.column-count {
+.table__column--count {
   width: 5%;
 }
 
-.column-power {
+.table__column--power {
   width: 12.5%;
 }
 
-.column-rate {
+.table__column--rate {
   width: 12.5%;
 }
 
-.column-cos {
+.table__column--cos {
   width: 12.5%;
 }
 
-.column-percent {
+.table__column--percent {
   width: 12.5%;
 }
 
-.column-active-power {
+.table__column--active-power {
   width: 12.5%;
 }
 
-.column-reactive-power {
-  width: 12.5%;
-}
-
-.table__column-number {
-  width: 5%;
-}
-
-.table__column-name {
-  width: 15%;
-}
-
-.table__column-count {
-  width: 5%;
-}
-
-.table__column-power {
-  width: 12.5%;
-}
-
-.table__column-rate {
-  width: 12.5%;
-}
-
-.table__column-cos {
-  width: 12.5%;
-}
-
-.table__column-percent {
-  width: 12.5%;
-}
-
-.table__column-active-power {
-  width: 12.5%;
-}
-
-.table__column-reactive-power {
+.table__column--reactive-power {
   width: 12.5%;
 }
 
@@ -793,42 +757,6 @@
   border-radius: 6px;
   text-align: center;
   font-size: 20px;
-}
-
-.result__number {
-  width: 5%;
-}
-
-.result__name {
-  width: 15%;
-}
-
-.result__count {
-  width: 5%;
-}
-
-.result__power {
-  width: 12.5%;
-}
-
-.result__rate {
-  width: 12.5%;
-}
-
-.result__cos {
-  width: 12.5%;
-}
-
-.result__percent {
-  width: 12.5%;
-}
-
-.result__active-power {
-  width: 12.5%;
-}
-
-.result__reactive-power {
-  width: 12.5%;
 }
 
 .formula {

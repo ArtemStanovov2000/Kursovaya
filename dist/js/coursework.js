@@ -1,5 +1,5 @@
 const table = document.querySelector(".table__body")
-let tableItem = document.querySelectorAll(".table__item")
+let tableRowData = document.querySelectorAll(".table__item")
 const listPowerSettingCalculation = document.querySelector(".list__power__setting__calculation")
 const listActivePowerSettingCalculation = document.querySelector(".list__active__power__setting__calculation")
 const listReactivePowerSettingCalculation = document.querySelector(".list__reactive__power__setting__calculation")
@@ -12,9 +12,9 @@ const COUNT_PERCENT_IN_UNIT = 100;
 
 //создаем строки таблицы
 for (let i = 0; i < tableLineCount; i++) {
-    table.appendChild(tableItem[0].cloneNode(true))
+    table.appendChild(tableRowData[0].cloneNode(true))
 }
-tableItem = document.querySelectorAll(".table__item")
+tableRowData = document.querySelectorAll(".table__item")
 
 const tableColumnNumber = document.querySelectorAll(".table__column__number")
 tableColumnNumber.forEach((item, index) => {
@@ -112,7 +112,7 @@ const calculatePowerMachineOfHRA = function calculatePowerMachineOfHRA() {
     let sumPowerValue = 0;
     let sumActivePowerValue = 0;
     let sumReactivePowerValue = 0;
-    tableItem.forEach((item, index) => {
+    tableRowData.forEach((item, index) => {
         sumCountValue += Number(AllInputCount[index].value);
         sumPowerValue += Number(AllInputPower[index].value);
         let activePowerValue = Number(AllInputPower[index].value) * Number(AllInputRate[index].value);
@@ -150,9 +150,9 @@ const validationCellOfRow = function validationCellOfRow(row, validateInput, val
 }
 
 const validationRowOfTable = function validationRowOfTable() {
-    validationCellOfRow(tableItem, AllInputPercent, MAX_VALUE_PERCENT, comparisonSignMoreThen);
-    validationCellOfRow(tableItem, AllInputCos, MAX_VALUE_COS, comparisonSignLessThan);
-    validationCellOfRow(tableItem, AllInputRate, MAX_VALUE_RATE, comparisonSignMoreThen);
+    validationCellOfRow(tableRowData, AllInputPercent, MAX_VALUE_PERCENT, comparisonSignMoreThen);
+    validationCellOfRow(tableRowData, AllInputCos, MAX_VALUE_COS, comparisonSignLessThan);
+    validationCellOfRow(tableRowData, AllInputRate, MAX_VALUE_RATE, comparisonSignMoreThen);
 }
 
 const getPercentLessUnitList = function getPercentLessUnitList(row, validateInput) {
@@ -196,9 +196,9 @@ table.addEventListener("change", evt => {
     if (evt.target.classList.contains("table__input")) {
         calculatePowerMachineOfHRA();
         validationRowOfTable();
-        getPercentLessUnitList(tableItem, AllInputPercent);
-        calculateActivePoverList(tableItem, AllInputPower, AllInputRate);
-        calculateReactivePoverList(tableItem, AllInputPower, AllInputRate, AllInputCos);
+        getPercentLessUnitList(tableRowData, AllInputPercent);
+        calculateActivePoverList(tableRowData, AllInputPower, AllInputRate);
+        calculateReactivePoverList(tableRowData, AllInputPower, AllInputRate, AllInputCos);
     };
 });
 
